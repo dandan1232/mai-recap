@@ -6,16 +6,20 @@
 
 <p align="center"><strong>把近期麦当劳点餐记录，变成一份值得收藏的回忆。</strong></p>
 
+在网页输入自己的 MCP 连接凭证，查看近期历史订单，生成五页回顾和分享卡。无需先上传订单文件，也无需在电脑上安装 Python；想在本机查询和保存完整 HTML 回顾，也可以使用本地命令。
+
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10 或更新版本">
   <img src="https://img.shields.io/badge/dependencies-0-26734D?style=flat-square" alt="零第三方依赖">
-  <img src="https://img.shields.io/badge/local_checks-12_passed-26734D?style=flat-square" alt="12项本地数据检查通过">
+  <img src="https://img.shields.io/badge/local_checks-20_passed-26734D?style=flat-square" alt="12项数据检查与8项网页接口检查通过，共20项">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-7B1728?style=flat-square" alt="MIT License"></a>
 </p>
 
 <p align="center">
   <a href="https://mai-recap.vercel.app/"><strong>在线体验</strong></a> ·
-  <a href="https://github.com/dandan1232/mai-recap/archive/refs/heads/main.zip"><strong>下载演示 ZIP</strong></a> ·
+  <a href="#在网页查看自己的订单"><strong>查看我的订单</strong></a> ·
+  <a href="#mcp-调用教程"><strong>MCP 调用教程</strong></a> ·
+  <a href="https://github.com/dandan1232/mai-recap/archive/refs/heads/main.zip"><strong>下载项目 ZIP</strong></a> ·
   <a href="#一条命令生成回顾"><strong>命令启动</strong></a> ·
   <a href="#快速体验">快速体验</a> ·
   <a href="#生成自己的回顾">生成自己的回顾</a> ·
@@ -26,15 +30,40 @@
 
 ## 在网页查看自己的订单
 
-页面提供“我的订单”入口，包含**连接账号、历史订单、MCP 教程**：
+**推荐直接使用网页。** 页面提供“我的订单”入口，包含**连接账号、历史订单、MCP 教程**。MCP Token 是麦当劳官方签发的账号连接凭证，相当于连接本人账号的一把钥匙。
 
-1. 按页面教程，在[麦当劳官方 MCP 平台](https://open.mcd.cn/mcp)申请自己的 MCP Token。
-2. 在“连接账号”中粘贴凭证，点击“获取我的订单”。输入框会在提交后清空。
-3. 查看本次近期订单，可按日期、门店或餐品搜索；点击“翻开我的回顾”阅读五页回顾并保存分享卡。
+1. 打开[麦迹网站](https://mai-recap.vercel.app/)，点击顶部的**“我的订单”**。
+2. 还没有凭证时，先打开**“MCP 教程”**，按提示到[麦当劳官方 MCP 平台](https://open.mcd.cn/mcp)登录并申请自己的 MCP Token。
+3. 回到**“连接账号”**粘贴凭证，点击**“获取我的订单”**。提交后输入框会清空，查询完成后进入**“历史订单”**。
+4. 按日期、门店或餐品搜索订单，点击**“翻开我的回顾”**阅读五页回顾；在最后一页打开分享卡，保存 PNG 图片。
+
+未查询过订单时，历史列表会提示先连接账号；查询成功但没有订单时，保留空白结果。凭证无效、查询失败或查询超时会单独提示，不会用虚构示例代替自己的记录。可在查询过程中取消，或查询完成后点击“清除本次记录”。
 
 网页通过同站的 `/api/orders` 临时转发到官方 MCP，只调用 `order-list {}`。凭证与订单不写入数据库或应用日志，返回页面前会去除订单号、手机号和配送地址等字段。本次结果只保留在当前页面，刷新、关闭或点击“清除本次记录”后清除。历史列表展示本次返回的订单，回顾只纳入已完成或已评价的记录，不承诺完整全年。
 
 服务需要在支持 Node.js 函数的 Vercel 环境部署；直接双击离线 HTML 时，仍可阅读已有回顾、生成分享卡，并按教程使用下方本地命令查询。网页查询功能的上线状态以实际部署为准。
+
+## MCP 调用教程
+
+**在麦迹网页使用：**“我的订单 → MCP 教程”包含官方凭证申请步骤、客户端配置示例、可复制的查询提示词和常见问题。获取自己的订单时，在“连接账号”填入凭证即可。
+
+**在其他 AI 助手里调用：**选择支持 Streamable HTTP（可持续接收服务响应的 HTTP 连接方式）的 MCP 客户端，按[官方接入文档](https://github.com/M-China/mcd-mcp-server)添加服务：
+
+| 设置项 | 填写内容 |
+|---|---|
+| 服务地址 | `https://mcp.mcd.cn` |
+| 传输协议 | Streamable HTTP |
+| 认证请求头 | `Authorization: Bearer YOUR_MCP_TOKEN`，仅在自己的客户端里替换占位符 |
+| 历史订单工具 | `order-list` |
+| 调用参数 | `{}` |
+
+连接成功后，可以发送：
+
+```text
+请调用麦当劳 MCP 的 order-list 工具，参数使用 {}，查询我近期的到店与外送历史订单。整理每笔订单的下单时间、门店、餐品和状态，明确说明本次可查询范围。
+```
+
+仓库提供 [MCP 配置示例](mcp-config.example.json)，其中的环境变量占位符需要客户端支持变量替换。凭证应填在客户端的认证设置中，不要发到聊天里。麦迹实际的只读调用流程、数据处理和验证范围见 [MCP 接入说明](MCP_INTEGRATION.md)。
 
 ## 一条命令生成回顾
 
@@ -94,6 +123,8 @@ python recap.py --live
 
 | 你想回顾的事 | 麦迹会怎样呈现 |
 |---|---|
+| 查看自己的历史订单 | 在“我的订单”输入本人 MCP 凭证，获取近期记录，并按日期、门店或餐品搜索 |
+| 不知道如何连接账号 | 在“MCP 教程”查看凭证申请步骤、客户端配置和查询示例 |
 | 什么时候下单 | 北京时间的饭点分布；点击时段，展开对应订单 |
 | 哪家店经常出现 | 按出餐门店统计频次，点击门店小票或店名查看记录 |
 | 最近反复点什么 | 分开统计订单频次与份数，点击餐品展开明细；套餐不重复拆算 |
@@ -106,7 +137,7 @@ python recap.py --live
 
 **在线体验：**打开 [麦迹](https://mai-recap.vercel.app/)，手机和电脑都可访问。默认回顾使用虚构订单，无需登录或 Token；部署查询接口后，可从“我的订单”填入自己的凭证获取近期订单，或查看 MCP 教程。
 
-**离线体验：**点击上方“下载演示 ZIP”，解压后双击 `麦迹-演示.html`。无需 Token、Python 或额外安装。
+**离线体验：**点击上方“下载项目 ZIP”，解压后双击 `麦迹-演示.html`。无需 Token、Python 或额外安装；离线页面不能直接联网查询，可按教程使用本地命令。
 
 进入页面后，点击“翻开这份回忆”，也可以直接向下滚动。点击饭点、门店或餐品可展开对应记录；最后一页点击“打开分享卡”，预览后保存图片。右上角菜单可跳转章节或体验空账户页面。
 
@@ -160,7 +191,7 @@ python recap.py --live
 | `recap.py` | 订单去重、已完成状态筛选、北京时间和餐品频次统计 |
 | `template.html` | 展示五页回顾，在浏览器内生成分享图片 |
 
-真实模式只调用历史查询工具。凭证和原始响应不落盘；生成报告不需要部署网站或配置模型服务。
+网页与本地命令都只调用历史查询工具，凭证和原始响应不落盘。网页查询使用已部署的转发接口；本地命令无需部署网站或配置模型服务。
 
 **结果保存位置：**本地命令生成的真实回顾默认写到项目目录的 `麦迹-我的回顾.html`，演示写到 `麦迹-演示.html`，也可用 `--output` 指定文件。网页查询结果只保留在当前页面。分享卡以 PNG 图片下载，保存位置由浏览器的下载设置决定。个人回顾已在 `.gitignore` 中排除。
 
@@ -184,7 +215,7 @@ node --test test_orders.cjs
 <details>
 <summary><strong>展开查看统计口径与隐私处理</strong></summary>
 
-- 仅统计已完成或已评价订单，重复订单不会重复计入。
+- 回顾仅统计已完成或已评价订单，重复订单不会重复计入；网页历史列表也可查看本次返回的其他状态订单。
 - 时间统一为北京时间；缺失或无法解析的时间不参与饭点分布。
 - 门店表示出餐门店，不代表实际用餐位置；缺失门店名时不猜测位置。
 - 餐品按订单顶层名称统计，套餐子项不会再次累加；笔数、份数分开计算。
@@ -222,7 +253,7 @@ mai-recap/
 
 本仓库提供项目介绍、目标用户、安装与使用示例、官方声明原文、MCP 接入说明、脱敏配置和可运行源码。官方声明文件名与内容保持不变。
 
-程序通过终端的隐藏输入读取凭证；`mcp-config.example.json` 供支持环境变量替换的 MCP 客户端参考，其中只保留占位符。
+网页通过密码输入框读取凭证，提交后立即清空；本地命令通过终端的隐藏输入读取凭证。`mcp-config.example.json` 供支持环境变量替换的 MCP 客户端参考，其中只保留占位符。
 
 普通参赛不强制使用 WorkBuddy。若参加 WorkBuddy 专项奖励，须真实使用 WorkBuddy 开发并提交对应记录。当前尚未提交正式报名申请，报名与资格以[官方活动规则](https://github.com/M-China/mcd-developer-innovation-challenge/blob/main/activityGuidelines.md)及主办方审核为准。
 
