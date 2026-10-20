@@ -14,6 +14,7 @@
 </p>
 
 <p align="center">
+  <a href="https://mai-recap.vercel.app/"><strong>在线体验</strong></a> ·
   <a href="https://github.com/dandan1232/mai-recap/archive/refs/heads/main.zip"><strong>下载演示 ZIP</strong></a> ·
   <a href="#快速体验">快速体验</a> ·
   <a href="#生成自己的回顾">生成自己的回顾</a> ·
@@ -65,7 +66,9 @@
 
 ## 快速体验
 
-**只想先看效果：**点击上方“下载演示 ZIP”，解压后双击 `麦迹-演示.html`。无需 Token、Python 或额外安装。
+**在线体验：**打开 [麦迹演示版](https://mai-recap.vercel.app/)，手机和电脑都可访问，无需登录或 Token，全部使用虚构订单。
+
+**离线体验：**点击上方“下载演示 ZIP”，解压后双击 `麦迹-演示.html`。无需 Token、Python 或额外安装。
 
 进入页面后，点击“翻开这份回忆”，最后一页可保存分享卡。右上角可以体验空账户页面。
 
