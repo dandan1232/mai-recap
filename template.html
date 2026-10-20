@@ -66,6 +66,7 @@ body.scrolled .topbar{background:rgba(245,241,233,.94);backdrop-filter:blur(12px
 .dial-caption{text-align:center;font-size:11px;letter-spacing:.1em;color:#bda896;margin-top:16px}.time-summary{font-size:17px;margin-bottom:27px;max-width:25em}.time-summary strong{color:#f9bc79;font-weight:500}.time-band{display:grid;grid-template-columns:42px 1fr 50px 15px;gap:17px;align-items:center;width:100%;text-align:left;padding:18px 0;border-bottom:1px solid #a78a7630;background:none;transition:transform .3s var(--ease)}
 .time-band:not(:disabled):hover{transform:translateX(5px)}.time-band-label{font-size:14px}.bar-track{height:4px;background:#9a796344;overflow:hidden;border-radius:10px}.bar-fill{height:100%;background:var(--bar-color,#efb17d);transform-origin:left;transform:scaleX(var(--amount));border-radius:10px}
 .time-band-count{font:14px/1.5 var(--number);text-align:right}.row-arrow{font-size:16px;opacity:.6}.plot-foot{font-size:10px;color:#bda896;margin-top:25px;line-height:1.9;max-width:40em}
+.time-top{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px);align-items:start;margin-bottom:32px}.order-moment{min-width:0;max-width:32em;overflow-wrap:anywhere}.moment-date{font-size:12px;color:#f7bd7d;line-height:1.8}.moment-title{font-size:clamp(1.45rem,2.3vw,2rem);letter-spacing:-.03em;margin-top:9px;text-wrap:balance}.moment-order{font-size:14px;margin-top:14px}.moment-thought,.moment-closing{font-size:13px;line-height:1.9;color:#dcc9b9;margin-top:12px}.moment-punchline{display:block;font-size:clamp(1.7rem,2.8vw,2.6rem);font-weight:700;line-height:1.4;color:#f7bd7d;margin-top:7px}.order-moment .text-button{font-size:12px;color:var(--paper);margin-top:10px}.meal-story{max-width:29em;margin-top:24px;font-size:14px;line-height:1.95;overflow-wrap:anywhere;text-wrap:pretty}.meal-story p+p{margin-top:10px}.meal-story strong{color:#8d2c1a;font-weight:700}
 .store-page{padding:100px clamp(30px,7.5vw,120px) 118px}.store-page .eyebrow{color:var(--red)}.store-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:end}.store-heading-note{font-size:13px;line-height:1.9;color:var(--muted);max-width:31em;margin-bottom:4px}.store-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center;margin-top:50px}
 .stamp-stack{position:relative;height:430px;isolation:isolate}.store-watermark{position:absolute;top:22px;left:-10px;font:300px/1 var(--number);letter-spacing:-.1em;color:#e6ddce;z-index:-1}
 .store-pass{position:absolute;top:55px;left:calc(50% - 110px);width:220px;min-height:280px;padding:23px 21px;background:#fffbf3;box-shadow:0 14px 25px #72604c12;border:1px solid #dfd3c0;text-align:left;transform:translateX(var(--shift)) rotate(var(--angle));transition:transform .65s var(--ease),box-shadow .3s;z-index:var(--layer)}
@@ -119,13 +120,14 @@ body.page-paused *{animation-play-state:paused!important}
 @keyframes titleIn{from{transform:translateY(110%);opacity:.3}to{transform:translateY(0);opacity:1}}
 @keyframes dialogIn{from{opacity:0;transform:var(--dialog-start)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes dialogOut{to{opacity:0;transform:translateY(18px) scale(.98)}}@keyframes backdropIn{from{opacity:0}to{opacity:1}}@keyframes backdropOut{to{opacity:0}}
 @media(min-width:1800px){.hero-visual{height:640px}.floating-paper{width:320px}.good-stamp{right:1%}}
-@media(max-width:1100px){.top-caption{display:none}.hero{padding-left:45px;padding-right:45px}.hero-wrap{grid-template-columns:1.1fr .9fr;gap:10px}.hero h1{font-size:6.8vw}.hero-visual{height:500px}.floating-paper{width:245px;left:12%;top:15%}.ticket-number{font-size:90px}.hero-ticket{padding:21px 21px 32px}.good-stamp{width:115px;height:115px;right:-4%}.good-stamp b{font-size:23px}.memory-orbit{top:2%;width:127%;left:-20%}.orbit-note{display:none}.hero-actions{gap:20px}.store-layout,.store-top{gap:40px}.food-layout{gap:40px}.finish-layout{gap:65px}.store-pass{width:190px;left:calc(50% - 95px);min-height:260px}.pass-count{font-size:66px}.store-row button{gap:12px}.time-layout{gap:35px}.time-band{gap:12px}}
+@media(max-width:1100px){.top-caption{display:none}.hero{padding-left:45px;padding-right:45px}.hero-wrap{grid-template-columns:1.1fr .9fr;gap:10px}.hero h1{font-size:6.8vw}.hero-visual{height:500px}.floating-paper{width:245px;left:12%;top:15%}.ticket-number{font-size:90px}.hero-ticket{padding:21px 21px 32px}.good-stamp{width:115px;height:115px;right:-4%}.good-stamp b{font-size:23px}.memory-orbit{top:2%;width:127%;left:-20%}.orbit-note{display:none}.hero-actions{gap:20px}.store-layout,.store-top{gap:40px}.food-layout{gap:40px}.finish-layout{gap:65px}.store-pass{width:190px;left:calc(50% - 95px);min-height:260px}.pass-count{font-size:66px}.store-row button{gap:12px}.time-layout,.time-top{gap:35px}.time-band{gap:12px}}
 @media(max-width:760px){
  .topbar{padding:15px 23px;gap:12px}.wordmark b{font-size:25px}.brand-mark{transform:scale(.8);transform-origin:left center;width:24px}.wordmark{gap:7px}.brand-caption{font-size:8px}.topbar-right{gap:10px;min-width:0}.source-tag{font-size:9px;gap:5px;white-space:normal;line-height:1.4}.source-tag:before{flex-shrink:0}.topbar .text-button{font-size:10px}.menu-button{width:44px;height:44px;flex-shrink:0}.github-link{padding:0}.github-link span{display:none}.topbar-right .text-button{display:none}
  .hero{padding:132px 29px 83px;min-height:auto}.hero-wrap{grid-template-columns:1fr;gap:0}.hero .eyebrow{font-size:10px;letter-spacing:.1em;margin-bottom:25px}.hero h1{font-size:clamp(3.1rem,10.8vw,5.5rem);line-height:1.22}.hero .lede{font-size:13px;margin-top:23px;max-width:30em}.hero-actions{gap:23px;margin-top:25px}.primary{font-size:12px;min-height:52px;padding-left:22px;gap:20px}.button-arrow{width:35px;height:35px;font-size:23px}.inline-button{font-size:11px}.range{font-size:9px;margin-top:20px}.hero-visual{height:430px;width:min(440px,100%);margin:8px auto 0}.floating-paper{width:225px;left:calc(50% - 112px);top:11%}.hero-ticket{padding:20px 21px 32px}.ticket-number{font-size:86px}.ticket-caption{margin-top:16px;font-size:8px}.ticket-unit{font-size:14px;margin-bottom:15px}.ticket-line{font-size:10px;padding:8px 0}.ticket-barcode{height:17px;margin-top:11px}.ticket-top{padding-bottom:11px;font-size:9px}.ticket-brand{font-size:20px}.ticket-bottom{font-size:8px}.memory-orbit{width:110%;top:0;left:-5%}.good-stamp{right:-2%;bottom:10%;width:105px;height:105px}.good-stamp b{font-size:22px}.good-stamp span{font-size:7px}.orbit-shadow{bottom:2%}.hero-mesh:before{width:180vw;height:230vw;left:-25%;top:-12%}.hero-scroll{left:29px;bottom:15px;font-size:10px}.hero-edition{right:29px;bottom:25px;font-size:8px}
  .time-page,.food-page{margin:0 9px;border-radius:25px;padding:40px 26px 55px}.section-head{margin-bottom:38px}.eyebrow{font-size:10px;letter-spacing:.1em}.section-meta{font-size:8px}.chapter-title{font-size:clamp(2rem,7vw,3.7rem)}.section-description{font-size:11px;margin-top:18px}.time-layout{grid-template-columns:1fr;gap:34px}.time-art{padding-top:0}.time-dial{width:min(350px,100%)}.dial-name{font-size:30px}.dial-count{font-size:60px}.dial-small{font-size:10px}.dial-caption{font-size:9px;margin-top:0}.time-summary{font-size:14px;margin-bottom:12px}.time-band{padding:16px 0;grid-template-columns:38px 1fr 42px 12px;gap:13px}.time-band-label{font-size:11px}.time-band-count{font-size:12px}.plot-foot{font-size:9px}
  .store-page{padding:63px 29px 64px}.store-top{display:flex;flex-direction:column;gap:20px;align-items:start}.store-heading-note{font-size:11px;max-width:28em}.store-layout{display:flex;flex-direction:column;gap:27px;margin-top:12px}.stamp-stack{width:100%;height:330px;max-width:420px}.store-watermark{font-size:250px;top:15px;left:0}.store-pass{top:35px;width:165px;min-height:224px;left:calc(50% - 82px);padding:17px 16px}.pass-label{font-size:7px}.pass-count{font-size:61px;margin:8px 0 12px}.pass-store{font-size:10px;min-height:39px}.pass-arrow{font-size:20px;margin-top:4px}.stack-note{bottom:4px;left:0;font-size:9px}.store-list-wrap{width:100%}.store-row button{grid-template-columns:22px 1fr auto 18px;gap:10px;padding:22px 0}.store-name{font-size:14px}.store-count{font-size:24px}.store-count small{font-size:9px}.store-statement{font-size:10px}
- .food-layout{grid-template-columns:1fr;gap:28px}.food-title{font-size:36px;margin-top:25px}.food-feature{padding-bottom:0}.food-description{font-size:11px;max-width:26em}.taste-stamp{position:absolute;width:84px;height:84px;right:0;bottom:3px;margin:0}.taste-stamp strong{font-size:32px}.taste-stamp span{font-size:8px}.food-description{padding-right:76px;box-sizing:content-box}.meal-row button{padding:20px 0;gap:10px;grid-template-columns:22px 1fr auto 15px}.meal-name{font-size:13px}.meal-meta{font-size:9px}.meal-orders{font-size:24px}.meal-orders small{font-size:9px}
+ .food-layout{grid-template-columns:1fr;gap:28px}.food-title{font-size:36px;margin-top:25px}.food-feature{padding-bottom:0}.food-description{font-size:11px;max-width:26em}.taste-stamp{width:84px;height:84px;margin-top:22px}.taste-stamp strong{font-size:32px}.taste-stamp span{font-size:8px}.meal-row button{padding:20px 0;gap:10px;grid-template-columns:22px 1fr auto 15px}.meal-name{font-size:13px}.meal-meta{font-size:9px}.meal-orders{font-size:24px}.meal-orders small{font-size:9px}
+ .time-top{grid-template-columns:1fr;gap:28px}.moment-date{font-size:11px}.moment-order{font-size:13px}.moment-thought,.moment-closing{font-size:12px}.meal-story{font-size:13px;margin-top:20px}
  .finish-page{padding:67px 29px 75px}.finish-layout{grid-template-columns:1fr;gap:35px}.finish-page .eyebrow{margin-bottom:25px}.finish-title{font-size:clamp(2.7rem,9.5vw,4.5rem)}.endnote{font-size:11px;margin-top:20px}.finish-actions{margin-top:25px;gap:18px}.secondary-actions{margin-top:13px;gap:20px}.poster-wrap{max-width:350px;margin:auto;width:100%;padding:14px 18px}.share-sheet{padding:25px 26px 24px;transform:rotate(4deg)}.share-big{font-size:110px}.share-caption{font-size:15px}.share-stat{padding:12px 0}.share-stat b{font-size:11px}.poster-hint{width:73px;height:73px;right:-7px;bottom:32px;font-size:9px}.method{padding:30px 29px 112px;gap:28px;flex-direction:column}.method-copy{font-size:9px}.method-brand b{font-size:24px}
  .bottom-nav{bottom:14px;gap:12px;padding-left:17px}.bottom-label{font-size:9px;gap:9px;min-width:85px}.bottom-actions{gap:4px}.bottom-actions button{width:35px;height:35px}.page-counter{font-size:9px;min-width:39px;padding:0 5px}
  dialog{width:100%;max-width:100%;max-height:86dvh;inset:auto 0 0;margin:0;border-radius:25px 25px 0 0;transform-origin:50% 100%;--dialog-start:translateY(85px) scale(.98)}.dialog-top{padding:18px 23px 12px}.dialog-body{padding:8px 26px 32px}.dialog-body h2{font-size:25px}.dialog-lead{font-size:11px}.dialog-metrics{gap:20px}.dialog-metrics strong{font-size:45px}.dialog-metrics span{font-size:10px}.share-dialog{width:100%}.share-dialog .dialog-body{padding:0 24px 28px}.share-preview{max-height:48dvh}.chapter-choice{padding:20px 0}.chapter-choice b{font-size:22px}.empty-page{padding:130px 29px 90px}.empty-page h1{font-size:38px}.empty-page p:not(.eyebrow){font-size:12px}
@@ -211,13 +213,18 @@ body.page-paused *{animation-play-state:paused!important}
  <section class="slide time-page" id="mealtimes" aria-labelledby="timeTitle" data-scene>
   <div class="section-wrap">
    <div class="section-head" data-reveal><p class="eyebrow">01 / 那些饭点</p><p class="section-meta">THE RHYTHM<br>OF YOUR DAYS</p></div>
-   <h2 class="chapter-title" id="timeTitle" data-reveal>日子有自己的<br>节奏。</h2>
+   <div class="time-top">
+    <h2 class="chapter-title" id="timeTitle" data-reveal>日子有自己的<br>节奏。</h2>
+    <article class="order-moment" id="orderMoment" aria-labelledby="momentTitle" data-reveal hidden><p class="moment-date" id="momentDate"></p><h3 class="moment-title" id="momentTitle"></h3><p class="moment-order" id="momentOrder"></p><p class="moment-thought" id="momentThought"></p><strong class="moment-punchline" id="momentPunchline"></strong><p class="moment-closing" id="momentClosing"></p><button type="button" class="text-button" data-detail="moment">看看那一单 ↗</button></article>
+   </div>
    <div class="time-layout">
     <div class="time-art" data-reveal>
      <div class="time-dial" data-motion="dial"><svg viewBox="0 0 440 440" role="img" aria-label="下单时段分布" id="timeRing"><defs><mask id="dialMask" maskUnits="userSpaceOnUse" x="0" y="0" width="440" height="440"><circle id="dialReveal" cx="220" cy="220" r="165" pathLength="100" fill="none" stroke="white" stroke-width="26" stroke-dasharray="100" stroke-dashoffset="0"/></mask></defs><circle class="dial-grid" cx="220" cy="220" r="205"/><circle class="dial-grid" cx="220" cy="220" r="125"/><circle cx="220" cy="220" r="165" fill="none" stroke="#725544" stroke-width="22"/><g id="periodRings" mask="url(#dialMask)"></g><g id="dialCursor" class="dial-cursor" aria-hidden="true"><circle cx="385" cy="220" r="12" fill="#fff1d5" opacity=".2"/><circle cx="385" cy="220" r="5" fill="#fff1d5"/></g></svg><div class="dial-center"><span class="dial-small">记录里最常出现的时段</span><span class="dial-name" id="favoritePeriod"></span><span class="dial-count"><span id="periodCount"></span><small>笔 / 时段</small></span></div></div>
      <p class="dial-caption">把每个饭点，放回这段日子里。</p>
     </div>
-    <div class="time-data" data-reveal style="--delay:.1s"><p class="time-summary" id="timeStatement"></p><div id="timeBars" data-motion="bars" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p></div>
+    <div class="time-data" data-reveal style="--delay:.1s">
+     <p class="time-summary" id="timeStatement"></p><div id="timeBars" data-motion="bars" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p>
+    </div>
    </div>
   </div>
  </section>
@@ -235,7 +242,7 @@ body.page-paused *{animation-play-state:paused!important}
   <div class="section-wrap">
    <div class="section-head" data-reveal><p class="eyebrow">03 / 反复出现的那一口</p><p class="section-meta">THE TASTE<br>YOU COME BACK TO</p></div>
    <div class="food-layout">
-    <div class="food-feature" data-reveal><h2 class="chapter-title" id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="food-description" id="mealStatement"></p><div class="taste-stamp" data-motion="stamp"><strong id="tasteCount"></strong><span id="tasteLabel"></span></div></div>
+    <div class="food-feature" data-reveal><h2 class="chapter-title" id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="food-description" id="mealStatement"></p><div class="meal-story" id="mealStory" hidden></div><div class="taste-stamp" data-motion="stamp"><strong id="tasteCount"></strong><span id="tasteLabel"></span></div></div>
     <ol class="meal-list" id="mealList" data-reveal style="--delay:.12s"></ol>
    </div>
   </div>
@@ -380,11 +387,49 @@ function observeScenes(){
 }
 motion.addEventListener('change',()=>{stopAnimations();if(!motion.matches&&!$('story').hidden)observeScenes();});
 addEventListener('beforeprint',stopAnimations);
-function periodFor(row){
+function localOrderTime(row){
  if(!row.time)return null;
  const parsed=new Date(row.time);if(Number.isNaN(parsed.getTime()))return null;
- const h=(parsed.getUTCHours()+8)%24;
+ return new Date(parsed.getTime()+8*60*60*1000);
+}
+function periodFor(row){
+ const at=localOrderTime(row);if(!at)return null;
+ const h=at.getUTCHours();
  return h>=5&&h<11?'早餐':h>=11&&h<14?'午间':h>=14&&h<17?'下午':h>=17&&h<22?'晚间':'深夜';
+}
+function orderMoment(r){
+ const timed=r.records.map(record=>({record,at:localOrderTime(record)})).filter(row=>row.at&&row.record.items.length);
+ const chosen=timed.find(row=>row.at.getUTCHours()<5)||timed.find(row=>row.at.getUTCHours()>=22)||timed.find(row=>row.at.getUTCHours()<11)||timed[0];
+ if(!chosen)return null;
+ const {record,at}=chosen,h=at.getUTCHours(),names=[...new Set(record.items.map(item=>item.name))];
+ const date=at.getUTCFullYear()+' 年 '+(at.getUTCMonth()+1)+' 月 '+at.getUTCDate()+' 日，'+(h<5?'凌晨 ':h<11?'早上 ':h<14?'中午 ':h<17?'下午 ':'晚上 ')+pad(h)+':'+pad(at.getUTCMinutes())+' · 北京时间';
+ let title,thought,punchline,closing;
+ if(h<5){
+  title='凌晨的这一单。';thought='凌晨还下了这一单，我想那时候的你，一定是——';punchline='饿了。';closing='那晚是不是发生了什么特别的事，留给你自己记得。我们替你记住这一餐。';
+ }else if(h>=22){
+  title='夜深了，还有这一口。';thought='这么晚还点了这一餐，想必那时候的你，一定是——';punchline='饿了。';closing='那天过得怎么样，只有你知道。这个夜晚，还有一份点给自己的滋味。';
+ }else if(h<11){
+  title='早上的这一餐。';thought='当时的你醒没醒透，我们不好说。但早餐已经——';punchline='安排明白了。';closing='挺好。新的一天，先给“吃什么”一个明确的答案。';
+ }else if(h<14){
+  title='到了饭点，先吃这一餐。';thought='中午吃什么，这个每天都要面对的问题，那天的你回答得很具体——';punchline='就点这份。';closing='别的答案可以慢慢找。这一餐，已经替你记好了。';
+ }else if(h<17){
+  title='下午，也有这一口。';thought='这个下午，你在订单里留下了一个小小的决定——';punchline='点都点了。';closing='挺好。平常的一天，也值得记住一点滋味。';
+ }else{
+  title='晚间的这一餐。';thought='到了晚上，“今天吃什么”这道题，你终于给出了答案——';punchline='就它了。';closing='日子一餐一餐地过，回忆也就这样攒了下来。';
+ }
+ return {record,date,title,order:'这一单里，有'+names.slice(0,2).join('、')+(names.length>2?'等 '+names.length+' 种餐品':'')+'。',thought,punchline,closing};
+}
+function renderOrderMoment(r){
+ const moment=orderMoment(r);$('orderMoment').hidden=!moment;
+ for(const key of ['date','title','order','thought','punchline','closing'])$('moment'+key[0].toUpperCase()+key.slice(1)).textContent=moment?.[key]||'';
+}
+function renderMealStory(r){
+ const top=r.meals[0],repeated=top?.orders>1,tied=r.favoriteMeals.length;
+ $('foodTitle').innerHTML=repeated?(tied>1?'你的菜单，<br>有几位老朋友。':'点来点去，<br>还是会想起它。'):'这一口，<br>也值得记住。';
+ $('mealStory').hidden=!top;
+ if(!top){$('mealStory').textContent='';return;}
+ const lines=repeated?(tied>1?['有些喜欢，不用非得选出第一名。','看来你的“老样子”，还分好几个版本。','熟悉的滋味，轮流惦记。']:['有些喜欢，不需要每次都重新选择。','当然，也可能是懒得重新选。','挺好。至少这段关系，很稳定。']):r.count===1?['这一单的滋味，先替你记住。','至于会不会成为“老样子”，下次点单的时候再说。']:['这份记录里，还没有哪种餐品重复出现。','看来你的“老样子”，暂时还没定下来。','也挺好，菜单值得多翻两页。'];
+ $('mealStory').innerHTML=lines.map((line,i)=>'<p>'+(i===1?'<strong>'+esc(line)+'</strong>':esc(line))+'</p>').join('');
 }
 function render(r){
  stopAnimations();sceneObserver?.disconnect();revealObserver?.disconnect();
@@ -406,6 +451,7 @@ function render(r){
  $('receiptStores').textContent=r.storeCount+' 家';$('receiptMeal').textContent=top?.name||'餐品未提供';
  $('receiptSource').textContent=demo?'DEMO / 虚构示例':'仅本次可查询记录';
  $('favoritePeriod').textContent=best||'时间待补充';setCount('periodCount',periodMax,true);
+ renderOrderMoment(r);
  $('timeStatement').innerHTML=best?'这些订单里，<strong>'+esc(best)+'</strong>'+ (r.favoritePeriods.length>1?'并列出现最多。':'出现最多。')+'<br>点一下，看看那些饭点里的记录。':'这次没有取得可用于分析的下单时间。';
  let offset=0;
  $('periodRings').innerHTML=r.periods.map((p,i)=>{const size=total?p.count/total*100:0;const circle='<circle class="period-ring" cx="220" cy="220" r="165" pathLength="100" stroke="'+colors[i]+'" stroke-dasharray="'+size+' '+(100-size)+'" stroke-dashoffset="'+(-offset)+'"/>';offset+=size;return circle;}).join('');
@@ -418,6 +464,7 @@ function render(r){
  $('storeStatement').textContent=(r.favoriteStores.length>1?'有 '+r.favoriteStores.length+' 家门店并列出现最多。':r.favoriteStores[0]?'「'+r.favoriteStores[0]+'」出现最多。':'')+'门店表示出餐门店，不代表实际用餐位置。';
  $('favoriteMeal').textContent=top?.name||'餐品信息待补充';
  $('mealStatement').textContent=top?'出现在 '+top.orders+' 笔订单里'+(tied>1?'，与另外 '+(tied-1)+' 种餐品并列最多。':'，在这份回顾里出现最多。')+'套餐按订单中的完整名称统计。':'本次没有取得可用于统计的餐品明细。';
+ renderMealStory(r);
  setCount('tasteCount',tied>1?tied:top?.orders||0,true);$('tasteLabel').textContent=tied>1?'种餐品并列最多':'笔订单中出现';
  $('mealList').innerHTML=r.meals.map((m,i)=>{const rank=r.meals.findIndex(x=>x.orders===m.orders)+1;return '<li class="meal-row" data-motion="row" data-index="'+i+'"><button type="button" data-detail="meal" data-index="'+i+'"><span class="meal-rank">'+pad(rank)+'</span><span><span class="meal-name">'+esc(m.name)+'</span><span class="meal-meta">合计 '+m.quantity+' 份</span></span><span class="meal-orders">'+m.orders+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>';}).join('');
  $('shareSource').textContent='麦迹 / '+(demo?'虚构示例回顾':'近期点餐回顾');
@@ -553,6 +600,9 @@ function showDetail(kind,index,trigger){
  if(kind==='receipt'){
   title='每个平常的饭点，都算数。';lead=rangeText(r)+(isDemo(r)?' · 全部为虚构示例':' · 仅本次可查询的记录');
   html='<div class="dialog-metrics"><div><strong>'+pad(r.count)+'</strong><span>笔已完成订单</span></div><div><strong>'+pad(r.storeCount)+'</strong><span>家出餐门店</span></div><div><strong>'+pad(r.favoriteMeals.length)+'</strong><span>种并列常点餐品</span></div></div><p class="dialog-note">饭点：'+esc(r.favoritePeriods.join('、')||'时间未提供')+'<br>常点：'+esc(r.favoriteMeals.join('、')||'餐品未提供')+'<br><br>这是一张本次记录的小票，不代表完整全年。继续向下翻，看看这些记录组成的回忆。</p>';
+ }else if(kind==='moment'){
+  const moment=orderMoment(r);if(!moment)return;
+  title=moment.title;lead=moment.date;kicker='这一餐，还记得吗';html=recordMarkup([moment.record]);
  }else if(kind==='period'){
   const item=r.periods[index];if(!item)return;
   title=item.name+'里的那些饭点';records=r.records.filter(row=>periodFor(row)===item.name);
