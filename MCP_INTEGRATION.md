@@ -1,0 +1,40 @@
+# 麦当劳 MCP 接入说明
+
+## Server 与实际使用的 Tool
+
+服务地址：`https://mcp.mcd.cn`，传输协议为 Streamable HTTP。通过官方申请的 Token 进行身份验证。凭证通过终端的隐藏输入读取，不记录到文件或日志。
+
+本版实际调用 `order-list {}`，读取当前授权用户的近期到店、外送历史订单。本地程序没有调用任意工具的入口，也不提供下单或其他账户写操作。
+
+## 调用流程
+
+1. `initialize` 协商连接协议。
+2. 发送 `notifications/initialized`。
+3. 调用 `tools/call`，工具固定为 `order-list`，参数固定为空对象。
+4. 解析 JSON 或 SSE 响应，以及文本块内 `Original Response` 的原始 JSON。
+5. 验证业务成功状态；只提取回顾所需的时间、门店名、餐品名、数量。订单编码仅在内存中用于去重，随后丢弃。
+6. 本地统计并输出一个无需外部资源的 HTML 文件；凭证与原始响应不落盘。
+
+## 业务价值
+
+将零散点餐记录整理成便于阅读和保存的时间、门店、口味回顾。对可查询范围如实标注，不把近期样本当作全年消费。
+
+## 已验证与待验证
+
+2026-10-20，使用授权的无历史订单账号连接成功。工具清单确认 `order-list` 输入为空，没有分页或日期参数；输出定义包含 `createTime`、`storeName`、`orderProductList`、`orderStatus` 等字段。历史查询实际返回业务成功且 `data={}`，与账号无点餐记录一致。
+
+真实有订单账号尚未完成联调。因此演示数据、自动检查与真实空账户验证分别记录，不声称已验证完整历史查询或全年数据覆盖。
+
+## 数据处理
+
+- 仅统计已完成或已评价记录。
+- 不存储凭证、原始响应、配送地址、手机号、收件人、取餐码或支付信息。
+- 生成的本地个人回顾包含门店和日期，已在 `.gitignore` 中排除。
+- 无订单、业务错误、未知响应格式分别处理；不把接口失败包装成无订单。
+- 分享图片不含门店名称和精确地点，示例图片始终包含演示标记。
+
+## 官方参考
+
+- 使用说明：https://github.com/M-China/mcd-mcp-server
+- 历史记录限制反馈：https://github.com/M-China/mcd-mcp-server/issues/13
+- 活动规则：https://github.com/M-China/mcd-developer-innovation-challenge/blob/main/activityGuidelines.md

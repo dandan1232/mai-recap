@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.local.json
+*.log
+*.html
+!template.html
+!麦迹-演示.html
+reports/
+*.pem
+*.key
+.impeccable.md
