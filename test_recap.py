@@ -27,6 +27,22 @@ class RecapTests(unittest.TestCase):
         self.assertEqual(report["skipped"], 2)
         self.assertEqual(report["meals"][0]["orders"], 1)
 
+    def test_official_history_completed_status(self):
+        one = demo_orders()[0]
+        rows = [
+            {**one, "orderId": "completed", "orderStatus": "订单已完成"},
+            {**one, "orderId": "cancelled", "orderStatus": "订单已取消"},
+            {**one, "orderId": "unpaid", "orderStatus": "待支付"},
+        ]
+        orders = extract_orders({"structuredContent": {
+            "success": True, "code": 200, "data": {"list": rows},
+        }})
+        report = analyze(orders, "live")
+        self.assertEqual(report["count"], 1)
+        self.assertEqual(report["skipped"], 2)
+        self.assertEqual(report["records"][0]["store"], one["storeName"])
+        self.assertEqual(report["meals"][0]["orders"], 1)
+
     def test_combo_children_are_not_double_counted(self):
         row = {**demo_orders()[0], "orderProductList": [{"productName": "套餐", "quantity": 1, "comboItemList": [{"name": "汉堡", "quantity": 1}]}]}
         report = analyze([row], "demo")

@@ -13,7 +13,7 @@ from mcp_client import McpError, ReadonlyMcp
 
 ROOT = Path(__file__).resolve().parent
 CST = timezone(timedelta(hours=8))
-COMPLETED = {"6", "8", "已完成", "已评价"}
+COMPLETED = {"6", "8", "已完成", "已评价", "订单已完成"}
 PERIODS = ("早餐", "午间", "下午", "晚间", "深夜")
 
 

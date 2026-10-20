@@ -9,7 +9,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square" alt="Python 3.10 或更新版本">
   <img src="https://img.shields.io/badge/dependencies-0-26734D?style=flat-square" alt="零第三方依赖">
-  <img src="https://img.shields.io/badge/local_checks-11_passed-26734D?style=flat-square" alt="11项本地数据检查通过">
+  <img src="https://img.shields.io/badge/local_checks-12_passed-26734D?style=flat-square" alt="12项本地数据检查通过">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-7B1728?style=flat-square" alt="MIT License"></a>
 </p>
 
@@ -131,7 +131,7 @@ python recap.py --live
 |---|---|
 | 官方 MCP 真实连接 | 2026-10-20 已使用授权空账户成功查询，返回 `success=true, code=200, data={}` |
 | 有历史订单的真实账号 | **待进一步联调**；当前内容演示使用虚构样例 |
-| 数据处理 | **11项本地检查通过**，可用下面的命令复现 |
+| 数据处理 | **12项本地检查通过**，包含官方示例“订单已完成”状态识别，可用下面的命令复现 |
 | 页面体验 | 已检查电脑、平板和手机尺寸的翻页、空状态和图片下载 |
 | 全年历史记录 | **不承诺覆盖**；目前接口没有翻页或日期筛选参数，公开反馈为最近10单 |
 | WorkBuddy 专项 | 当前未提供真实 `workbuddy.md` 开发记录，不声称已满足专项条件 |
@@ -162,7 +162,7 @@ mai-recap/
 ├── recap.py                   # 整理订单与生成本地回顾
 ├── mcp_client.py              # 官方 MCP 只读连接
 ├── template.html             # 叙事式回顾与分享卡
-├── test_recap.py              # 11项数据与安全检查
+├── test_recap.py              # 12项数据与安全检查
 ├── 麦迹-演示.html             # 可直接打开的离线演示
 ├── scripts/build-demo.mjs    # 将虚构演示构建为网站首页
 ├── vercel.json              # Vercel 构建命令与网站输出目录
