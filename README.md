@@ -16,12 +16,38 @@
 <p align="center">
   <a href="https://mai-recap.vercel.app/"><strong>在线体验</strong></a> ·
   <a href="https://github.com/dandan1232/mai-recap/archive/refs/heads/main.zip"><strong>下载演示 ZIP</strong></a> ·
+  <a href="#一条命令生成回顾"><strong>命令启动</strong></a> ·
   <a href="#快速体验">快速体验</a> ·
   <a href="#生成自己的回顾">生成自己的回顾</a> ·
   <a href="MCP_INTEGRATION.md">MCP 接入说明</a>
 </p>
 
 麦当劳程序员创意开发大赛开源参赛项目 · **非麦当劳官方产品** · 回顾范围以实际可查询记录为准。
+
+## 一条命令生成回顾
+
+**已下载项目，并在项目文件夹打开终端后，复制运行：**
+
+```powershell
+python recap.py --live
+```
+
+需要 Python 3.10 或更新版本，无需安装第三方依赖。命令会提示你输入[麦当劳官方 MCP 平台](https://open.mcd.cn/mcp)申请的连接凭证 Token（输入不显示），调用 `order-list` 查询近期订单，并在本机生成 `麦迹-我的回顾.html`；双击文件即可查看。凭证不要写进命令或发到聊天里。
+
+**首次运行：**先[下载 ZIP](https://github.com/dandan1232/mai-recap/archive/refs/heads/main.zip)并解压，或按[快速体验](#快速体验)中的步骤下载源码；申请凭证的步骤见[生成自己的回顾](#生成自己的回顾)。想先看效果，可以运行 `python recap.py --demo`，或直接打开[在线演示](https://mai-recap.vercel.app/)。
+
+<details>
+<summary><strong>想让 AI 助手帮忙启动？复制这句话</strong></summary>
+
+适用于能够下载项目、运行本地命令的 AI 助手：
+
+```text
+请帮我运行麦迹：https://github.com/dandan1232/mai-recap。先阅读 README，检查本机是否有 Python 3.10 或更新版本，再下载项目，在项目目录运行 python recap.py --live。连接凭证由我在终端隐藏输入，不要让我在聊天里发送 Token，也不要把它写入文件。生成后告诉我回顾文件的保存位置；没有订单时保留空状态。
+```
+
+</details>
+
+当前命令支持查询订单和生成回顾；优惠点餐尚未上线。
 
 ## 有饭点，有店名，有熟悉的那一口
 
