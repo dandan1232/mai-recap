@@ -4,28 +4,226 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
+<meta name="description" content="麦迹，把近期点餐记录串成一段有饭点、有店名、有熟悉滋味的回忆。非官方项目，在线版使用虚构示例。">
+<meta name="theme-color" content="#f5f1e9">
 <title>麦迹 · 把日常，再回味一遍</title>
 <style>
-:root{--red:oklch(.37 .13 18);--red-light:oklch(.48 .15 18);--yellow:oklch(.9 .15 91);--white:oklch(.98 .003 350);--ink:oklch(.24 .028 18);--green:oklch(.32 .05 165);--muted:oklch(.48 .025 18);--line:oklch(.82 .01 18);--ease:cubic-bezier(.22,1,.36,1);--body:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;--display:"STZhongsong","Noto Serif CJK SC","Songti SC","SimSun",serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-snap-type:y proximity}body{margin:0;background:var(--red);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.75}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer}button:disabled{opacity:.35;cursor:default}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid currentColor;outline-offset:5px}a{color:inherit}button{min-height:46px}h1,h2,h3,p{margin:0}h1,h2{font-family:var(--display);font-weight:500;line-height:1.35;letter-spacing:-.025em;text-wrap:balance}h1{font-size:clamp(2.8rem,5.4vw,5.5rem)}h2{font-size:clamp(2.25rem,4.1vw,4.25rem)}p{max-width:48ch;text-wrap:pretty}svg{display:block}button svg{width:20px;height:20px}button{transition:transform .2s var(--ease),background-color .2s var(--ease)}button:not(:disabled):active{transform:translateY(2px)}[hidden]{display:none!important}.topbar{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px clamp(20px,4vw,64px);background:var(--red);color:var(--white);border-bottom:1px solid oklch(.6 .08 18)}.wordmark{display:flex;align-items:center;gap:12px;white-space:nowrap}.wordmark b{font-family:var(--display);font-size:1.65rem;font-weight:600}.wordmark span{font-size:.8rem;opacity:.85}.source-tag{font-size:.85rem;line-height:1.5}.topbar .text-button{padding:8px 0;color:var(--white);border:0;background:transparent;white-space:nowrap;font-size:.85rem;text-decoration:underline;text-underline-offset:5px}.topbar-right{display:flex;align-items:center;gap:24px}.slide{position:relative;min-height:100svh;scroll-snap-align:start;padding:128px clamp(24px,7vw,112px) 112px;display:flex;align-items:center}.inner{width:min(1180px,100%);margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,7vw,110px);align-items:center}.intro{color:var(--white);background:var(--red)}.opening-note{margin-bottom:26px;color:var(--yellow);font-size:.95rem}.lede{font-size:1.1rem;line-height:1.9;margin-top:26px;opacity:.9}.range{font-size:.9rem;margin-top:30px;opacity:.8}.primary{display:inline-flex;align-items:center;justify-content:center;gap:28px;border:0;border-radius:100px;background:var(--yellow);color:var(--red);padding:13px 26px;font-weight:600;text-decoration:none;min-height:52px}.intro .primary{margin-top:34px}.primary:hover{background:oklch(.95 .11 91)}.receipt{width:min(348px,90%);margin:16px auto;background:var(--white);color:var(--ink);padding:34px 30px 42px;transform:rotate(5deg);clip-path:polygon(0 0,100% 0,100% 97%,96% 100%,92% 97%,88% 100%,84% 97%,80% 100%,76% 97%,72% 100%,68% 97%,64% 100%,60% 97%,56% 100%,52% 97%,48% 100%,44% 97%,40% 100%,36% 97%,32% 100%,28% 97%,24% 100%,20% 97%,16% 100%,12% 97%,8% 100%,4% 97%,0 100%)}.receipt-head{text-align:center}.receipt-head .stamp{display:inline-block;color:var(--red);font:500 2.5rem var(--display);border:2px solid var(--red);padding:2px 12px;margin-bottom:14px}.receipt-head p{font-size:.85rem}.receipt-lines{border-top:1px dashed var(--muted);border-bottom:1px dashed var(--muted);padding:19px 0;margin:22px 0;font-size:.9rem}.receipt-line{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0}.receipt-bottom{text-align:center;font-size:.8rem}.receipt-bottom strong{font:500 1.7rem var(--display);display:block;margin-bottom:8px}.barcode{height:27px;margin:20px 24px 10px;display:flex;gap:3px;justify-content:center}.barcode span{background:var(--ink);width:2px}.barcode span:nth-child(3n){width:5px}.time-page{background:var(--white)}.chapter{font-size:.9rem;margin-bottom:22px}.statement{margin-top:28px;font-size:1.1rem}.statement strong{font-weight:600;color:var(--red)}.small-note{font-size:.85rem;color:var(--muted);margin-top:18px}.time-plot{padding:32px 0}.time-band{display:grid;grid-template-columns:54px 1fr 54px;align-items:center;gap:18px;padding:14px 0}.time-band-label,.time-band-count{font-size:.9rem}.time-band-count{text-align:right;font-variant-numeric:tabular-nums}.bar-track{height:26px;background:oklch(.91 .009 18);overflow:hidden}.bar-fill{height:100%;background:var(--red);transform-origin:left;transition:transform .65s var(--ease)}.plot-foot{border-top:1px solid var(--line);padding-top:18px;margin-top:12px;font-size:.82rem;color:var(--muted)}.store-page{background:var(--green);color:var(--white)}.store-page .small-note{color:oklch(.85 .025 165)}.store-list{list-style:none;padding:0;margin:0}.store-row{padding:24px 0;border-bottom:1px solid oklch(.52 .035 165);display:flex;align-items:baseline;justify-content:space-between;gap:24px}.store-row:first-child{border-top:1px solid oklch(.52 .035 165)}.store-name{font-size:1.1rem;overflow-wrap:anywhere}.store-row:first-child .store-name{font-family:var(--display);font-size:1.55rem;color:var(--yellow)}.store-count{white-space:nowrap;font-size:.9rem;font-variant-numeric:tabular-nums}.store-sign{font-family:var(--display);font-size:clamp(4.5rem,10vw,9rem);color:var(--yellow);line-height:1.1;margin:30px 0 18px}.store-sign small{font:1rem var(--body);color:var(--white);padding-left:18px}.food-page{background:var(--yellow)}.food-page .inner{grid-template-columns:.9fr 1.1fr}.food-page .chapter{color:var(--red)}.food-title{font-family:var(--display);font-size:clamp(1.8rem,3.2vw,3.15rem);color:var(--red);margin-top:28px;line-height:1.5;overflow-wrap:anywhere}.meal-list{list-style:none;margin:0;padding:0}.meal-row{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:16px;padding:21px 0;border-bottom:1px solid oklch(.69 .095 91)}.meal-rank{font-family:var(--display);font-size:1.3rem;color:var(--red)}.meal-name{font-weight:600;font-size:1rem;overflow-wrap:anywhere}.meal-meta{font-size:.82rem;color:oklch(.39 .035 35)}.meal-orders{font-size:.95rem;white-space:nowrap}.food-page .small-note{color:oklch(.39 .035 35)}.finish-page{background:var(--white)}.finish-page .inner{align-items:start}.endnote{margin-top:24px;color:var(--muted)}.share-sheet{padding:32px;background:var(--red);color:var(--white);border-radius:4px}.share-sheet .share-kicker{font-size:.85rem;color:var(--yellow)}.share-sheet h3{font-family:var(--display);font-size:2.3rem;font-weight:500;margin:18px 0 28px;line-height:1.45}.share-stat{display:flex;justify-content:space-between;gap:20px;border-top:1px solid oklch(.6 .075 18);padding:15px 0}.share-stat b{font-weight:500;text-align:right;overflow-wrap:anywhere}.share-sheet .source-small{font-size:.8rem;margin-top:24px;color:oklch(.9 .025 18)}.finish-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:24px}.secondary{background:transparent;color:var(--red);border:1px solid var(--red);border-radius:100px;padding:10px 22px}.secondary:hover{background:oklch(.94 .015 18)}.feedback{font-size:.85rem;min-height:28px;color:var(--red);margin-top:12px}.records{margin-top:28px;width:100%}.records summary{cursor:pointer;min-height:46px;font-size:.9rem;text-decoration:underline;text-underline-offset:5px;padding:10px 0}.record-row{padding:14px 0;border-top:1px solid var(--line);font-size:.85rem}.record-row p{margin-top:4px;color:var(--muted)}.method{border-top:1px solid var(--line);padding:28px clamp(24px,7vw,112px) 110px;background:var(--white);font-size:.82rem;color:var(--muted)}.method p{max-width:100ch;margin:auto}.page-nav{position:fixed;right:25px;top:50%;transform:translateY(-50%);z-index:20;display:flex;flex-direction:column;gap:10px;padding:12px 8px;background:var(--red);border-radius:100px}.page-nav button{display:flex;align-items:center;justify-content:center;min-height:30px;width:28px;border:0;background:transparent;color:var(--white);padding:0}.page-nav button:after{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.5}.page-nav button[aria-current="step"]:after{height:20px;border-radius:4px;opacity:1}.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--red);color:var(--white);display:flex;justify-content:space-between;align-items:center;padding:10px clamp(20px,4vw,64px);gap:16px;border-top:1px solid oklch(.6 .08 18)}.bottom-nav p{font-size:.8rem}.bottom-actions{display:flex;align-items:center;gap:18px}.bottom-actions button{background:transparent;color:var(--white);border:1px solid oklch(.68 .04 18);width:44px;height:44px;min-height:44px;border-radius:50%;display:grid;place-items:center}.bottom-actions button:not(:disabled):hover{background:var(--red-light)}.page-counter{font-size:.82rem;font-variant-numeric:tabular-nums;min-width:44px;text-align:center}.empty-page{min-height:100svh;padding:140px 28px 100px;display:grid;place-items:center;color:var(--white);background:var(--red)}.empty-content{max-width:760px;width:100%;text-align:left}.empty-content .chapter{color:var(--yellow)}.empty-content h1{font-size:clamp(2.5rem,5vw,4.75rem)}.empty-content p{margin-top:28px;max-width:44ch}.empty-content .primary{margin-top:34px}.empty-stamp{font-family:var(--display);font-size:6rem;color:var(--yellow);line-height:1;margin-bottom:28px}.empty-content .small-note{color:oklch(.88 .025 18)}.arrival{animation:arrive .65s var(--ease) both}@keyframes arrive{from{transform:translateY(14px);opacity:.5}to{transform:translateY(0);opacity:1}}@media(max-width:900px){.slide{padding:120px 38px 110px}.inner{gap:36px}.receipt{padding:28px 22px}.wordmark span{display:none}.page-nav{right:6px;padding:8px 3px}.topbar{gap:10px}.topbar-right{gap:14px}.source-tag{max-width:205px}.store-row{gap:12px}.meal-row{gap:10px}.meal-name{font-size:.94rem}}
-@media(max-width:640px){.topbar{padding:10px 20px;align-items:center}.wordmark b{font-size:1.4rem}.topbar-right{gap:12px}.source-tag{font-size:.72rem;max-width:125px}.topbar .text-button{font-size:.75rem}.slide{padding:110px 26px 105px;min-height:100svh}.inner,.food-page .inner{grid-template-columns:1fr;gap:40px}h1{font-size:2.8rem}h2{font-size:2.25rem}.lede{font-size:1rem;margin-top:20px}.opening-note{margin-bottom:20px}.receipt{width:260px;padding:26px 24px 36px;transform:rotate(3deg);margin:0 auto}.receipt-head .stamp{font-size:1.8rem;margin-bottom:8px}.receipt-lines{margin:15px 0;padding:9px 0}.receipt-line{padding:5px 0;font-size:.8rem}.receipt-bottom strong{font-size:1.25rem}.barcode{height:18px;margin-top:12px}.receipt-bottom{font-size:.7rem}.intro .inner{gap:40px}.range{margin-top:18px;font-size:.8rem}.intro .primary{margin-top:24px}.chapter{margin-bottom:16px}.time-plot{padding:0}.time-band{padding:10px 0;gap:14px}.bar-track{height:22px}.statement{font-size:1rem}.store-sign{font-size:5rem;margin-top:24px}.store-row{padding:17px 0}.store-name{font-size:1rem}.store-row:first-child .store-name{font-size:1.3rem}.food-title{font-size:2rem;margin-top:20px}.meal-row{padding:16px 0}.share-sheet{padding:26px}.share-sheet h3{font-size:1.85rem}.page-nav{display:none}.bottom-nav{padding:8px 20px}.bottom-nav p{font-size:.72rem;max-width:175px;line-height:1.5}.bottom-actions{gap:9px}.bottom-actions button{width:42px;height:42px}.page-counter{min-width:38px;font-size:.75rem}.method{padding:24px 26px 100px}.finish-actions{gap:10px}.finish-actions .primary{padding:12px 20px}.secondary{padding:10px 18px}.empty-page{padding:120px 26px 80px}.empty-content h1{font-size:2.6rem}.empty-stamp{font-size:5rem}.endnote{font-size:.95rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;scroll-snap-type:none}*,*:before,*:after{animation:none!important;transition:none!important}}
-@media print{.topbar,.bottom-nav,.page-nav,.finish-actions,.records,.method{display:none!important}.slide{min-height:auto;page-break-after:always;padding:48px;print-color-adjust:exact;-webkit-print-color-adjust:exact}.inner{grid-template-columns:1fr 1fr;gap:40px}.finish-page{page-break-after:auto}.receipt{transform:none}body{font-size:12pt}.empty-page{min-height:90vh}.arrival{animation:none}}
+:root{
+  --paper:#f5f1e9;--paper-deep:#e9e2d6;--ink:#29251f;--muted:#756b5d;
+  --red:#b93522;--orange:#f36c3d;--yellow:#f6c966;--night:#30231f;--line:#d9d0c1;
+  --ease:cubic-bezier(.16,1,.3,1);--body:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;
+  --display:"Microsoft YaHei","PingFang SC","Noto Sans CJK SC",sans-serif;--number:"Arial",sans-serif;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scrollbar-gutter:stable}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--body);-webkit-font-smoothing:antialiased}
+body.dialog-open{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font:inherit;cursor:pointer;color:inherit}button:disabled{cursor:default;opacity:.4}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+a{color:inherit}button{touch-action:manipulation}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.22;letter-spacing:-.065em}
+button,input{font-family:var(--body)}button{border:0}svg{display:block}button svg{width:20px;height:20px}[hidden]{display:none!important}
+::selection{background:#f8ba78;color:var(--ink)}.sr-only{position:absolute;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.topbar{position:fixed;inset:0 0 auto;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:23px clamp(22px,4vw,68px);gap:20px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+body.scrolled .topbar{background:rgba(245,241,233,.94);backdrop-filter:blur(12px);border-color:rgba(41,37,31,.08)}
+.wordmark{display:flex;align-items:center;gap:11px;text-decoration:none;flex-shrink:0}.wordmark b{font-size:29px;line-height:1;letter-spacing:-.09em}.brand-mark{width:30px;height:30px;position:relative}
+.brand-mark:before,.brand-mark:after{content:"";position:absolute;width:21px;height:25px;border:5px solid var(--red);border-radius:55% 55% 48% 48%;transform:rotate(32deg);left:0;top:1px}.brand-mark:after{left:10px;transform:rotate(-32deg);border-color:var(--orange);mix-blend-mode:multiply}
+.brand-caption{font:10px/1.2 var(--number);letter-spacing:.14em;margin-top:5px}.top-caption{font-size:12px;color:var(--muted);letter-spacing:.08em}
+.topbar-right{display:flex;align-items:center;gap:22px}.source-tag{font-size:11px;display:flex;align-items:center;gap:7px;white-space:nowrap}.source-tag:before{content:"";width:5px;height:5px;background:var(--red);border-radius:50%}
+.text-button{padding:7px 0;border:0;background:none;font-size:12px;text-decoration:underline;text-underline-offset:5px;min-height:42px}
+.menu-button{display:flex;align-items:center;justify-content:center;width:45px;height:45px;border:1px solid #b8b0a4;border-radius:50%;background:transparent;transition:background .25s,transform .35s var(--ease)}.menu-button:hover{background:var(--paper-deep);transform:rotate(8deg)}
+.menu-lines{width:16px;display:grid;gap:5px}.menu-lines:before,.menu-lines:after{content:"";height:1px;background:var(--ink)}
+.slide{position:relative;scroll-margin-top:78px}.section-wrap{width:min(1280px,100%);margin:auto}.eyebrow{font-size:11px;letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:10px}.eyebrow:before{content:"";height:1px;width:24px;background:currentColor}
+.primary{display:inline-flex;gap:30px;align-items:center;justify-content:space-between;padding:9px 10px 9px 27px;min-height:58px;border-radius:100px;background:var(--ink);color:var(--paper);font-size:14px;font-weight:500;text-decoration:none;transition:background .25s,transform .35s var(--ease)}
+.button-arrow{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--paper);color:var(--ink);font:25px/1 var(--number);transition:transform .35s var(--ease)}
+.primary:hover{background:var(--red);transform:translateY(-3px)}.primary:hover .button-arrow{transform:rotate(45deg)}.primary:active{transform:scale(.98)}.primary.light{background:var(--paper);color:var(--ink)}.primary.light .button-arrow{background:var(--orange);color:var(--paper)}
+.inline-button{min-height:48px;display:inline-flex;align-items:center;gap:16px;padding:6px 0;background:none;font-size:13px;border-bottom:1px solid currentColor;text-decoration:none}.inline-button span{font-size:22px;transition:transform .3s var(--ease)}.inline-button:hover span{transform:translate(3px,-3px)}
+.hero{min-height:100svh;isolation:isolate;overflow:hidden;padding:150px clamp(24px,5.5vw,88px) 116px;display:flex;align-items:center;background:#f5f0e6}
+.hero-mesh{position:absolute;inset:0;z-index:-2;overflow:hidden;pointer-events:none}.hero-mesh:before{content:"";position:absolute;width:140vw;height:140vw;left:-20%;top:-55%;background:radial-gradient(ellipse closest-side at 70% 55%,#ffb37b 0%,#f8d1a6 32%,rgba(250,224,194,.4) 55%,transparent 90%);animation:meshDrift 22s ease-in-out infinite alternate}
+.hero-mesh:after{content:"";position:absolute;width:76vw;height:76vw;left:-45%;bottom:-63%;background:radial-gradient(ellipse closest-side,#f7c97f 0%,rgba(249,214,151,.25) 45%,transparent 90%)}
+.hero-grain{position:absolute;inset:0;z-index:-1;opacity:.035;pointer-events:none;filter:url(#paperNoise)}
+.hero-wrap{width:min(1370px,100%);display:grid;grid-template-columns:1.12fr 1fr;gap:30px;align-items:center;margin:auto;position:relative}
+.hero-copy{position:relative;z-index:3}.hero .eyebrow{color:var(--red);margin-bottom:35px}.hero h1{font-size:clamp(3.4rem,6.6vw,6.7rem);line-height:1.2;font-weight:750;letter-spacing:-.075em}
+.title-line{display:block;overflow:hidden;padding-bottom:.08em}.title-line>span{display:block}.hero h1 .warm{color:var(--red)}.hero .lede{font-size:15px;line-height:1.95;max-width:32em;margin-top:28px;color:#706150}.hero-actions{display:flex;align-items:center;gap:28px;flex-wrap:wrap;margin-top:36px}.range{font:11px/1.6 var(--number);letter-spacing:.06em;color:var(--muted);margin-top:28px}
+.hero-visual{position:relative;min-width:0;height:590px;perspective:1200px;isolation:isolate}
+.orbit-shadow{position:absolute;width:72%;height:8%;left:15%;bottom:5%;background:radial-gradient(ellipse,#88442540,transparent 70%);transform:rotate(-5deg)}
+.memory-orbit{position:absolute;width:115%;aspect-ratio:1;top:-4%;left:-8%;transform:rotate(-27deg) rotateY(calc(-20deg + var(--ry,0deg))) rotateX(calc(25deg + var(--rx,0deg)));transition:transform .6s var(--ease);z-index:-1}
+.orbit-surface{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 15deg,#9c2d14,#ef743b 18%,#ffdcb0 30%,#f77e42 42%,#b33218 58%,#e76b31 70%,#ffc995 82%,#9c2d14);-webkit-mask:radial-gradient(closest-side,transparent 59%,#29251f 60%);mask:radial-gradient(closest-side,transparent 59%,#29251f 60%);box-shadow:inset 3px 3px 12px #ffe8be;animation:orbitTurn 30s linear infinite}
+.orbit-surface:after{content:"";position:absolute;inset:13px;border:1px solid #fff0ca77;border-radius:50%}
+.hero-object{position:absolute;inset:0}
+.floating-paper{position:absolute;top:12%;left:19%;width:290px;filter:drop-shadow(5px 22px 16px #8a4a2925);animation:paperFloat 7s ease-in-out infinite}
+.hero-ticket{position:relative;width:100%;padding:27px 25px 39px;text-align:left;background:#fff8ed;color:var(--ink);transform:rotate(-9deg);clip-path:polygon(0 0,100% 0,100% 97%,95% 100%,90% 97%,85% 100%,80% 97%,75% 100%,70% 97%,65% 100%,60% 97%,55% 100%,50% 97%,45% 100%,40% 97%,35% 100%,30% 97%,25% 100%,20% 97%,15% 100%,10% 97%,5% 100%,0 97%);transition:transform .55s var(--ease)}
+.hero-ticket:hover{transform:rotate(-4deg) translateY(-8px)}.ticket-top{display:flex;align-items:center;justify-content:space-between;border-bottom:1px dashed #cdbda7;padding-bottom:14px;font-size:11px}.ticket-brand{font-weight:700;font-size:22px;letter-spacing:-.08em}.ticket-caption{display:block;font-size:10px;letter-spacing:.12em;color:var(--muted);margin-top:20px}.ticket-number{display:block;font:110px/1.1 var(--number);letter-spacing:-.09em;margin:4px 0 0;color:var(--red)}.ticket-unit{display:block;font-size:16px;margin-top:-5px;margin-bottom:18px}
+.ticket-line{display:flex;align-items:center;justify-content:space-between;font-size:11px;border-top:1px dashed #cdbda7;padding:10px 0;gap:12px}.ticket-line strong{font-weight:500}.ticket-bottom{display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.04em;margin-top:9px}.ticket-bottom i{font:25px/1 var(--number);font-style:normal}
+.ticket-barcode{height:21px;display:block;margin:14px 0 7px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 5px,var(--ink) 5px 6px,transparent 6px 9px,var(--ink) 9px 13px,transparent 13px 16px)}
+.good-stamp{position:absolute;bottom:13%;right:-1%;width:140px;height:140px;display:grid;place-content:center;text-align:center;background:var(--red);color:#ffe6ba;border-radius:50%;transform:rotate(13deg);box-shadow:inset 0 0 0 7px var(--red),inset 0 0 0 8px #f4b67588}.good-stamp b{font-size:29px;letter-spacing:.13em;line-height:1.2;padding-left:.13em}.good-stamp span{font:8px/1.4 var(--number);letter-spacing:.12em;margin-top:8px}
+.orbit-note{position:absolute;right:-5%;top:14%;writing-mode:vertical-rl;font:10px/1.4 var(--number);letter-spacing:.2em;color:#9c6d4c}.hero-scroll{position:absolute;bottom:27px;left:clamp(24px,5.5vw,88px);display:flex;align-items:center;gap:14px;font-size:11px;background:none;padding:10px 0}.scroll-icon{font:22px/1 var(--number);animation:scrollNudge 2.5s ease-in-out infinite}.hero-edition{position:absolute;right:clamp(24px,5.5vw,88px);bottom:38px;text-align:right;font:10px/1.5 var(--number);letter-spacing:.14em;color:var(--muted)}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:64px}.section-meta{font:10px/1.6 var(--number);letter-spacing:.1em;text-align:right;opacity:.6}
+.chapter-title{font-size:clamp(2.5rem,4.3vw,4.4rem);letter-spacing:-.055em;max-width:18ch}.section-description{font-size:13px;color:var(--muted);margin-top:22px;max-width:34em;line-height:1.95}
+.time-page{margin:0 15px;border-radius:36px;background:var(--night);color:var(--paper);padding:68px clamp(30px,6.5vw,100px) 96px;overflow:hidden;isolation:isolate}
+.time-page:before{content:"";position:absolute;z-index:-1;width:780px;height:780px;left:-340px;bottom:-310px;background:radial-gradient(ellipse,#b84e2e77,transparent 66%);pointer-events:none}
+.time-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px);align-items:center}.time-page .eyebrow{color:#f0b78b}.time-page .section-description,.time-page .small-note{color:#c2b0a2}
+.time-art{position:relative;padding-top:20px}.time-dial{position:relative;width:min(450px,100%);aspect-ratio:1;margin:auto}.time-dial svg{width:100%;height:100%;transform:rotate(-90deg)}.dial-grid{stroke:#b4958030;fill:none}.period-ring{fill:none;stroke-width:22;transition:stroke-dasharray 1s var(--ease)}
+.dial-center{position:absolute;inset:23%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.dial-small{font-size:11px;color:#c4ad9c}.dial-name{font-size:clamp(1.8rem,3.4vw,3.25rem);font-weight:500;letter-spacing:-.06em;line-height:1.4;overflow-wrap:anywhere}.dial-count{font:74px/1.1 var(--number);color:#f7bd7d;letter-spacing:-.07em;margin-top:8px}.dial-count small{font:12px/1 var(--body);margin-left:7px;color:#c4ad9c;letter-spacing:0}
+.dial-caption{text-align:center;font-size:11px;letter-spacing:.1em;color:#bda896;margin-top:16px}.time-summary{font-size:17px;margin-bottom:27px;max-width:25em}.time-summary strong{color:#f9bc79;font-weight:500}.time-band{display:grid;grid-template-columns:42px 1fr 50px 15px;gap:17px;align-items:center;width:100%;text-align:left;padding:18px 0;border-bottom:1px solid #a78a7630;background:none;transition:transform .3s var(--ease)}
+.time-band:not(:disabled):hover{transform:translateX(5px)}.time-band-label{font-size:14px}.bar-track{height:4px;background:#9a796344;overflow:hidden;border-radius:10px}.bar-fill{height:100%;background:var(--bar-color,#efb17d);transform-origin:left;transform:scaleX(var(--amount));border-radius:10px;transition:transform 1.15s var(--ease)}.motion-ready .time-page:not(.is-active) .bar-fill{transform:scaleX(0)}
+.time-band-count{font:14px/1.5 var(--number);text-align:right}.row-arrow{font-size:16px;opacity:.6}.plot-foot{font-size:10px;color:#bda896;margin-top:25px;line-height:1.9;max-width:40em}
+.store-page{padding:100px clamp(30px,7.5vw,120px) 118px}.store-page .eyebrow{color:var(--red)}.store-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:end}.store-heading-note{font-size:13px;line-height:1.9;color:var(--muted);max-width:31em;margin-bottom:4px}.store-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center;margin-top:50px}
+.stamp-stack{position:relative;height:430px;isolation:isolate}.store-watermark{position:absolute;top:22px;left:-10px;font:300px/1 var(--number);letter-spacing:-.1em;color:#e6ddce;z-index:-1}
+.store-pass{position:absolute;top:55px;left:calc(50% - 110px);width:220px;min-height:280px;padding:23px 21px;background:#fffbf3;box-shadow:0 14px 25px #72604c12;border:1px solid #dfd3c0;text-align:left;transform:translateX(var(--shift)) rotate(var(--angle));transition:transform .65s var(--ease),box-shadow .3s;z-index:var(--layer)}
+.store-pass:nth-of-type(2n){background:#ead6b5}.store-pass:nth-of-type(3n){background:#b9422c;color:#fff1d5;border-color:#ad3d27}
+.store-pass:hover,.store-pass:focus-visible{transform:translateX(var(--shift)) rotate(0deg) translateY(-22px);box-shadow:0 20px 30px #72604c25;z-index:5}
+.pass-label{display:flex;justify-content:space-between;font:9px/1.5 var(--number);letter-spacing:.08em}.pass-count{display:block;font:80px/1.4 var(--number);letter-spacing:-.08em;border-bottom:1px solid currentColor;margin:12px 0 18px}.pass-store{font-size:12px;display:block;min-height:48px;overflow-wrap:anywhere}.pass-arrow{font-size:24px;display:block;text-align:right;margin-top:10px}
+.stack-note{position:absolute;bottom:10px;left:20px;font-size:10px;color:var(--muted);letter-spacing:.05em}.store-list{list-style:none;padding:0;margin:0}.store-row{border-bottom:1px solid var(--line)}.store-row:first-child{border-top:1px solid var(--line)}.store-row button{display:grid;grid-template-columns:27px 1fr auto 25px;gap:18px;width:100%;text-align:left;align-items:center;padding:28px 0;background:none;transition:transform .35s var(--ease)}.store-row button:hover{transform:translateX(6px)}
+.store-index{font:10px/1 var(--number);color:var(--muted)}.store-name{font-size:clamp(1rem,1.5vw,1.4rem);overflow-wrap:anywhere;letter-spacing:-.04em}.store-count{font:28px/1 var(--number);letter-spacing:-.06em}.store-count small{font:10px/1 var(--body);margin-left:5px;letter-spacing:0}.store-list .row-arrow{font-size:21px}
+.store-statement{font-size:11px;color:var(--muted);line-height:1.9;margin-top:22px}
+.food-page{padding:72px clamp(30px,7.5vw,120px) 100px;margin:0 15px;border-radius:36px;background:#f1bd6b;position:relative;overflow:hidden;isolation:isolate}
+.food-page:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 15% 0%,#ffe1a5 0,transparent 56%),radial-gradient(ellipse at 100% 100%,#ed8351 0,transparent 62%)}.food-page .section-meta{color:#765022}
+.food-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:75px;align-items:start}.food-title{font-size:clamp(2.4rem,4.3vw,4.3rem);letter-spacing:-.065em;color:#8d2c1a;line-height:1.3;margin-top:40px;overflow-wrap:anywhere}
+.food-feature{position:relative;padding-bottom:30px}.taste-stamp{margin:35px 0 0;width:140px;height:140px;border:1px solid #8d2c1a;border-radius:50%;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#8d2c1a;transform:rotate(-12deg)}.taste-stamp strong{font:53px/1.2 var(--number);letter-spacing:-.06em}.taste-stamp span{font-size:10px;letter-spacing:.05em}
+.food-description{font-size:13px;line-height:1.9;color:#714c28;margin-top:20px;max-width:27em}.meal-list{list-style:none;margin:0;padding:0}.meal-row{border-bottom:1px solid #986b393e}.meal-row:first-child{border-top:1px solid #986b393e}
+.meal-row button{display:grid;grid-template-columns:26px 1fr auto 18px;gap:18px;align-items:center;width:100%;padding:25px 12px;text-align:left;background:none;transition:background .3s,color .3s,transform .3s var(--ease);border-radius:3px}.meal-row button:hover{background:#30231f;color:#fff0d2;transform:translateX(5px)}
+.meal-rank{font:11px/1 var(--number);opacity:.6}.meal-name{font-size:16px;letter-spacing:-.025em;overflow-wrap:anywhere}.meal-meta{display:block;font-size:10px;opacity:.6;margin-top:4px}.meal-orders{font:28px/1 var(--number);letter-spacing:-.06em;white-space:nowrap}.meal-orders small{font:10px/1 var(--body);margin-left:5px;letter-spacing:0}
+.finish-page{padding:118px clamp(30px,7.5vw,120px) 100px}.finish-layout{display:grid;grid-template-columns:1fr .85fr;gap:clamp(60px,10vw,170px);align-items:center}.finish-page .eyebrow{color:var(--red);margin-bottom:35px}.finish-title{font-size:clamp(2.9rem,5.2vw,5.2rem);letter-spacing:-.075em;line-height:1.25}.finish-title .soft{color:var(--red)}.endnote{font-size:13px;color:var(--muted);line-height:1.9;margin-top:26px;max-width:29em}.finish-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:32px}.secondary-actions{display:flex;align-items:center;gap:22px;margin-top:20px}
+.poster-wrap{position:relative;padding:20px 12px}.share-sheet{width:100%;display:block;text-align:left;position:relative;border-radius:14px;background:var(--night);color:var(--paper);padding:30px 32px 28px;transform:rotate(5deg);box-shadow:0 26px 35px #56402a18;overflow:hidden;isolation:isolate;transition:transform .6s var(--ease)}
+.share-sheet:hover{transform:rotate(0deg) translateY(-8px)}.share-sheet:before{content:"";position:absolute;z-index:-1;width:430px;height:430px;right:-270px;top:-200px;background:radial-gradient(ellipse,#f4a46699,transparent 70%)}
+.share-kicker{font-size:10px;display:block;color:#dfc5ad}.share-big{font:130px/1.2 var(--number);letter-spacing:-.09em;display:block;margin:21px 0 0;color:#f7c48b}.share-caption{display:block;font-size:17px;letter-spacing:.05em;margin-top:-5px;margin-bottom:27px}.share-stat{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:14px 0;border-top:1px solid #b9a08d38;font-size:10px}.share-stat b{font-size:12px;font-weight:400;text-align:right;overflow-wrap:anywhere}.source-small{display:block;font-size:9px;line-height:1.8;margin-top:22px;color:#bda693}.poster-hint{position:absolute;right:-22px;bottom:32px;background:var(--red);color:#fff2dc;display:grid;place-content:center;width:84px;height:84px;border-radius:50%;font-size:10px;line-height:1.7;text-align:center;transform:rotate(-9deg);pointer-events:none}.poster-hint b{font:24px/1.2 var(--number)}
+.method{padding:45px clamp(30px,7.5vw,120px) 140px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:35px;align-items:start}.method-brand b{font-size:27px;letter-spacing:-.08em}.method-brand p{font-size:10px;color:var(--muted);margin-top:5px}.method-copy{max-width:450px;font-size:10px;color:var(--muted);line-height:1.9}.method .text-button{font-size:10px}
+.bottom-nav{position:fixed;z-index:35;bottom:19px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:25px;padding:7px 8px 7px 22px;background:rgba(41,37,31,.94);color:var(--paper);border:1px solid #f5f1e918;border-radius:100px;box-shadow:0 5px 24px #29251f12;backdrop-filter:blur(12px)}
+.bottom-label{display:flex;gap:12px;align-items:center;font-size:10px;white-space:nowrap;min-width:105px}.bottom-label>span:first-child{font:10px/1 var(--number);color:#e8a678}.bottom-actions{display:flex;gap:6px;align-items:center}.bottom-actions button{width:37px;height:37px;display:grid;place-items:center;border:1px solid #e9dfce38;border-radius:50%;background:transparent;color:var(--paper);transition:background .2s,transform .2s}.bottom-actions button:hover:not(:disabled){background:var(--red);transform:scale(1.05)}.page-counter{font:10px/1 var(--number);padding:0 8px;min-width:45px;text-align:center}.bottom-progress{position:absolute;bottom:-1px;left:22px;right:22px;height:2px;overflow:hidden;border-radius:3px}.bottom-progress span{display:block;height:100%;background:var(--orange);transform:scaleX(var(--progress,0));transform-origin:left}
+.empty-page{min-height:100svh;display:grid;place-items:center;padding:150px 30px 100px;position:relative;isolation:isolate;overflow:hidden}.empty-page:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 80% 20%,#f9c693,transparent 55%)}
+.empty-content{width:min(830px,100%)}.empty-stamp{display:inline-flex;width:85px;height:85px;align-items:center;justify-content:center;border:1px solid var(--red);color:var(--red);border-radius:50%;font-size:22px;transform:rotate(-12deg);margin-bottom:30px}.empty-page h1{font-size:clamp(2.6rem,5vw,5rem)}.empty-page .eyebrow{color:var(--red);margin-bottom:20px}.empty-page p:not(.eyebrow){font-size:14px;color:var(--muted);max-width:38em;margin-top:25px}.empty-page .primary{margin-top:35px}.empty-page .small-note{font-size:11px!important}
+dialog{position:fixed;padding:0;border:0;max-width:calc(100% - 40px);width:650px;max-height:min(86svh,900px);border-radius:26px;background:var(--paper);color:var(--ink);box-shadow:0 30px 120px #160e1440;overflow:auto;overscroll-behavior:contain}
+dialog::backdrop{background:rgba(28,20,16,.45);backdrop-filter:blur(9px);animation:backdropIn .35s var(--ease)}
+dialog[open]{animation:dialogIn .45s var(--ease)}dialog.closing{animation:dialogOut .18s ease-in forwards}dialog.closing::backdrop{animation:backdropOut .18s ease-in forwards}
+.dialog-top{position:sticky;top:0;z-index:2;background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 28px 14px}.dialog-source{font-size:10px;color:var(--muted)}.close-dialog{border:1px solid var(--line);border-radius:50%;width:40px;height:40px;background:none;font:25px/1 var(--number);transition:transform .3s var(--ease)}.close-dialog:hover{transform:rotate(90deg)}
+.dialog-body{padding:10px 36px 34px;overflow-wrap:anywhere}.dialog-kicker{font:10px/1.5 var(--number);letter-spacing:.12em;color:var(--red);margin-bottom:15px}.dialog-body h2{font-size:30px;letter-spacing:-.05em;line-height:1.4}.dialog-lead{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.9}.dialog-content{margin-top:25px}.dialog-metrics{display:flex;gap:25px;justify-content:space-between;padding:15px 0 28px;border-bottom:1px solid var(--line);margin-bottom:20px}.dialog-metrics strong{font:56px/1.3 var(--number);letter-spacing:-.06em;display:block;color:var(--red)}.dialog-metrics span{font-size:11px}
+.record-row{border-top:1px solid var(--line);padding:17px 0}.record-row:first-child{border-top:0}.record-date{font:11px/1.5 var(--number);color:var(--red)}.record-row strong{display:block;font-size:13px;font-weight:500;margin-top:7px}.record-row p{font-size:11px;color:var(--muted);line-height:1.9;margin-top:5px}.dialog-note{font-size:11px;line-height:1.9;color:var(--muted)}
+.chapter-choice{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;text-align:left;padding:22px 0;border-top:1px solid var(--line);background:none;transition:color .2s,transform .3s var(--ease)}.chapter-choice:first-child{border:0}.chapter-choice:hover{color:var(--red);transform:translateX(5px)}.chapter-choice small{font:11px/1 var(--number);color:var(--muted);margin-right:20px}.chapter-choice b{font-size:23px;font-weight:500;letter-spacing:-.04em}
+.share-dialog{width:480px}.share-dialog .dialog-body{padding:0 25px 25px}.share-dialog h2{font-size:20px}.share-preview{width:100%;height:auto;max-height:55svh;object-fit:contain;display:block;margin:15px 0 21px}.share-dialog-actions{display:flex;align-items:center;gap:15px;justify-content:space-between}.share-dialog-actions p{max-width:14em;font-size:10px;color:var(--muted);line-height:1.8}.share-dialog .primary{min-height:48px;padding-left:21px;font-size:12px;gap:18px}.share-dialog .button-arrow{width:32px;height:32px;font-size:21px}
+.toast{position:fixed;left:50%;bottom:93px;z-index:100;transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .25s;background:var(--ink);color:var(--paper);font-size:12px;line-height:1.8;max-width:calc(100% - 40px);padding:13px 22px;border-radius:12px;text-align:center;box-shadow:0 10px 40px #29251f20}.toast.visible{transform:translate(-50%,0);opacity:1}
+.motion-ready [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--delay,0s)}.motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+.motion-ready .hero .title-line>span{animation:titleIn 1s var(--ease) both}.motion-ready .hero .title-line:nth-child(2)>span{animation-delay:.12s}
+.hero-mesh:before,.orbit-surface,.floating-paper,.scroll-icon{animation-play-state:paused}.hero.is-active .hero-mesh:before,.hero.is-active .orbit-surface,.hero.is-active .floating-paper,.hero.is-active .scroll-icon{animation-play-state:running}
+.hero.is-active .hero-visual:hover .floating-paper,.hero.is-active .floating-paper:focus-within{animation-play-state:paused}
+body.page-paused *{animation-play-state:paused!important}
+@keyframes meshDrift{to{transform:translate(-6%,9%) rotate(18deg)}}@keyframes orbitTurn{to{transform:rotate(360deg)}}@keyframes paperFloat{50%{transform:translate3d(0,-15px,0) rotate(2deg)}}@keyframes scrollNudge{50%{transform:translateY(5px)}}
+@keyframes titleIn{from{transform:translateY(110%);opacity:.3}to{transform:translateY(0);opacity:1}}
+@keyframes dialogIn{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes dialogOut{to{opacity:0;transform:translateY(18px) scale(.98)}}@keyframes backdropIn{from{opacity:0}to{opacity:1}}@keyframes backdropOut{to{opacity:0}}
+@media(min-width:1800px){.hero-visual{height:640px}.floating-paper{width:320px}.good-stamp{right:1%}}
+@media(max-width:1100px){.top-caption{display:none}.hero{padding-left:45px;padding-right:45px}.hero-wrap{grid-template-columns:1.1fr .9fr;gap:10px}.hero h1{font-size:6.8vw}.hero-visual{height:500px}.floating-paper{width:245px;left:12%;top:15%}.ticket-number{font-size:90px}.hero-ticket{padding:21px 21px 32px}.good-stamp{width:115px;height:115px;right:-4%}.good-stamp b{font-size:23px}.memory-orbit{top:2%;width:127%;left:-20%}.orbit-note{display:none}.hero-actions{gap:20px}.store-layout,.store-top{gap:40px}.food-layout{gap:40px}.finish-layout{gap:65px}.store-pass{width:190px;left:calc(50% - 95px);min-height:260px}.pass-count{font-size:66px}.store-row button{gap:12px}.time-layout{gap:35px}.time-band{gap:12px}}
+@media(max-width:760px){
+ .topbar{padding:15px 23px;gap:12px}.wordmark b{font-size:25px}.brand-mark{transform:scale(.8);transform-origin:left center;width:24px}.wordmark{gap:7px}.brand-caption{font-size:8px}.topbar-right{gap:13px}.source-tag{font-size:9px;gap:5px}.topbar .text-button{font-size:10px}.menu-button{width:37px;height:37px}.topbar-right .text-button{display:none}
+ .hero{padding:132px 29px 83px;min-height:auto}.hero-wrap{grid-template-columns:1fr;gap:0}.hero .eyebrow{font-size:10px;letter-spacing:.1em;margin-bottom:25px}.hero h1{font-size:clamp(3.1rem,10.8vw,5.5rem);line-height:1.22}.hero .lede{font-size:13px;margin-top:23px;max-width:30em}.hero-actions{gap:23px;margin-top:25px}.primary{font-size:12px;min-height:52px;padding-left:22px;gap:20px}.button-arrow{width:35px;height:35px;font-size:23px}.inline-button{font-size:11px}.range{font-size:9px;margin-top:20px}.hero-visual{height:430px;width:min(440px,100%);margin:8px auto 0}.floating-paper{width:225px;left:calc(50% - 112px);top:11%}.hero-ticket{padding:20px 21px 32px}.ticket-number{font-size:86px}.ticket-caption{margin-top:16px;font-size:8px}.ticket-unit{font-size:14px;margin-bottom:15px}.ticket-line{font-size:10px;padding:8px 0}.ticket-barcode{height:17px;margin-top:11px}.ticket-top{padding-bottom:11px;font-size:9px}.ticket-brand{font-size:20px}.ticket-bottom{font-size:8px}.memory-orbit{width:110%;top:0;left:-5%}.good-stamp{right:-2%;bottom:10%;width:105px;height:105px}.good-stamp b{font-size:22px}.good-stamp span{font-size:7px}.orbit-shadow{bottom:2%}.hero-mesh:before{width:180vw;height:230vw;left:-25%;top:-12%}.hero-scroll{left:29px;bottom:15px;font-size:10px}.hero-edition{right:29px;bottom:25px;font-size:8px}
+ .time-page,.food-page{margin:0 9px;border-radius:25px;padding:40px 26px 55px}.section-head{margin-bottom:38px}.eyebrow{font-size:10px;letter-spacing:.1em}.section-meta{font-size:8px}.chapter-title{font-size:clamp(2rem,7vw,3.7rem)}.section-description{font-size:11px;margin-top:18px}.time-layout{grid-template-columns:1fr;gap:34px}.time-art{padding-top:0}.time-dial{width:min(350px,100%)}.dial-name{font-size:30px}.dial-count{font-size:60px}.dial-small{font-size:10px}.dial-caption{font-size:9px;margin-top:0}.time-summary{font-size:14px;margin-bottom:12px}.time-band{padding:16px 0;grid-template-columns:38px 1fr 42px 12px;gap:13px}.time-band-label{font-size:11px}.time-band-count{font-size:12px}.plot-foot{font-size:9px}
+ .store-page{padding:63px 29px 64px}.store-top{display:flex;flex-direction:column;gap:20px;align-items:start}.store-heading-note{font-size:11px;max-width:28em}.store-layout{display:flex;flex-direction:column;gap:27px;margin-top:12px}.stamp-stack{width:100%;height:330px;max-width:420px}.store-watermark{font-size:250px;top:15px;left:0}.store-pass{top:35px;width:165px;min-height:224px;left:calc(50% - 82px);padding:17px 16px}.pass-label{font-size:7px}.pass-count{font-size:61px;margin:8px 0 12px}.pass-store{font-size:10px;min-height:39px}.pass-arrow{font-size:20px;margin-top:4px}.stack-note{bottom:4px;left:0;font-size:9px}.store-list-wrap{width:100%}.store-row button{grid-template-columns:22px 1fr auto 18px;gap:10px;padding:22px 0}.store-name{font-size:14px}.store-count{font-size:24px}.store-count small{font-size:9px}.store-statement{font-size:10px}
+ .food-layout{grid-template-columns:1fr;gap:28px}.food-title{font-size:36px;margin-top:25px}.food-feature{padding-bottom:0}.food-description{font-size:11px;max-width:26em}.taste-stamp{position:absolute;width:84px;height:84px;right:0;bottom:3px;margin:0}.taste-stamp strong{font-size:32px}.taste-stamp span{font-size:8px}.food-description{padding-right:76px;box-sizing:content-box}.meal-row button{padding:20px 0;gap:10px;grid-template-columns:22px 1fr auto 15px}.meal-name{font-size:13px}.meal-meta{font-size:9px}.meal-orders{font-size:24px}.meal-orders small{font-size:9px}
+ .finish-page{padding:67px 29px 75px}.finish-layout{grid-template-columns:1fr;gap:35px}.finish-page .eyebrow{margin-bottom:25px}.finish-title{font-size:clamp(2.7rem,9.5vw,4.5rem)}.endnote{font-size:11px;margin-top:20px}.finish-actions{margin-top:25px;gap:18px}.secondary-actions{margin-top:13px;gap:20px}.poster-wrap{max-width:350px;margin:auto;width:100%;padding:14px 18px}.share-sheet{padding:25px 26px 24px;transform:rotate(4deg)}.share-big{font-size:110px}.share-caption{font-size:15px}.share-stat{padding:12px 0}.share-stat b{font-size:11px}.poster-hint{width:73px;height:73px;right:-7px;bottom:32px;font-size:9px}.method{padding:30px 29px 112px;gap:28px;flex-direction:column}.method-copy{font-size:9px}.method-brand b{font-size:24px}
+ .bottom-nav{bottom:14px;gap:12px;padding-left:17px}.bottom-label{font-size:9px;gap:9px;min-width:85px}.bottom-actions{gap:4px}.bottom-actions button{width:35px;height:35px}.page-counter{font-size:9px;min-width:39px;padding:0 5px}
+ dialog{width:100%;max-width:100%;max-height:86dvh;inset:auto 0 0;margin:0;border-radius:25px 25px 0 0}.dialog-top{padding:18px 23px 12px}.dialog-body{padding:8px 26px 32px}.dialog-body h2{font-size:25px}.dialog-lead{font-size:11px}.dialog-metrics{gap:20px}.dialog-metrics strong{font-size:45px}.dialog-metrics span{font-size:10px}.share-dialog{width:100%}.share-dialog .dialog-body{padding:0 24px 28px}.share-preview{max-height:48dvh}.chapter-choice{padding:20px 0}.chapter-choice b{font-size:22px}.empty-page{padding:130px 29px 90px}.empty-page h1{font-size:38px}.empty-page p:not(.eyebrow){font-size:12px}
+}
+@media(max-width:370px){.topbar{padding-left:19px;padding-right:19px}.hero{padding-left:24px;padding-right:24px}.source-tag{font-size:8px}.hero-actions{gap:18px}.hero h1{font-size:10.4vw}.hero-visual{height:405px}.good-stamp{right:-3%;bottom:13%}.taste-stamp{width:72px;height:72px}.store-pass{width:150px;left:calc(50% - 75px)}}
+@media(hover:none),(pointer:coarse){.floating-paper{animation:none!important}}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
+ .motion-ready [data-reveal]{opacity:1!important;transform:none!important}.motion-ready .time-page:not(.is-active) .bar-fill{transform:scaleX(var(--amount))}.hero-object{transform:none!important}
+}
+@media print{
+ .topbar,.bottom-nav,.hero-scroll,.hero-edition,.hero-actions,.finish-actions,.secondary-actions,.poster-hint,.method,dialog,.toast{display:none!important}
+ .slide{margin:0;min-height:auto;border-radius:0;padding:45px;page-break-after:always;print-color-adjust:exact;-webkit-print-color-adjust:exact}.hero-wrap{grid-template-columns:1fr 1fr}.hero h1{font-size:48px}.hero-visual{height:450px}.finish-page{page-break-after:auto}
+ [data-reveal]{opacity:1!important;transform:none!important}.bar-fill{transform:scaleX(var(--amount))!important}.hero-ticket,.share-sheet{transform:none}.hero-mesh:before,.hero-mesh:after{display:none}.store-layout,.time-layout,.finish-layout,.food-layout{grid-template-columns:1fr 1fr;gap:30px}.store-layout{display:grid}.hero-mesh{background:var(--paper)}.empty-page{min-height:90vh}body{font-size:12pt}
+}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="wordmark"><b>麦迹</b><span>把日常，再回味一遍</span></div><div class="topbar-right"><span id="sourceTag" class="source-tag"></span><button id="modeButton" class="text-button" type="button"></button></div></header>
+<svg width="0" height="0" aria-hidden="true" style="position:absolute"><filter id="paperNoise"><feTurbulence type="fractalNoise" baseFrequency=".7" numOctaves="3" stitchTiles="stitch"/></filter></svg>
+<header class="topbar">
+ <a class="wordmark" href="#opening" aria-label="麦迹，回到开场"><span class="brand-mark" aria-hidden="true"></span><span><b>麦迹</b><span class="brand-caption" style="display:block">MAI RECAP</span></span></a>
+ <p class="top-caption">每个平常的饭点，都算数。</p>
+ <div class="topbar-right"><span id="sourceTag" class="source-tag"></span><button id="modeButton" class="text-button" type="button"></button><button id="menuButton" class="menu-button" type="button" aria-label="打开回顾目录"><span class="menu-lines" aria-hidden="true"></span></button></div>
+</header>
 <main id="story">
-<section class="slide intro" aria-labelledby="introTitle"><div class="inner"><div class="arrival"><p class="opening-note">一份属于平常日子的回顾</p><h1 id="introTitle">把日常，<br>再回味一遍。</h1><p class="lede" id="introText"></p><p id="range" class="range"></p><button class="primary" id="begin" type="button">翻开这份回忆 <span aria-hidden="true">↓</span></button></div><div class="receipt" aria-label="回顾小票"><div class="receipt-head"><span class="stamp">好好吃饭</span><p>一些平常的饭点，值得被记住。</p></div><div class="receipt-lines" id="receiptLines"></div><div class="receipt-bottom"><strong>生活，自有滋味。</strong><div class="barcode" aria-hidden="true"></div><p id="receiptSource"></p></div></div></div></section>
-<section class="slide time-page" aria-labelledby="timeTitle"><div class="inner"><div><p class="chapter">那些饭点</p><h2 id="timeTitle">日子有自己的<br>节奏。</h2><p class="statement" id="timeStatement"></p><p class="small-note">记下的是下单时刻，<br>也是这些记录里，一个小小的生活切片。</p></div><div class="time-plot"><div id="timeBars" role="img" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p></div></div></section>
-<section class="slide store-page" aria-labelledby="storeTitle"><div class="inner"><div><p class="chapter">熟悉的地方</p><h2 id="storeTitle">总有些店名，<br>一看就很熟悉。</h2><div class="store-sign" id="storeSign"></div><p id="storeStatement"></p><p class="small-note">这里统计出餐门店，<br>不代表你的实际用餐位置。</p></div><ol class="store-list" id="storeList"></ol></div></section>
-<section class="slide food-page" aria-labelledby="foodTitle"><div class="inner"><div><p class="chapter">反复出现的那一口</p><h2 id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="statement" id="mealStatement"></p><p class="small-note">常点，是这些记录里的频次。<br>套餐按订单中的完整名称统计。</p></div><ol class="meal-list" id="mealList"></ol></div></section>
-<section class="slide finish-page" aria-labelledby="finishTitle"><div class="inner"><div><p class="chapter">把这段回忆带走</p><h2 id="finishTitle">平常的一餐，<br>也有值得留住的<br>小片刻。</h2><p class="endnote">留下一张回顾卡，<br>把这段日子的滋味收好。</p><div class="finish-actions"><button type="button" class="primary" id="download">保存分享卡 <span aria-hidden="true">↗</span></button><button type="button" class="secondary" id="print">打印回顾</button></div><p class="feedback" id="feedback" role="status" aria-live="polite"></p><details class="records"><summary>看看这份回顾包含哪些记录</summary><div id="recordList"></div></details></div><div class="share-sheet" id="shareSheet"><p class="share-kicker" id="shareSource"></p><h3>这一段日子，<br>是这样的滋味。</h3><div id="shareStats"></div><p class="source-small">分享卡不含门店名、订单号和精确地址。<br>非麦当劳官方产品。</p></div></div></section>
-<footer class="method"><p id="methodText"></p></footer>
+ <section class="slide hero is-active" id="opening" aria-labelledby="introTitle" data-scene>
+  <div class="hero-mesh" aria-hidden="true"></div><div class="hero-grain" aria-hidden="true"></div>
+  <div class="hero-wrap">
+   <div class="hero-copy">
+    <p class="eyebrow">一段好好吃饭的日子 / MAI RECAP</p>
+    <h1 id="introTitle"><span class="title-line"><span>把日常，</span></span><span class="title-line warm"><span>再回味一遍。</span></span></h1>
+    <p class="lede" id="introText" data-reveal></p>
+    <div class="hero-actions" data-reveal style="--delay:.12s"><button class="primary" id="begin" type="button">翻开这份回忆 <span class="button-arrow" aria-hidden="true">↘</span></button><button class="inline-button" type="button" data-detail="receipt">先看这份小票 <span aria-hidden="true">↗</span></button></div>
+    <p class="range" id="range" data-reveal style="--delay:.2s"></p>
+   </div>
+   <div class="hero-visual" id="heroVisual" data-reveal style="--delay:.15s">
+    <div class="orbit-shadow" aria-hidden="true"></div><div class="memory-orbit" aria-hidden="true"><div class="orbit-surface"></div></div>
+    <div class="hero-object" id="heroObject"><div class="floating-paper"><button type="button" class="hero-ticket" data-detail="receipt" aria-label="打开回顾小票">
+     <span class="ticket-top"><span class="ticket-brand">麦迹</span><span>YOUR LITTLE MOMENTS</span></span>
+     <span class="ticket-caption">平常的一餐，也值得记下来</span><span class="ticket-number" id="heroCount">10</span><span class="ticket-unit">次好好吃饭</span>
+     <span class="ticket-line"><span>留下记录的门店</span><strong id="receiptStores"></strong></span>
+     <span class="ticket-line"><span>常点的那一口</span><strong id="receiptMeal"></strong></span>
+     <span class="ticket-barcode" aria-hidden="true"></span><span class="ticket-bottom"><span id="receiptSource"></span><i aria-hidden="true">↗</i></span>
+    </button></div></div>
+    <div class="good-stamp" aria-hidden="true"><b>好好<br>吃饭</b><span>LITTLE JOYS, EVERY DAY</span></div><span class="orbit-note" aria-hidden="true">A TASTE OF EVERYDAY LIFE</span>
+   </div>
+  </div>
+  <button type="button" class="hero-scroll" id="scrollBegin"><span class="scroll-icon" aria-hidden="true">↓</span>向下，回味一下</button><p class="hero-edition">RECENT MEMORIES<br>非官方回顾项目</p>
+ </section>
+ <section class="slide time-page" id="mealtimes" aria-labelledby="timeTitle" data-scene>
+  <div class="section-wrap">
+   <div class="section-head" data-reveal><p class="eyebrow">01 / 那些饭点</p><p class="section-meta">THE RHYTHM<br>OF YOUR DAYS</p></div>
+   <h2 class="chapter-title" id="timeTitle" data-reveal>日子有自己的<br>节奏。</h2>
+   <div class="time-layout">
+    <div class="time-art" data-reveal>
+     <div class="time-dial"><svg viewBox="0 0 440 440" role="img" aria-label="下单时段分布" id="timeRing"><circle class="dial-grid" cx="220" cy="220" r="205"/><circle class="dial-grid" cx="220" cy="220" r="125"/><circle cx="220" cy="220" r="165" fill="none" stroke="#725544" stroke-width="22"/><g id="periodRings"></g></svg><div class="dial-center"><span class="dial-small">记录里最常出现的时段</span><span class="dial-name" id="favoritePeriod"></span><span class="dial-count"><span id="periodCount"></span><small>笔 / 时段</small></span></div></div>
+     <p class="dial-caption">把每个饭点，放回这段日子里。</p>
+    </div>
+    <div class="time-data" data-reveal style="--delay:.1s"><p class="time-summary" id="timeStatement"></p><div id="timeBars" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p></div>
+   </div>
+  </div>
+ </section>
+ <section class="slide store-page" id="places" aria-labelledby="storeTitle" data-scene>
+  <div class="section-wrap">
+   <div class="section-head" data-reveal><p class="eyebrow">02 / 熟悉的地方</p><p class="section-meta">SOME PLACES<br>FEEL FAMILIAR</p></div>
+   <div class="store-top"><h2 class="chapter-title" id="storeTitle" data-reveal>有些店名，<br>一看就很熟悉。</h2><p class="store-heading-note" data-reveal>有时是一家常出现的店，有时是偶尔的一次。<br>那些出餐门店，也成了回忆的一部分。</p></div>
+   <div class="store-layout">
+    <div class="stamp-stack" id="storeStack" data-reveal></div>
+    <div class="store-list-wrap" data-reveal style="--delay:.1s"><ol class="store-list" id="storeList"></ol><p class="store-statement" id="storeStatement"></p></div>
+   </div>
+  </div>
+ </section>
+ <section class="slide food-page" id="flavors" aria-labelledby="foodTitle" data-scene>
+  <div class="section-wrap">
+   <div class="section-head" data-reveal><p class="eyebrow">03 / 反复出现的那一口</p><p class="section-meta">THE TASTE<br>YOU COME BACK TO</p></div>
+   <div class="food-layout">
+    <div class="food-feature" data-reveal><h2 class="chapter-title" id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="food-description" id="mealStatement"></p><div class="taste-stamp"><strong id="tasteCount"></strong><span id="tasteLabel"></span></div></div>
+    <ol class="meal-list" id="mealList" data-reveal style="--delay:.12s"></ol>
+   </div>
+  </div>
+ </section>
+ <section class="slide finish-page" id="keepsake" aria-labelledby="finishTitle" data-scene>
+  <div class="section-wrap finish-layout">
+   <div>
+    <p class="eyebrow" data-reveal>04 / 把回忆打包带走</p><h2 class="finish-title" id="finishTitle" data-reveal>生活，<br><span class="soft">自有滋味。</span></h2><p class="endnote" data-reveal>平常的一餐，也有值得留住的小片刻。<br>把这些饭点、这些滋味，收进一张回顾卡。</p>
+    <div class="finish-actions" data-reveal><button type="button" class="primary" id="openShare">打开分享卡 <span class="button-arrow" aria-hidden="true">↗</span></button></div>
+    <div class="secondary-actions" data-reveal><button class="inline-button" type="button" id="openRecords">看看这次的记录 <span aria-hidden="true">↗</span></button><button type="button" class="text-button" id="print">打印回顾</button></div>
+   </div>
+   <div class="poster-wrap" data-reveal style="--delay:.15s">
+    <button type="button" class="share-sheet" id="shareSheet" aria-label="预览并保存分享卡"><span class="share-kicker" id="shareSource"></span><span class="share-big" id="shareCount"></span><span class="share-caption">次好好吃饭。</span><span id="shareStats"></span><span class="source-small">仅覆盖本次记录，不代表完整全年。<br>非麦当劳官方产品 · 分享卡省略门店与精确地点。</span></button>
+    <span class="poster-hint" aria-hidden="true"><b>↗</b>点开<br>把回忆带走</span>
+   </div>
+  </div>
+ </section>
+ <footer class="method"><div class="method-brand"><b>麦迹</b><p>把日常，再回味一遍。 / MAI RECAP</p></div><div class="method-copy"><p>这些是本次可查询记录里的小小切片，不代表完整全年。<br>门店表示出餐门店，不代表实际用餐位置。</p><button type="button" class="text-button" data-detail="method">数据范围与统计说明 ↗</button></div></footer>
 </main>
-<main class="empty-page" id="empty" hidden><div class="empty-content"><div class="empty-stamp" aria-hidden="true">待续</div><p class="chapter">属于你的回顾，从第一条记录开始</p><h1>故事还没开始，<br>先留一页空白。</h1><p id="emptyText"></p><button type="button" class="primary" id="showDemo">先看看示例回顾 <span aria-hidden="true">→</span></button><p class="small-note">示例使用虚构订单，页面会明确标注。<br>有记录后，可重新运行本地工具生成自己的回顾。</p></div></main>
-<nav class="page-nav" id="pageNav" aria-label="回顾章节"></nav>
-<div class="bottom-nav" id="bottomNav"><p id="bottomScope"></p><div class="bottom-actions"><button id="previous" type="button" aria-label="上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button><span class="page-counter" id="pageCounter"></span><button id="next" type="button" aria-label="下一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></button></div></div>
+<main class="empty-page" id="empty" hidden>
+ <div class="empty-content"><span class="empty-stamp" aria-hidden="true">待续</span><p class="eyebrow">下一段回忆，等你开启</p><h1>故事还没开始，<br>先留一页空白。</h1><p id="emptyText"></p><button type="button" class="primary" id="showDemo">先看看示例回顾 <span class="button-arrow" aria-hidden="true">↗</span></button><p class="small-note">示例使用虚构订单，页面会明确标注。<br>有记录后，可重新运行本地工具生成自己的回顾。</p></div>
+</main>
+<nav class="bottom-nav" id="bottomNav" aria-label="回顾翻页"><p class="bottom-label"><span id="chapterNumber">00</span><span id="chapterName">回忆开场</span></p><div class="bottom-actions"><button id="previous" type="button" aria-label="上一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><span class="page-counter" id="pageCounter"></span><button id="next" type="button" aria-label="下一页"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div><span class="bottom-progress" aria-hidden="true"><span id="scrollProgress"></span></span></nav>
+<dialog id="detailDialog" aria-labelledby="detailTitle" aria-describedby="detailLead">
+ <div class="dialog-top"><span class="dialog-source" id="detailSource"></span><button type="button" class="close-dialog" data-close aria-label="关闭详情">×</button></div>
+ <div class="dialog-body"><p class="dialog-kicker" id="detailKicker"></p><h2 id="detailTitle" tabindex="-1"></h2><p class="dialog-lead" id="detailLead"></p><div class="dialog-content" id="detailContent"></div></div>
+</dialog>
+<dialog id="shareDialog" class="share-dialog" aria-labelledby="shareDialogTitle">
+ <div class="dialog-top"><span class="dialog-source" id="previewSource"></span><button type="button" class="close-dialog" data-close aria-label="关闭分享卡">×</button></div>
+ <div class="dialog-body"><h2 id="shareDialogTitle">把这段回忆，收好。</h2><img id="sharePreview" class="share-preview" alt="可保存的回顾分享卡预览，不包含门店和精确地点" width="900" height="1200"><div class="share-dialog-actions"><p>图片保留数据来源标记。<br>不含门店、订单号和地址。</p><button type="button" class="primary" id="download">保存图片 <span class="button-arrow" aria-hidden="true">↓</span></button></div><p id="shareFeedback" class="dialog-note" role="status" aria-live="polite"></p></div>
+</dialog>
+<p class="toast" id="feedback" role="status" aria-live="polite"></p>
 <script id="recapData" type="application/json">{"initial": {"source": "demo", "count": 10, "fetched": 10, "skipped": 0, "dateStart": "2026-08-18", "dateEnd": "2026-10-18", "periods": [{"name": "早餐", "count": 1}, {"name": "午间", "count": 5}, {"name": "下午", "count": 1}, {"name": "晚间", "count": 2}, {"name": "深夜", "count": 1}], "favoritePeriods": ["午间"], "stores": [{"name": "示例·河畔餐厅", "count": 5}, {"name": "示例·车站餐厅", "count": 3}, {"name": "示例·公园餐厅", "count": 2}], "favoriteStores": ["示例·河畔餐厅"], "storeCount": 3, "meals": [{"name": "薯条（中）", "orders": 4, "quantity": 4}, {"name": "麦辣鸡腿汉堡", "orders": 4, "quantity": 4}, {"name": "可口可乐（中）", "orders": 3, "quantity": 3}, {"name": "巨无霸", "orders": 3, "quantity": 3}, {"name": "麦乐鸡（5块）", "orders": 2, "quantity": 3}, {"name": "奥利奥麦旋风", "orders": 1, "quantity": 1}], "favoriteMeals": ["薯条（中）", "麦辣鸡腿汉堡"], "unknown": {"time": 0, "store": 0, "meals": 0}, "records": [{"time": "2026-10-18T12:26:00+08:00", "date": "10.18", "clock": "12:26", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-10-14T18:42:00+08:00", "date": "10.14", "clock": "18:42", "store": "示例·车站餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-10-09T12:08:00+08:00", "date": "10.09", "clock": "12:08", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "麦乐鸡（5块）", "quantity": 1}]}, {"time": "2026-10-03T09:12:00+08:00", "date": "10.03", "clock": "09:12", "store": "示例·公园餐厅", "items": [{"name": "猪柳蛋麦满分", "quantity": 1}, {"name": "美式咖啡", "quantity": 1}]}, {"time": "2026-09-26T12:44:00+08:00", "date": "09.26", "clock": "12:44", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-09-19T19:18:00+08:00", "date": "09.19", "clock": "19:18", "store": "示例·车站餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-09-11T12:17:00+08:00", "date": "09.11", "clock": "12:17", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-09-03T15:36:00+08:00", "date": "09.03", "clock": "15:36", "store": "示例·公园餐厅", "items": [{"name": "奥利奥麦旋风", "quantity": 1}]}, {"time": "2026-08-25T22:14:00+08:00", "date": "08.25", "clock": "22:14", "store": "示例·车站餐厅", "items": [{"name": "麦乐鸡（5块）", "quantity": 2}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-08-18T11:57:00+08:00", "date": "08.18", "clock": "11:57", "store": "示例·河畔餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}]}, "demo": {"source": "demo", "count": 10, "fetched": 10, "skipped": 0, "dateStart": "2026-08-18", "dateEnd": "2026-10-18", "periods": [{"name": "早餐", "count": 1}, {"name": "午间", "count": 5}, {"name": "下午", "count": 1}, {"name": "晚间", "count": 2}, {"name": "深夜", "count": 1}], "favoritePeriods": ["午间"], "stores": [{"name": "示例·河畔餐厅", "count": 5}, {"name": "示例·车站餐厅", "count": 3}, {"name": "示例·公园餐厅", "count": 2}], "favoriteStores": ["示例·河畔餐厅"], "storeCount": 3, "meals": [{"name": "薯条（中）", "orders": 4, "quantity": 4}, {"name": "麦辣鸡腿汉堡", "orders": 4, "quantity": 4}, {"name": "可口可乐（中）", "orders": 3, "quantity": 3}, {"name": "巨无霸", "orders": 3, "quantity": 3}, {"name": "麦乐鸡（5块）", "orders": 2, "quantity": 3}, {"name": "奥利奥麦旋风", "orders": 1, "quantity": 1}], "favoriteMeals": ["薯条（中）", "麦辣鸡腿汉堡"], "unknown": {"time": 0, "store": 0, "meals": 0}, "records": [{"time": "2026-10-18T12:26:00+08:00", "date": "10.18", "clock": "12:26", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-10-14T18:42:00+08:00", "date": "10.14", "clock": "18:42", "store": "示例·车站餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-10-09T12:08:00+08:00", "date": "10.09", "clock": "12:08", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "麦乐鸡（5块）", "quantity": 1}]}, {"time": "2026-10-03T09:12:00+08:00", "date": "10.03", "clock": "09:12", "store": "示例·公园餐厅", "items": [{"name": "猪柳蛋麦满分", "quantity": 1}, {"name": "美式咖啡", "quantity": 1}]}, {"time": "2026-09-26T12:44:00+08:00", "date": "09.26", "clock": "12:44", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-09-19T19:18:00+08:00", "date": "09.19", "clock": "19:18", "store": "示例·车站餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}, {"time": "2026-09-11T12:17:00+08:00", "date": "09.11", "clock": "12:17", "store": "示例·河畔餐厅", "items": [{"name": "麦辣鸡腿汉堡", "quantity": 1}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-09-03T15:36:00+08:00", "date": "09.03", "clock": "15:36", "store": "示例·公园餐厅", "items": [{"name": "奥利奥麦旋风", "quantity": 1}]}, {"time": "2026-08-25T22:14:00+08:00", "date": "08.25", "clock": "22:14", "store": "示例·车站餐厅", "items": [{"name": "麦乐鸡（5块）", "quantity": 2}, {"name": "可口可乐（中）", "quantity": 1}]}, {"time": "2026-08-18T11:57:00+08:00", "date": "08.18", "clock": "11:57", "store": "示例·河畔餐厅", "items": [{"name": "巨无霸", "quantity": 1}, {"name": "薯条（中）", "quantity": 1}]}]}}</script>
 <script>
 'use strict';
@@ -33,52 +231,233 @@ const bundle=JSON.parse(document.getElementById('recapData').textContent);
 const $=id=>document.getElementById(id);
 const esc=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const slides=[...document.querySelectorAll('.slide')];
-const titles=['开场','饭点','门店','餐品','回顾卡'];
-let active=0,current=bundle.initial;
+const titles=['回忆开场','那些饭点','熟悉的门店','常点的滋味','把回忆带走'];
+const motion=matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
+const colors=['#b8956c','#f0a15b','#e66a45','#bf6b56','#8e7162'];
+let active=0,current=bundle.initial,shareCanvas=null,toastTimer,scrollFrame=0,sceneObserver,revealObserver;
 const dateLabel=d=>d?d.replaceAll('-','.'):'';
-const rangeText=r=>r.dateStart?`${dateLabel(r.dateStart)} — ${dateLabel(r.dateEnd)}`:'日期信息尚未提供';
+const rangeText=r=>r.dateStart?dateLabel(r.dateStart)+' — '+dateLabel(r.dateEnd):'日期信息尚未提供';
 const isDemo=r=>r.source!=='live';
-const go=index=>slides[Math.max(0,Math.min(slides.length-1,index))].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
-function navigation(index){active=index;$('pageCounter').textContent=`${index+1} / ${slides.length}`;$('previous').disabled=index===0;$('next').disabled=index===slides.length-1;[...$('pageNav').children].forEach((b,i)=>{if(i===index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current')});}
-$('pageNav').innerHTML=titles.map((t,i)=>`<button type="button" aria-label="第${i+1}页：${t}" data-index="${i}"></button>`).join('');
-$('pageNav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(Number(b.dataset.index))});
-const observer=new IntersectionObserver(entries=>{for(const e of entries){if(e.isIntersecting&&e.intersectionRatio>=.4)navigation(slides.indexOf(e.target));}},{threshold:[.4,.65]});slides.forEach(s=>observer.observe(s));
-document.querySelector('.barcode').innerHTML='<span></span>'.repeat(35);
+const sourceLabel=()=>isDemo(current)?'演示数据 · 全部为虚构示例':'真实记录 · 本机生成';
+const pad=n=>String(n).padStart(2,'0');
+function go(index){
+ if($('story').hidden)return;
+ const i=Math.max(0,Math.min(slides.length-1,index));
+ slides[i].scrollIntoView({behavior:motion.matches?'instant':'smooth',block:'start'});
+}
+function navigation(index){
+ active=index;$('pageCounter').textContent=(index+1)+' / '+slides.length;
+ $('chapterNumber').textContent=pad(index);$('chapterName').textContent=titles[index];
+ $('previous').disabled=index===0;$('next').disabled=index===slides.length-1;
+}
+function updateScroll(){
+ scrollFrame=0;document.body.classList.toggle('scrolled',scrollY>24);
+ if($('story').hidden)return;
+ let index=0;
+ for(let i=0;i<slides.length;i++){if(slides[i].getBoundingClientRect().top<=innerHeight*.4)index=i;}
+ if(active!==index)navigation(index);
+ const last=slides[slides.length-1];
+ const end=Math.max(1,last.offsetTop+last.offsetHeight-innerHeight);
+ $('scrollProgress').style.setProperty('--progress',Math.min(1,Math.max(0,scrollY/end)));
+}
+function queueScroll(){if(!scrollFrame)scrollFrame=requestAnimationFrame(updateScroll);}
+addEventListener('scroll',queueScroll,{passive:true});addEventListener('resize',queueScroll,{passive:true});
+function animateNumber(element,value){
+ cancelAnimationFrame(element._countFrame||0);
+ element.textContent=value;
+ if(motion.matches||value<1)return;
+ const start=performance.now();
+ function frame(now){
+  const progress=Math.min(1,(now-start)/950);
+  element.textContent=Math.round(value*(1-Math.pow(1-progress,4)));
+  if(progress<1&&element.isConnected)element._countFrame=requestAnimationFrame(frame);
+ }
+ element._countFrame=requestAnimationFrame(frame);
+}
+function observeScenes(){
+ if(sceneObserver)sceneObserver.disconnect();if(revealObserver)revealObserver.disconnect();
+ document.body.classList.add('motion-ready');
+ revealObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}}},{threshold:.08});
+ document.querySelectorAll('[data-reveal]').forEach(el=>{el.classList.remove('is-visible');revealObserver.observe(el);});
+ sceneObserver=new IntersectionObserver(entries=>{for(const entry of entries)entry.target.classList.toggle('is-active',entry.isIntersecting);},{threshold:0});
+ slides.forEach(slide=>sceneObserver.observe(slide));
+}
+function periodFor(row){
+ if(!row.time)return null;
+ const parsed=new Date(row.time);if(Number.isNaN(parsed.getTime()))return null;
+ const h=(parsed.getUTCHours()+8)%24;
+ return h>=5&&h<11?'早餐':h>=11&&h<14?'午间':h>=14&&h<17?'下午':h>=17&&h<22?'晚间':'深夜';
+}
 function render(r){
- current=r;active=0;const demo=isDemo(r),empty=r.count===0;
+ current=r;shareCanvas=null;const demo=isDemo(r),empty=r.count===0;
  $('sourceTag').textContent=r.source==='empty-demo'?'空账户效果演示':demo?'演示数据 · 非本人记录':'真实记录 · 本机生成';
  $('modeButton').textContent=r.source==='live'?'查看示例':r.source==='empty-demo'?'返回示例':bundle.initial.source==='live'?'返回我的记录':'看看空账户';
- $('story').hidden=empty;$('empty').hidden=!empty;$('pageNav').hidden=empty;$('bottomNav').hidden=empty;
- if(empty){$('emptyText').textContent=r.source==='empty-demo'?'这是无历史记录时的页面效果。没有订单时，会保留这页空白，不会自动把示例填进你的回顾。':r.fetched?`本次取得 ${r.fetched} 笔记录，其中没有可用于回顾的已完成订单。`:'已连接麦当劳服务，本次没有返回历史订单。这里先留给未来的回忆。';window.scrollTo({top:0,behavior:'instant'});return;}
- $('introText').textContent=`${demo?'这是一份虚构示例。':''}把最近 ${r.count} 笔已完成订单，串成一段有饭点、有店名、有熟悉滋味的回忆。`;
- $('range').textContent=rangeText(r)+(demo?' · 示例时间范围':' · 本次记录覆盖范围');
- $('receiptLines').innerHTML=[['记下的饭点',`${r.count} 笔订单`],['出现的门店',`${r.storeCount} 家`],['常点的餐品',r.meals[0]?.name||'尚无明细']].map(([a,b])=>`<div class="receipt-line"><span>${esc(a)}</span><span>${esc(b)}</span></div>`).join('');
- $('receiptSource').textContent=demo?'DEMO / 全部为虚构示例':'仅回顾本次可查询的记录';
- const bestPeriods=r.favoritePeriods.join('、');
- $('timeStatement').innerHTML=bestPeriods?`这些订单里，<strong>${esc(bestPeriods)}</strong>${r.favoritePeriods.length>1?'并列出现最多。':'出现最多。'}`:'这次没有取得可用于分析的下单时间。';
- const max=Math.max(...r.periods.map(p=>p.count),1);
- $('timeBars').innerHTML=r.periods.map(p=>`<div class="time-band"><span class="time-band-label">${esc(p.name)}</span><div class="bar-track" aria-hidden="true"><div class="bar-fill" style="transform:scaleX(${p.count/max})"></div></div><span class="time-band-count">${p.count} 笔</span></div>`).join('');
- $('timeBars').setAttribute('aria-label',r.periods.map(p=>`${p.name}${p.count}笔`).join('，'));
- $('timeFoot').textContent=`北京时间 · 有有效时间的 ${r.count-r.unknown.time} 笔订单。早餐 05–11 时，午间 11–14 时，下午 14–17 时，晚间 17–22 时，其余为深夜。`;
- $('storeSign').innerHTML=`${r.storeCount}<small>家门店，留下记录</small>`;
- $('storeStatement').textContent=r.favoriteStores.length>1?`有 ${r.favoriteStores.length} 家门店并列出现最多。`:(r.favoriteStores[0]?`「${r.favoriteStores[0]}」在这些记录里出现最多。`:'本次没有取得门店名称。');
- $('storeList').innerHTML=r.stores.length?r.stores.map(s=>`<li class="store-row"><span class="store-name">${esc(s.name)}</span><span class="store-count">${s.count} 笔订单</span></li>`).join(''):'<li class="store-row">门店信息待补充</li>';
- $('favoriteMeal').textContent=r.meals[0]?.name||'餐品信息待补充';
- const top=r.meals[0],tied=r.favoriteMeals.length;
- $('mealStatement').textContent=top?`出现在 ${top.orders} 笔订单里${tied>1?`，与另外 ${tied-1} 种餐品并列最多`:'，在这份回顾里出现最多'}。`:'本次没有取得可用于统计的餐品明细。';
- $('mealList').innerHTML=r.meals.map((m,i)=>{const rank=r.meals.findIndex(x=>x.orders===m.orders)+1;return `<li class="meal-row"><span class="meal-rank">${rank}</span><div><div class="meal-name">${esc(m.name)}</div><div class="meal-meta">合计 ${m.quantity} 份</div></div><span class="meal-orders">${m.orders} 笔订单</span></li>`}).join('');
- $('shareSource').textContent=`麦迹 · ${demo?'虚构示例回顾':'近期点餐回顾'}`;
- $('shareStats').innerHTML=[['记录',`${r.count} 笔已完成订单`],['饭点',bestPeriods||'时间未提供'],['常点',top?.name||'餐品未提供'],['时间',rangeText(r)]].map(([a,b])=>`<div class="share-stat"><span>${esc(a)}</span><b>${esc(b)}</b></div>`).join('');
- $('recordList').innerHTML=r.records.map(row=>`<div class="record-row"><strong>${esc(row.date)} ${esc(row.clock)} · ${esc(row.store)}</strong><p>${row.items.map(i=>`${esc(i.name)} × ${i.quantity}`).join('，')||'餐品明细未提供'}</p></div>`).join('');
- $('methodText').textContent=`${demo?'本页使用完全虚构的示例订单，不是本人消费记录。':'本页根据本人授权查询的订单在本机生成。'}本次获取 ${r.fetched} 笔，纳入 ${r.count} 笔已完成或已评价订单，排除 ${r.skipped} 笔其他状态订单；重复订单不重复统计。${r.unknown.time+r.unknown.store+r.unknown.meals?`其中 ${r.unknown.time} 笔缺少有效时间，${r.unknown.store} 笔缺少门店名，${r.unknown.meals} 笔缺少有效餐品明细。`:''}这些是本次可查询记录的统计，不代表完整全年。分享卡省略门店名称与精确地点。麦迹是非官方参赛项目。`;
- $('bottomScope').textContent=`${demo?'虚构示例':'真实记录'} · ${r.count} 笔已完成订单 · 非完整全年`;
- $('feedback').textContent='';document.querySelector('.records').open=false;navigation(0);window.scrollTo({top:0,behavior:'instant'});
+ $('story').hidden=empty;$('empty').hidden=!empty;$('bottomNav').hidden=empty;
+ $('menuButton').setAttribute('aria-label',empty?'打开页面菜单':'打开回顾目录');
+ if(empty){
+  $('emptyText').textContent=r.source==='empty-demo'?'这是没有历史订单时的页面效果。没有记录时，会留下一页空白，不会把示例自动填进你的回顾。':r.fetched?'本次取得 '+r.fetched+' 笔记录，其中没有可用于回顾的已完成订单。':'已连接麦当劳服务，本次没有返回历史订单。这里先留给未来的回忆。';
+  window.scrollTo({top:0,behavior:'instant'});return;
+ }
+ const top=r.meals[0],best=r.favoritePeriods.join('、'),max=Math.max(...r.periods.map(p=>p.count),1),total=r.periods.reduce((sum,p)=>sum+p.count,0);
+ const tied=r.favoriteMeals.length,periodMax=Math.max(...r.periods.map(p=>p.count),0);
+ $('introText').textContent=(demo?'这是一份虚构示例。':'')+'把最近 '+r.count+' 笔已完成订单，串成一段有饭点、有店名、有熟悉滋味的回忆。';
+ $('range').textContent=rangeText(r)+(demo?' · 示例记录范围':' · 本次记录范围');
+ animateNumber($('heroCount'),r.count);
+ $('receiptStores').textContent=r.storeCount+' 家';$('receiptMeal').textContent=top?.name||'餐品未提供';
+ $('receiptSource').textContent=demo?'DEMO / 虚构示例':'仅本次可查询记录';
+ $('favoritePeriod').textContent=best||'时间待补充';$('periodCount').textContent=pad(periodMax);
+ $('timeStatement').innerHTML=best?'这些订单里，<strong>'+esc(best)+'</strong>'+ (r.favoritePeriods.length>1?'并列出现最多。':'出现最多。')+'<br>点一下，看看那些饭点里的记录。':'这次没有取得可用于分析的下单时间。';
+ let offset=0;
+ $('periodRings').innerHTML=r.periods.map((p,i)=>{const size=total?p.count/total*100:0;const circle='<circle class="period-ring" cx="220" cy="220" r="165" pathLength="100" stroke="'+colors[i]+'" stroke-dasharray="'+size+' '+(100-size)+'" stroke-dashoffset="'+(-offset)+'"/>';offset+=size;return circle;}).join('');
+ $('timeRing').setAttribute('aria-label',r.periods.map(p=>p.name+p.count+'笔').join('，'));
+ $('timeBars').innerHTML=r.periods.map((p,i)=>'<button type="button" class="time-band" data-detail="period" data-index="'+i+'" '+(p.count?'':'disabled')+' aria-label="'+esc(p.name)+' '+p.count+'笔，查看相关记录"><span class="time-band-label">'+esc(p.name)+'</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="display:block;--amount:'+p.count/max+';--bar-color:'+colors[i]+'"></span></span><span class="time-band-count">'+p.count+' 笔</span><span class="row-arrow" aria-hidden="true">↗</span></button>').join('');
+ $('timeFoot').textContent='北京时间 · '+(r.count-r.unknown.time)+' 笔有有效时间。早餐 05–11 时，午间 11–14 时，下午 14–17 时，晚间 17–22 时，其余为深夜。圆环仅统计有效时间。';
+ const passAngles=[-16,4,18],passShifts=[-48,0,48];
+ $('storeStack').innerHTML='<span class="store-watermark" aria-hidden="true">'+pad(r.storeCount)+'</span>'+r.stores.slice(0,3).map((s,i)=>'<button type="button" class="store-pass" data-detail="store" data-index="'+i+'" style="--angle:'+passAngles[i]+'deg;--shift:'+passShifts[i]+'px;--layer:'+(i+1)+'" aria-label="'+esc(s.name)+' '+s.count+'笔，查看相关记录"><span class="pass-label"><span>MAI / PLACES</span><span>'+pad(i+1)+'</span></span><span class="pass-count">'+pad(s.count)+'</span><span class="pass-store">'+esc(s.name)+'</span><span class="pass-arrow" aria-hidden="true">↗</span></button>').join('')+'<p class="stack-note">'+r.storeCount+' 家出餐门店 · 这是频次回顾，不是位置地图</p>';
+ $('storeList').innerHTML=r.stores.length?r.stores.map((s,i)=>'<li class="store-row"><button type="button" data-detail="store" data-index="'+i+'"><span class="store-index">'+pad(i+1)+'</span><span class="store-name">'+esc(s.name)+'</span><span class="store-count">'+pad(s.count)+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>').join(''):'<li class="store-row"><p class="store-statement">本次没有取得门店名称。</p></li>';
+ $('storeStatement').textContent=(r.favoriteStores.length>1?'有 '+r.favoriteStores.length+' 家门店并列出现最多。':r.favoriteStores[0]?'「'+r.favoriteStores[0]+'」出现最多。':'')+'门店表示出餐门店，不代表实际用餐位置。';
+ $('favoriteMeal').textContent=top?.name||'餐品信息待补充';
+ $('mealStatement').textContent=top?'出现在 '+top.orders+' 笔订单里'+(tied>1?'，与另外 '+(tied-1)+' 种餐品并列最多。':'，在这份回顾里出现最多。')+'套餐按订单中的完整名称统计。':'本次没有取得可用于统计的餐品明细。';
+ $('tasteCount').textContent=pad(tied>1?tied:top?.orders||0);$('tasteLabel').textContent=tied>1?'种餐品并列最多':'笔订单中出现';
+ $('mealList').innerHTML=r.meals.map((m,i)=>{const rank=r.meals.findIndex(x=>x.orders===m.orders)+1;return '<li class="meal-row"><button type="button" data-detail="meal" data-index="'+i+'"><span class="meal-rank">'+pad(rank)+'</span><span><span class="meal-name">'+esc(m.name)+'</span><span class="meal-meta">合计 '+m.quantity+' 份</span></span><span class="meal-orders">'+m.orders+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>';}).join('');
+ $('shareSource').textContent='麦迹 / '+(demo?'虚构示例回顾':'近期点餐回顾');
+ $('shareCount').textContent=pad(r.count);
+ $('shareStats').innerHTML=[['饭点',best||'时间未提供'],['常点',top?.name||'餐品未提供'],['时间',rangeText(r)]].map(row=>'<span class="share-stat"><span>'+esc(row[0])+'</span><b>'+esc(row[1])+'</b></span>').join('');
+ $('feedback').classList.remove('visible');navigation(0);
+ window.scrollTo({top:0,behavior:'instant'});observeScenes();queueScroll();
 }
-$('modeButton').onclick=()=>{if(current.source==='live'||current.source==='empty-demo')render(bundle.demo);else if(bundle.initial.source==='live')render(bundle.initial);else render({...bundle.demo,source:'empty-demo',count:0,fetched:0});};
-$('showDemo').onclick=()=>render(bundle.demo);$('begin').onclick=()=>go(1);$('previous').onclick=()=>go(active-1);$('next').onclick=()=>go(active+1);$('print').onclick=()=>window.print();
-document.addEventListener('keydown',e=>{if($('story').hidden||e.target.closest('button,a,summary,input,textarea,select')||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==='ArrowRight'){e.preventDefault();go(active+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(active-1)}});
-function wrapText(ctx,text,x,y,maxWidth,lineHeight){let line='';for(const char of text){if(ctx.measureText(line+char).width>maxWidth&&line){ctx.fillText(line,x,y);line=char;y+=lineHeight}else line+=char}if(line)ctx.fillText(line,x,y);return y+lineHeight;}
-$('download').onclick=()=>{try{const r=current,demo=isDemo(r),canvas=document.createElement('canvas');canvas.width=900;canvas.height=1200;const c=canvas.getContext('2d');c.fillStyle='#7b1728';c.fillRect(0,0,900,1200);c.fillStyle='#f4d666';c.font='28px "Microsoft YaHei",sans-serif';c.fillText(`麦迹 / ${demo?'演示数据 · 虚构示例':'近期点餐回顾'}`,76,94);c.fillStyle='#f8f6f6';c.font='58px "STZhongsong","SimSun",serif';c.fillText('这一段日子，',76,220);c.fillText('是这样的滋味。',76,305);c.font='26px "Microsoft YaHei",sans-serif';const rows=[['记录',`${r.count} 笔已完成订单`],['饭点',r.favoritePeriods.join('、')||'时间未提供'],['常点',r.meals[0]?.name||'餐品未提供'],['时间',rangeText(r)]];let y=410;for(const [label,value] of rows){c.strokeStyle='#b26e78';c.beginPath();c.moveTo(76,y-26);c.lineTo(824,y-26);c.stroke();c.fillStyle='#f4d666';c.font='25px "Microsoft YaHei",sans-serif';c.fillText(label,76,y+18);c.fillStyle='#f8f6f6';c.font='30px "Microsoft YaHei",sans-serif';y=wrapText(c,value,190,y+18,620,44)+53;}c.fillStyle='#efcbd0';c.font='22px "Microsoft YaHei",sans-serif';c.fillText('仅覆盖本次可查询的记录，不代表完整全年。',76,1060);c.fillText('分享卡省略门店名与精确地点 · 非官方项目',76,1100);canvas.toBlob(blob=>{if(!blob){$('feedback').textContent='图片生成失败，请使用打印回顾。';return}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=demo?'麦迹-示例分享卡.png':'麦迹-我的分享卡.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('feedback').textContent=`分享卡已生成${demo?'，已保留演示标记':''}。`;},'image/png');}catch{$('feedback').textContent='图片生成失败，请使用打印回顾。';}};
+function recordMarkup(records){
+ return records.map(row=>'<article class="record-row"><span class="record-date">'+esc(row.date)+' '+esc(row.clock)+'</span><strong>'+esc(row.store)+'</strong><p>'+ (row.items.map(item=>esc(item.name)+' × '+item.quantity).join('，')||'餐品明细未提供')+'</p></article>').join('');
+}
+function methodText(){
+ const r=current;
+ return (isDemo(r)?'本页使用完全虚构的示例订单，不是本人消费记录。':'本页根据本人授权查询的订单在本机生成。')+'本次获取 '+r.fetched+' 笔，纳入 '+r.count+' 笔已完成或已评价订单，排除 '+r.skipped+' 笔其他状态订单；重复订单不重复统计。'+(r.unknown.time+r.unknown.store+r.unknown.meals?'其中 '+r.unknown.time+' 笔缺少有效时间，'+r.unknown.store+' 笔缺少门店名，'+r.unknown.meals+' 笔缺少有效餐品明细。':'')+'这些是本次可查询记录的统计，不代表完整全年。门店表示出餐门店，不代表实际用餐位置。餐品按订单顶层名称统计，套餐子项不重复拆算。分享卡省略门店名称与精确地点。麦迹是非官方参赛项目。';
+}
+function openModal(dialog,trigger){
+ dialog._trigger=trigger||document.activeElement;dialog._scrollX=scrollX;dialog._scrollY=scrollY;
+ if(dialog._trigger?.isConnected)dialog._trigger.focus({preventScroll:true});
+ dialog.classList.remove('closing');dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');
+}
+function closeModal(dialog,after){
+ if(!dialog.open||dialog.classList.contains('closing'))return;
+ function finish(){
+  dialog.close();dialog.classList.remove('closing');
+  if(!document.querySelector('dialog[open]'))document.body.classList.remove('dialog-open');
+  if(dialog._trigger?.isConnected)dialog._trigger.focus({preventScroll:true});
+  window.scrollTo({left:dialog._scrollX,top:dialog._scrollY,behavior:'instant'});updateScroll();
+  if(after)after();
+ }
+ if(motion.matches)finish();else{dialog.classList.add('closing');setTimeout(finish,180);}
+}
+document.querySelectorAll('dialog').forEach(dialog=>{
+ dialog.addEventListener('cancel',event=>{event.preventDefault();closeModal(dialog);});
+ dialog.addEventListener('keydown',event=>{
+  if(event.key!=='Tab')return;
+  const controls=[...dialog.querySelectorAll('button,a[href],input,textarea,select,[tabindex]:not([tabindex="-1"])')].filter(element=>!element.disabled&&element.getClientRects().length);
+  if(!controls.length){event.preventDefault();return;}
+  const first=controls[0],last=controls[controls.length-1],known=controls.includes(document.activeElement);
+  if(event.shiftKey&&(document.activeElement===first||!known)){event.preventDefault();last.focus();}
+  else if(!event.shiftKey&&(document.activeElement===last||!known)){event.preventDefault();first.focus();}
+ });
+ dialog.addEventListener('click',event=>{
+  if(event.target.closest('[data-close]')){closeModal(dialog);return;}
+  if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)closeModal(dialog);}
+ });
+});
+function showDetail(kind,index,trigger){
+ const r=current;let title='',lead='',html='',kicker='YOUR LITTLE MOMENTS',records=[];
+ if(kind==='receipt'){
+  title='每个平常的饭点，都算数。';lead=rangeText(r)+(isDemo(r)?' · 全部为虚构示例':' · 仅本次可查询的记录');
+  html='<div class="dialog-metrics"><div><strong>'+pad(r.count)+'</strong><span>笔已完成订单</span></div><div><strong>'+pad(r.storeCount)+'</strong><span>家出餐门店</span></div><div><strong>'+pad(r.favoriteMeals.length)+'</strong><span>种并列常点餐品</span></div></div><p class="dialog-note">饭点：'+esc(r.favoritePeriods.join('、')||'时间未提供')+'<br>常点：'+esc(r.favoriteMeals.join('、')||'餐品未提供')+'<br><br>这是一张本次记录的小票，不代表完整全年。继续向下翻，看看这些记录组成的回忆。</p>';
+ }else if(kind==='period'){
+  const item=r.periods[index];if(!item)return;
+  title=item.name+'里的那些饭点';records=r.records.filter(row=>periodFor(row)===item.name);
+  lead=item.count+' 笔订单发生在这个时段，以下为本次记录。时间统一为北京时间。';kicker='THE RHYTHM OF YOUR DAYS';html=recordMarkup(records);
+ }else if(kind==='store'){
+  const item=r.stores[index];if(!item)return;
+  title=item.name;records=r.records.filter(row=>row.store===item.name);
+  lead=item.count+' 笔订单由这家门店出餐。出餐门店不代表你的实际用餐位置。';kicker='SOME PLACES FEEL FAMILIAR';html=recordMarkup(records);
+ }else if(kind==='meal'){
+  const item=r.meals[index];if(!item)return;
+  title=item.name;records=r.records.filter(row=>row.items.some(product=>product.name===item.name));
+  lead='出现在 '+item.orders+' 笔订单，合计 '+item.quantity+' 份。笔数和份数分别统计，套餐不重复拆算。';kicker='THE TASTE YOU COME BACK TO';html=recordMarkup(records);
+ }else if(kind==='records'){
+  title='回顾里的每一笔。';lead=r.count+' 笔已完成或已评价订单 · '+rangeText(r);html=recordMarkup(r.records);kicker='LITTLE MOMENTS, ALL HERE';
+ }else if(kind==='method'){
+  title='回忆，也要有据可查。';lead='数据范围与统计说明';html='<p class="dialog-note">'+esc(methodText())+'</p>';kicker='ABOUT THIS RECAP';
+ }else if(kind==='chapters'){
+  title=$('story').hidden?'先看一份示例。':'把回忆，翻到这一页。';lead='点击章节前往，也可以直接向下滚动。';kicker='EXPLORE YOUR RECAP';
+  html=$('story').hidden?'<button type="button" class="chapter-choice" data-menu-demo><b>查看虚构示例</b><span aria-hidden="true">↗</span></button>':titles.map((name,i)=>'<button type="button" class="chapter-choice" data-chapter="'+i+'"><span><small>'+pad(i)+'</small><b>'+esc(name)+'</b></span><span aria-hidden="true">↗</span></button>').join('');
+  html+='<button type="button" class="chapter-choice" data-menu-mode><span><small>↔</small><b>'+esc($('modeButton').textContent)+'</b></span><span aria-hidden="true">↗</span></button>';
+ }
+ $('detailTitle').textContent=title;$('detailLead').textContent=lead;$('detailKicker').textContent=kicker;$('detailSource').textContent=sourceLabel();$('detailContent').innerHTML=html;openModal($('detailDialog'),trigger);
+}
+document.addEventListener('click',event=>{
+ const detail=event.target.closest('[data-detail]');if(detail){showDetail(detail.dataset.detail,Number(detail.dataset.index||0),detail);return;}
+ const chapter=event.target.closest('[data-chapter]');if(chapter){closeModal($('detailDialog'),()=>go(Number(chapter.dataset.chapter)));return;}
+ if(event.target.closest('[data-menu-mode]')){closeModal($('detailDialog'),toggleMode);return;}
+ if(event.target.closest('[data-menu-demo]'))closeModal($('detailDialog'),()=>render(bundle.demo));
+});
+function toggleMode(){
+ if(current.source==='live'||current.source==='empty-demo')render(bundle.demo);
+ else if(bundle.initial.source==='live')render(bundle.initial);
+ else render({...bundle.demo,source:'empty-demo',count:0,fetched:0});
+}
+$('modeButton').onclick=toggleMode;$('showDemo').onclick=()=>render(bundle.demo);$('menuButton').onclick=()=>showDetail('chapters',0,$('menuButton'));
+$('begin').onclick=()=>go(1);$('scrollBegin').onclick=()=>go(1);$('previous').onclick=()=>go(active-1);$('next').onclick=()=>go(active+1);$('print').onclick=()=>window.print();$('openRecords').onclick=()=>showDetail('records',0,$('openRecords'));
+document.querySelector('.wordmark').onclick=event=>{event.preventDefault();if($('story').hidden)window.scrollTo({top:0,behavior:'smooth'});else go(0);};
+document.addEventListener('keydown',event=>{
+ if($('story').hidden||document.querySelector('dialog[open]')||event.target.closest('button,a,input,textarea,select')||event.altKey||event.ctrlKey||event.metaKey)return;
+ if(event.key==='ArrowRight'){event.preventDefault();go(active+1);}if(event.key==='ArrowLeft'){event.preventDefault();go(active-1);}
+});
+function wrapText(context,text,x,y,maxWidth,lineHeight){
+ let line='';for(const char of text){if(context.measureText(line+char).width>maxWidth&&line){context.fillText(line,x,y);line=char;y+=lineHeight;}else line+=char;}
+ if(line)context.fillText(line,x,y);return y+lineHeight;
+}
+function createShareCard(){
+ if(shareCanvas)return shareCanvas;
+ const r=current,canvas=document.createElement('canvas');canvas.width=900;canvas.height=1200;const context=canvas.getContext('2d');
+ if(!context)throw new Error('Canvas unavailable');
+ context.fillStyle='#f5f1e9';context.fillRect(0,0,900,1200);
+ const glow=context.createRadialGradient(850,50,0,850,50,700);glow.addColorStop(0,'#f0a46a');glow.addColorStop(.55,'#f4d4ac');glow.addColorStop(1,'#f5f1e9');context.fillStyle=glow;context.fillRect(0,0,900,900);
+ context.fillStyle='#29251f';context.font='bold 34px "Microsoft YaHei",sans-serif';context.fillText('麦迹',66,85);context.font='18px "Microsoft YaHei",sans-serif';context.fillText(isDemo(r)?'虚构示例回顾 · 非本人记录':'近期点餐回顾 · 本机生成',66,123);
+ context.font='bold 64px "Microsoft YaHei",sans-serif';context.fillText('生活，自有滋味。',66,237);
+ context.fillStyle='#b93522';context.font='250px Arial,sans-serif';context.fillText(pad(r.count),52,505);
+ context.fillStyle='#29251f';context.font='31px "Microsoft YaHei",sans-serif';context.fillText('次好好吃饭。',66,568);
+ const top=r.meals[0],favorite=top?top.name+(r.favoriteMeals.length>1?'（等 '+r.favoriteMeals.length+' 种并列）':''):'餐品未提供';
+ const rows=[['饭点',r.favoritePeriods.join('、')||'时间未提供'],['常点',favorite],['时间',rangeText(r)]];
+ let y=654;
+ for(const row of rows){
+  context.strokeStyle='#cbbca8';context.beginPath();context.moveTo(66,y-27);context.lineTo(834,y-27);context.stroke();
+  context.fillStyle='#756b5d';context.font='21px "Microsoft YaHei",sans-serif';context.fillText(row[0],66,y+12);
+  context.fillStyle='#29251f';context.font='26px "Microsoft YaHei",sans-serif';y=wrapText(context,row[1],164,y+12,665,37)+35;
+ }
+ context.fillStyle='#756b5d';context.font='18px "Microsoft YaHei",sans-serif';context.fillText('仅覆盖本次记录，不代表完整全年。',66,1090);context.fillText('分享卡不含门店与精确地点 · 非麦当劳官方产品',66,1127);
+ context.fillStyle='#b93522';context.font='16px Arial,sans-serif';context.fillText('MAI RECAP / A TASTE OF EVERYDAY LIFE',66,1170);
+ shareCanvas=canvas;return canvas;
+}
+function toast(message){clearTimeout(toastTimer);$('feedback').textContent=message;$('feedback').classList.add('visible');toastTimer=setTimeout(()=>$('feedback').classList.remove('visible'),3600);}
+function previewShare(event){
+ try{$('sharePreview').src=createShareCard().toDataURL('image/png');$('previewSource').textContent=sourceLabel();$('shareFeedback').textContent='';openModal($('shareDialog'),event?.currentTarget);}
+ catch{toast('分享卡暂时无法生成，可以先使用“打印回顾”。');}
+}
+$('openShare').onclick=previewShare;$('shareSheet').onclick=previewShare;
+$('download').onclick=()=>{
+ try{createShareCard().toBlob(blob=>{
+  if(!blob){$('shareFeedback').textContent='图片生成失败，可以使用打印回顾。';return;}
+  const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=isDemo(current)?'麦迹-示例分享卡.png':'麦迹-我的分享卡.png';link.click();setTimeout(()=>URL.revokeObjectURL(url),1500);
+  $('shareFeedback').textContent='分享卡已生成'+(isDemo(current)?'，已保留虚构示例标记。':'。');toast('分享卡已生成，快把这段回忆收好。');
+ },'image/png');}catch{$('shareFeedback').textContent='图片生成失败，可以使用打印回顾。';}
+};
+let pointerFrame=0,pointerX=0,pointerY=0;
+$('heroVisual').addEventListener('pointermove',event=>{
+ if(motion.matches||!finePointer.matches)return;
+ const box=$('heroVisual').getBoundingClientRect();pointerX=(event.clientX-box.left)/box.width-.5;pointerY=(event.clientY-box.top)/box.height-.5;
+ if(!pointerFrame)pointerFrame=requestAnimationFrame(()=>{$('heroVisual').style.setProperty('--rx',(-pointerY*9)+'deg');$('heroVisual').style.setProperty('--ry',(pointerX*12)+'deg');pointerFrame=0;});
+});
+$('heroVisual').addEventListener('pointerleave',()=>{$('heroVisual').style.setProperty('--rx','0deg');$('heroVisual').style.setProperty('--ry','0deg');});
+document.addEventListener('visibilitychange',()=>document.body.classList.toggle('page-paused',document.hidden));
 render(bundle.initial);
 </script>
 </body>

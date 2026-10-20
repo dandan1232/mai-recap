@@ -134,7 +134,7 @@ def render(report, target):
     template = (ROOT / "template.html").read_text(encoding="utf-8")
     html = template.replace("__RECAP_DATA__", embedded)
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(html, encoding="utf-8")
+    target.write_text(html, encoding="utf-8", newline="\n")
 
 
 def main():
