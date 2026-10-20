@@ -211,7 +211,7 @@ body.page-paused *{animation-play-state:paused!important}
    </div>
   </div>
  </section>
- <footer class="method"><div class="method-brand"><b>麦迹</b><p>把日常，再回味一遍。 / MAI RECAP</p></div><div class="method-copy"><p>这些是本次可查询记录里的小小切片，不代表完整全年。<br>门店表示出餐门店，不代表实际用餐位置。</p><button type="button" class="text-button" data-detail="method">数据范围与统计说明 ↗</button></div></footer>
+ <footer class="method"><div class="method-brand"><b>麦迹</b><p>把日常，再回味一遍。 / MAI RECAP</p></div><div class="method-copy"><p>真实回顾接入麦当劳官方 MCP；演示使用虚构订单。<br>仅覆盖本次可查询记录，不代表完整全年。<br>门店表示出餐门店，不代表实际用餐位置。</p><button type="button" class="text-button" data-detail="method">数据来源与接入说明 ↗</button></div></footer>
 </main>
 <main class="empty-page" id="empty" hidden>
  <div class="empty-content"><span class="empty-stamp" aria-hidden="true">待续</span><p class="eyebrow">下一段回忆，等你开启</p><h1>故事还没开始，<br>先留一页空白。</h1><p id="emptyText"></p><button type="button" class="primary" id="showDemo">先看看示例回顾 <span class="button-arrow" aria-hidden="true">↗</span></button><p class="small-note">示例使用虚构订单，页面会明确标注。<br>有记录后，可重新运行本地工具生成自己的回顾。</p></div>
@@ -443,7 +443,7 @@ function showDetail(kind,index,trigger){
  }else if(kind==='records'){
   title='回顾里的每一笔。';lead=r.count+' 笔已完成或已评价订单 · '+rangeText(r);html=recordMarkup(r.records);kicker='LITTLE MOMENTS, ALL HERE';
  }else if(kind==='method'){
-  title='回忆，也要有据可查。';lead='数据范围与统计说明';html='<p class="dialog-note">'+esc(methodText())+'</p>';kicker='ABOUT THIS RECAP';
+  title='回忆，也要有据可查。';lead='数据来源与接入说明';html='<p class="dialog-note"><strong>使用哪个服务</strong><br>真实回顾通过<a href="https://open.mcd.cn/mcp" target="_blank" rel="noopener noreferrer">麦当劳官方 MCP（新标签页）</a>连接订单服务，只调用 order-list 查询本人授权账号的近期订单。演示使用虚构订单，不查询真实账号。</p><p class="dialog-note" style="margin-top:18px"><strong>数据保存在哪里</strong><br>真实回顾在本机生成，默认保存为项目目录中的“麦迹-我的回顾.html”。凭证和原始响应不写入文件，项目网站不接收订单。分享卡以 PNG 图片下载，位置由浏览器的下载设置决定。</p><p class="dialog-note" style="margin-top:18px"><strong>统计范围</strong><br>'+esc(methodText())+'</p>';kicker='ABOUT THIS RECAP';
  }else if(kind==='chapters'){
   title=$('story').hidden?'先看一份示例。':'把回忆，翻到这一页。';lead='点击章节前往，也可以直接向下滚动。';kicker='EXPLORE YOUR RECAP';
   html=$('story').hidden?'<button type="button" class="chapter-choice" data-menu-demo><b>查看虚构示例</b><span aria-hidden="true">↗</span></button>':titles.map((name,i)=>'<button type="button" class="chapter-choice" data-chapter="'+i+'"><span><small>'+pad(i)+'</small><b>'+esc(name)+'</b></span><span aria-hidden="true">↗</span></button>').join('');
