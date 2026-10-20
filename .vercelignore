@@ -1,6 +1,7 @@
-# Upload only the public demo and its build files.
+# Upload only the public demo, read-only API, and build files.
 /*
 !vercel.json
 !.vercelignore
 !麦迹-演示.html
 !scripts
+!api

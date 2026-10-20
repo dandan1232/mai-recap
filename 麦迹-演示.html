@@ -100,6 +100,15 @@ dialog[open]{animation:dialogIn .45s var(--ease)}dialog.closing{animation:dialog
 .chapter-choice{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;text-align:left;padding:22px 0;border-top:1px solid var(--line);background:none;transition:color .2s,transform .3s var(--ease)}.chapter-choice:first-child{border:0}.chapter-choice:hover{color:var(--red);transform:translateX(5px)}.chapter-choice small{font:11px/1 var(--number);color:var(--muted);margin-right:20px}.chapter-choice b{font-size:23px;font-weight:500;letter-spacing:-.04em}
 .share-dialog{width:480px}.share-dialog .dialog-body{padding:0 25px 25px}.share-dialog h2{font-size:20px}.share-preview{width:100%;height:auto;max-height:55svh;object-fit:contain;display:block;margin:15px 0 21px}.share-dialog-actions{display:flex;align-items:center;gap:15px;justify-content:space-between}.share-dialog-actions p{max-width:14em;font-size:10px;color:var(--muted);line-height:1.8}.share-dialog .primary{min-height:48px;padding-left:21px;font-size:12px;gap:18px}.share-dialog .button-arrow{width:32px;height:32px;font-size:21px}
 .toast{position:fixed;left:50%;bottom:93px;z-index:100;transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .25s;background:var(--ink);color:var(--paper);font-size:12px;line-height:1.8;max-width:calc(100% - 40px);padding:13px 22px;border-radius:12px;text-align:center;box-shadow:0 10px 40px #29251f20}.toast.visible{transform:translate(-50%,0);opacity:1}
+.account-button{background:var(--ink);color:var(--paper);border-radius:100px;padding:10px 19px;min-height:44px;font-size:12px;white-space:nowrap;transition:background .2s}.account-button:hover{background:var(--red)}
+.personal-entry{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:15px}.personal-entry button{font-size:12px;color:var(--red)}
+.account-page{max-width:1180px;min-height:100svh;margin:auto;padding:145px 44px 90px}.account-heading{display:flex;align-items:end;justify-content:space-between;gap:24px}.account-heading h1{font-size:clamp(2rem,4vw,3.7rem);letter-spacing:-.04em}.account-heading p{font-size:14px;margin-top:18px;color:#65594b;max-width:40em}.account-nav{display:flex;gap:30px;border-bottom:1px solid var(--line);margin:36px 0}.account-nav button{background:none;padding:14px 0;font-size:14px;border-bottom:2px solid transparent;margin-bottom:-1px;min-height:48px}.account-nav button[aria-current="page"]{color:var(--red);border-color:var(--red);font-weight:700}.account-panel h2{font-size:25px;letter-spacing:-.03em;line-height:1.5}.account-panel h3{font-size:17px;letter-spacing:-.02em;line-height:1.6}
+.connect-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:75px;align-items:start}.connect-copy{font-size:14px;color:#65594b;margin:12px 0 26px;max-width:38em}.token-label{display:block;font-size:13px;font-weight:700;margin-bottom:9px}.token-field{display:flex;align-items:center;border:1px solid #a99a86;border-radius:12px;background:#fffbf4;overflow:hidden}.token-field:focus-within{outline:3px solid var(--orange);outline-offset:3px}.token-field input{width:100%;min-width:0;border:0;background:none;color:var(--ink);padding:17px;font-size:16px;outline:none}.token-field input::placeholder{color:#75604e}.token-field button{flex-shrink:0;min-height:48px;padding:0 16px;font-size:12px;background:none}.token-hint{font-size:12px;color:#65594b;margin-top:12px}.connect-actions{display:flex;align-items:center;flex-wrap:wrap;gap:22px;margin-top:25px}.account-page .primary{min-height:54px;font-size:14px}.connect-feedback{font-size:13px;line-height:1.8;margin-top:19px;min-height:24px}.connect-feedback[data-error="true"]{color:#a3291b}.connect-foot{font-size:12px;color:#65594b;border-top:1px solid var(--line);padding-top:19px;margin-top:24px;line-height:1.9}.connect-note{background:#f1bd6b;padding:30px;border-radius:14px;position:relative;margin-top:5px}.connect-note h3{font-size:23px;margin-bottom:17px}.connect-note p{font-size:14px;color:#634423;line-height:1.9}.connect-note .text-button{font-size:13px;margin-top:14px;color:var(--ink)}.connect-note .note-stamp{display:inline-flex;margin-bottom:22px;border:1px solid #8d2c1a;border-radius:50%;width:65px;height:65px;align-items:center;justify-content:center;transform:rotate(-12deg);color:#8d2c1a;font-size:15px}
+.history-tools{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-bottom:23px}.history-summary{font-size:13px;color:#65594b;margin-top:9px}.history-search{display:block;flex-shrink:0;font-size:12px;color:#65594b}.history-search input{display:block;border:1px solid #a99a86;background:#fffbf4;border-radius:9px;min-height:45px;padding:10px 13px;font-size:14px;width:250px;color:var(--ink);margin-top:6px}.history-search input::placeholder{color:#75604e}.history-search input:focus-visible{outline:3px solid var(--orange);outline-offset:3px}.history-list{border-top:1px solid var(--line)}.history-row{display:grid;grid-template-columns:150px 1fr auto;gap:25px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}.history-date{font-size:14px;color:var(--red)}.history-date small{display:block;color:#65594b;font-size:12px;margin-top:5px}.history-row h3{font-size:16px;overflow-wrap:anywhere}.history-row p{font-size:13px;color:#65594b;margin-top:7px;overflow-wrap:anywhere}.order-status{font-size:11px;border-radius:100px;padding:5px 12px;background:var(--paper-deep);white-space:nowrap;color:#65594b}.order-status.completed{background:#e3e7d2;color:#42502e}.history-empty{padding:45px 0;max-width:40em;color:#65594b;font-size:14px}.history-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:28px}.account-note{font-size:12px;color:#65594b;line-height:1.9;margin-top:24px;max-width:65em}
+.tutorial-intro{max-width:46em;font-size:14px;color:#65594b;margin:10px 0 25px}.tutorial-steps{counter-reset:guide;list-style:none;margin:0;padding:0;max-width:860px}.tutorial-steps>li{counter-increment:guide;position:relative;padding:26px 0 28px 55px;border-top:1px solid var(--line)}.tutorial-steps>li:before{content:counter(guide);position:absolute;left:0;top:25px;display:grid;place-items:center;width:32px;height:32px;background:var(--paper-deep);border-radius:50%;font-size:14px;color:var(--red)}.tutorial-steps p{font-size:14px;color:#65594b;margin-top:10px;max-width:48em;overflow-wrap:anywhere}.tutorial-steps a{color:var(--red);text-underline-offset:4px}.tutorial-steps .text-button{font-size:12px;color:var(--red)}.tutorial-steps pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--night);color:#f9dcc0;padding:21px;border-radius:12px;font:12px/1.9 Consolas,monospace;margin:17px 0 0}.tutorial-steps details{margin-top:18px}.tutorial-steps summary{font-size:14px;cursor:pointer;padding:8px 0}.copy-line{display:flex;justify-content:flex-end;gap:20px;align-items:center;flex-wrap:wrap}.copy-status{font-size:12px;color:#65594b}.tutorial-faq{margin-top:25px;max-width:860px;border-top:1px solid var(--line);padding-top:25px}.tutorial-faq p{font-size:13px;color:#65594b;margin-top:12px;line-height:1.9}
+@media(max-width:760px){.account-page{padding:115px 25px 55px}.account-heading{align-items:start;flex-direction:column;gap:10px}.account-heading h1{font-size:32px}.account-heading h1 span{display:block}.account-heading p{font-size:13px;margin-top:12px}.account-nav{margin:22px 0 27px;gap:26px}.account-nav button{font-size:13px}.account-panel h2{font-size:23px}.connect-layout{grid-template-columns:1fr;gap:32px}.connect-copy{font-size:13px}.connect-note{padding:25px}.connect-note .note-stamp{width:52px;height:52px;margin-bottom:15px}.connect-note h3{font-size:21px}.connect-note p{font-size:13px}.connect-actions{gap:16px}.history-tools{align-items:stretch;flex-direction:column;gap:15px}.history-search input{width:100%}.history-row{grid-template-columns:1fr auto;gap:12px;padding:21px 0}.history-date{grid-column:1/-1;display:flex;gap:12px;align-items:center;font-size:12px}.history-date small{display:inline;margin:0}.history-row h3{font-size:14px}.history-row p{font-size:12px}.order-status{font-size:10px;padding:4px 10px}.tutorial-steps>li{padding-left:43px}.tutorial-steps pre{font-size:11px;padding:15px}.personal-entry{gap:8px 20px}.personal-entry button{font-size:11px}.account-button{padding:10px 14px;font-size:11px}.account-heading>.text-button{font-size:12px}}
+@media(max-width:520px){.topbar .source-tag{display:none}.topbar-right{gap:9px}.account-button{padding:10px 12px}}
+@media print{.account-page,.personal-entry{display:none!important}}
 .ticket-number,.dial-count,.pass-count,.store-count,.meal-orders,.share-big,.taste-stamp strong{font-variant-numeric:tabular-nums}
 .menu-button:active,.bottom-actions button:not(:disabled):active,.close-dialog:active{scale:.93}
 .motion-ready .hero .title-line>span{animation:titleIn 1s var(--ease) both}.motion-ready .hero .title-line:nth-child(2)>span{animation-delay:.12s}
@@ -139,8 +148,40 @@ body.page-paused *{animation-play-state:paused!important}
 <header class="topbar">
  <a class="wordmark" href="#opening" aria-label="麦迹，回到开场"><span class="brand-mark" aria-hidden="true"></span><span><b>麦迹</b><span class="brand-caption" style="display:block">MAI RECAP</span></span></a>
  <p class="top-caption">每个平常的饭点，都算数。</p>
- <div class="topbar-right"><span id="sourceTag" class="source-tag"></span><button id="modeButton" class="text-button" type="button"></button><a class="github-link" href="https://github.com/dandan1232/mai-recap" target="_blank" rel="noopener noreferrer" aria-label="在新标签页打开麦迹 GitHub 仓库" title="查看 GitHub 源码（新标签页）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.558 21.922c.563.104.77-.244.77-.542 0-.267-.01-.975-.015-1.914-3.13.68-3.79-1.508-3.79-1.508-.512-1.3-1.25-1.646-1.25-1.646-1.022-.7.078-.686.078-.686 1.13.08 1.724 1.16 1.724 1.16 1.005 1.722 2.637 1.225 3.28.937.102-.728.393-1.225.715-1.507-2.5-.285-5.13-1.25-5.13-5.562 0-1.228.44-2.232 1.16-3.018-.117-.285-.503-1.429.11-2.978 0 0 .945-.303 3.095 1.153a10.8 10.8 0 0 1 5.632 0c2.148-1.456 3.091-1.153 3.091-1.153.615 1.55.23 2.693.113 2.978.722.786 1.158 1.79 1.158 3.018 0 4.324-2.634 5.274-5.144 5.553.405.35.766 1.042.766 2.1 0 1.518-.014 2.743-.014 3.116 0 .3.203.65.774.54A11.252 11.252 0 0 0 12 .75Z"/></svg><span aria-hidden="true">GitHub ↗</span></a><button id="menuButton" class="menu-button" type="button" aria-label="打开回顾目录"><span class="menu-lines" aria-hidden="true"></span></button></div>
+ <div class="topbar-right"><button type="button" class="account-button" data-account="orders">我的订单 ↗</button><span id="sourceTag" class="source-tag"></span><button id="modeButton" class="text-button" type="button"></button><a class="github-link" href="https://github.com/dandan1232/mai-recap" target="_blank" rel="noopener noreferrer" aria-label="在新标签页打开麦迹 GitHub 仓库" title="查看 GitHub 源码（新标签页）"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .75a11.25 11.25 0 0 0-3.558 21.922c.563.104.77-.244.77-.542 0-.267-.01-.975-.015-1.914-3.13.68-3.79-1.508-3.79-1.508-.512-1.3-1.25-1.646-1.25-1.646-1.022-.7.078-.686.078-.686 1.13.08 1.724 1.16 1.724 1.16 1.005 1.722 2.637 1.225 3.28.937.102-.728.393-1.225.715-1.507-2.5-.285-5.13-1.25-5.13-5.562 0-1.228.44-2.232 1.16-3.018-.117-.285-.503-1.429.11-2.978 0 0 .945-.303 3.095 1.153a10.8 10.8 0 0 1 5.632 0c2.148-1.456 3.091-1.153 3.091-1.153.615 1.55.23 2.693.113 2.978.722.786 1.158 1.79 1.158 3.018 0 4.324-2.634 5.274-5.144 5.553.405.35.766 1.042.766 2.1 0 1.518-.014 2.743-.014 3.116 0 .3.203.65.774.54A11.252 11.252 0 0 0 12 .75Z"/></svg><span aria-hidden="true">GitHub ↗</span></a><button id="menuButton" class="menu-button" type="button" aria-label="打开回顾目录"><span class="menu-lines" aria-hidden="true"></span></button></div>
 </header>
+<main id="account" class="account-page" hidden>
+ <div class="account-heading"><div><h1><span>把你的那一份，</span><span>也收好。</span></h1><p>连接自己的麦当劳账号，看看近期订单，再把它们翻成一段回忆。</p></div><button type="button" class="text-button" id="backToStory">返回回顾 ↗</button></div>
+ <nav class="account-nav" aria-label="我的订单与使用教程"><button type="button" data-account="connect" aria-current="page">连接账号</button><button type="button" data-account="history">历史订单</button><button type="button" data-account="tutorial">MCP 教程</button></nav>
+ <section id="connectPanel" class="account-panel" aria-labelledby="connectTitle">
+  <div class="connect-layout"><div><h2 id="connectTitle" tabindex="-1">从你自己的订单开始。</h2><p class="connect-copy">填入麦当劳官方的连接凭证，获取这个账号近期可查询的订单。凭证相当于一把临时钥匙，官方称它为 MCP Token。</p>
+   <form id="connectForm"><label class="token-label" for="mcpToken">MCP 连接凭证 / Token</label><div class="token-field"><input id="mcpToken" name="mcp-token" type="password" required maxlength="4096" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="粘贴你的 MCP Token" aria-describedby="tokenHint connectFeedback"><button type="button" id="toggleToken" aria-pressed="false" aria-label="显示连接凭证">显示</button></div><p id="tokenHint" class="token-hint">在下方教程中申请。凭证只用于本次查询，提交后输入框会清空。</p><div class="connect-actions"><button type="submit" class="primary" id="connectSubmit">获取我的订单 <span class="button-arrow" aria-hidden="true">↗</span></button><button type="button" class="text-button" id="cancelQuery" hidden>取消查询</button><button type="button" class="text-button" data-account="tutorial">还没有凭证？查看教程 ↗</button></div><p class="connect-feedback" id="connectFeedback" role="status" aria-live="polite"></p></form>
+   <p class="connect-foot">查询通过麦迹的服务器临时转发到麦当劳官方服务。凭证与订单不写入数据库或日志；本次订单只留在当前页面，刷新或关闭后清除。完整回顾可能包含门店和日期。</p>
+  </div><aside class="connect-note"><span class="note-stamp" aria-hidden="true">我的<br>那一份</span><h3>先看看每一餐，<br>再回味这段日子。</h3><p>获取订单后，可以查看时间、出餐门店和餐品。已完成或已评价的订单，会组成你的五页回顾和分享卡。</p><p style="margin-top:14px">官方接口提供近期记录，可查询范围以实际返回为准。</p><button type="button" class="text-button" id="accountDemo">先看看虚构示例 ↗</button></aside></div>
+ </section>
+ <section id="historyPanel" class="account-panel" aria-labelledby="historyTitle" hidden>
+  <div class="history-tools"><div><h2 id="historyTitle" tabindex="-1">这段日子的每一餐。</h2><p id="historySummary" class="history-summary"></p></div><label class="history-search">查找本次订单<input id="historySearch" type="search" placeholder="搜索日期、门店或餐品" autocomplete="off"></label></div>
+  <div id="historyList" class="history-list" aria-live="polite"></div><div class="history-actions"><button type="button" class="primary" id="viewMyRecap" hidden>翻开我的回顾 <span class="button-arrow" aria-hidden="true">↗</span></button><button type="button" class="text-button" data-account="connect" id="reconnect">连接账号，获取订单 ↗</button><button type="button" class="text-button" id="clearOrders" hidden>清除本次记录</button></div><p class="account-note">这里只展示本次查询返回的近期记录，不代表完整全年。取消、待支付等其他状态的订单可查看，但不纳入回顾。分享卡省略门店、订单号、手机号和地址。</p>
+ </section>
+ <section id="tutorialPanel" class="account-panel" aria-labelledby="tutorialTitle" hidden>
+  <h2 id="tutorialTitle" tabindex="-1">接上自己的那段回忆。</h2><p class="tutorial-intro">MCP 是让工具读取账号数据的一种连接方式。你可以直接在麦迹获取订单，也可以在支持 MCP 的 AI 助手里调用。</p>
+  <ol class="tutorial-steps"><li><h3>在官方平台申请凭证</h3><p>打开<a href="https://open.mcd.cn/mcp" target="_blank" rel="noopener noreferrer">麦当劳官方 MCP 平台 ↗</a>，使用手机号登录，进入“控制台”，按提示激活并同意服务协议，再复制 MCP Token。这个凭证代表你的账号，请自己保管。</p></li>
+   <li><h3>回到麦迹，获取订单</h3><p>在“连接账号”里粘贴凭证，点击“获取我的订单”。查询完成会进入历史订单；再点击“翻开我的回顾”，就能阅读回顾和保存分享卡。</p><button type="button" class="text-button" data-account="connect">去连接我的账号 ↗</button></li>
+   <li><h3>想在 AI 助手里调用？</h3><p>在支持 Streamable HTTP（可持续接收响应的网页连接方式）的 MCP 客户端中，添加服务地址 <strong>https://mcp.mcd.cn</strong>，并在认证设置中填入 <strong>Authorization: Bearer 你的凭证</strong>。不同客户端的字段名称可能不同，以各自说明为准。</p><details><summary>展开通用配置示例</summary><p>这是占位符示例。只在你自己的 MCP 客户端里替换 YOUR_MCP_TOKEN，不要把真实凭证发到聊天里。</p><pre id="mcpConfig">{
+  "mcpServers": {
+    "mcd-mcp": {
+      "type": "streamablehttp",
+      "url": "https://mcp.mcd.cn",
+      "headers": {
+        "Authorization": "Bearer YOUR_MCP_TOKEN"
+      }
+    }
+  }
+}</pre><div class="copy-line"><span class="copy-status" id="configCopyStatus" role="status"></span><button type="button" class="text-button" data-copy="mcpConfig" data-copy-status="configCopyStatus">复制配置</button></div></details>
+   <p>连接后，可使用下面这段话查询。调用的工具是 <strong>order-list</strong>，参数为 <strong>{}</strong>。</p><pre id="mcpPrompt">请调用麦当劳 MCP 的 order-list 工具，参数使用 {}，查询我近期的到店与外送历史订单。整理每笔订单的下单时间、门店、餐品和状态，明确说明本次可查询范围。</pre><div class="copy-line"><span class="copy-status" id="promptCopyStatus" role="status"></span><button type="button" class="text-button" data-copy="mcpPrompt" data-copy-status="promptCopyStatus">复制查询提示词</button></div><p>接入步骤与工具说明来自<a href="https://github.com/M-China/mcd-mcp-server" target="_blank" rel="noopener noreferrer">麦当劳官方 MCP 文档 ↗</a>，核对日期：2026-10-20。</p></li>
+  </ol><div class="tutorial-faq"><h3>遇到这些情况时</h3><p><strong>凭证无效或过期：</strong>回到官方平台检查凭证，再重新查询。<br><strong>查询太频繁：</strong>稍等一分钟，再试一次。<br><strong>没有订单：</strong>保留空白结果，不会自动用示例代替。<br><strong>只返回少量记录：</strong>接口提供近期订单，本页不能取得接口没有返回的更早记录。</p><p>下载项目后，也可以在本机运行 <code>python recap.py --live</code>，按提示隐藏输入凭证，生成可离线打开的个人回顾。</p></div>
+ </section>
+</main>
 <main id="story">
  <section class="slide hero is-active" id="opening" aria-labelledby="introTitle" data-scene>
   <div class="hero-mesh" aria-hidden="true"></div><div class="hero-grain" aria-hidden="true"></div>
@@ -150,6 +191,7 @@ body.page-paused *{animation-play-state:paused!important}
     <h1 id="introTitle"><span class="title-line"><span>把日常，</span></span><span class="title-line warm"><span>再回味一遍。</span></span></h1>
     <p class="lede" id="introText" data-reveal></p>
     <div class="hero-actions" data-reveal style="--delay:.12s"><button class="primary" id="begin" type="button">翻开这份回忆 <span class="button-arrow" aria-hidden="true">↘</span></button><button class="inline-button" type="button" data-detail="receipt">先看这份小票 <span aria-hidden="true">↗</span></button></div>
+    <div class="personal-entry"><button type="button" class="text-button" data-account="connect">生成我自己的回顾 ↗</button><button type="button" class="text-button" data-account="tutorial">MCP 调用教程 ↗</button></div>
     <p class="range" id="range" data-reveal style="--delay:.2s"></p>
    </div>
    <div class="hero-visual" id="heroVisual" data-reveal style="--delay:.15s">
@@ -238,6 +280,9 @@ const motion=matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
 const colors=['#b8956c','#f0a15b','#e66a45','#bf6b56','#8e7162'];
 let active=0,current=bundle.initial,shareCanvas=null,toastTimer,scrollFrame=0,sceneObserver,revealObserver;
+let liveReport=bundle.initial.source==='live'?bundle.initial:null;
+let liveOrders=liveReport?liveReport.records.map(row=>({...row,status:'已完成',completed:true})):[];
+let queryController=null;
 const entranceAnimations=new Set();
 const dateLabel=d=>d?d.replaceAll('-','.'):'';
 const rangeText=r=>r.dateStart?dateLabel(r.dateStart)+' — '+dateLabel(r.dateEnd):'日期信息尚未提供';
@@ -256,7 +301,7 @@ function navigation(index){
 }
 function updateScroll(){
  scrollFrame=0;document.body.classList.toggle('scrolled',scrollY>24);
- if($('story').hidden)return;
+ if($('story').hidden||!$('account').hidden)return;
  let index=0;
  for(let i=0;i<slides.length;i++){if(slides[i].getBoundingClientRect().top<=innerHeight*.4)index=i;}
  if(active!==index)navigation(index);
@@ -343,13 +388,14 @@ function periodFor(row){
 }
 function render(r){
  stopAnimations();sceneObserver?.disconnect();revealObserver?.disconnect();
+ $('account').hidden=true;
  current=r;shareCanvas=null;const demo=isDemo(r),empty=r.count===0;
  $('sourceTag').textContent=r.source==='empty-demo'?'空账户效果演示':demo?'演示数据 · 非本人记录':'真实记录 · 本机生成';
- $('modeButton').textContent=r.source==='live'?'查看示例':r.source==='empty-demo'?'返回示例':bundle.initial.source==='live'?'返回我的记录':'看看空账户';
+ $('modeButton').textContent=r.source==='live'?'查看示例':r.source==='empty-demo'?'返回示例':liveReport?'返回我的记录':'看看空账户';
  $('story').hidden=empty;$('empty').hidden=!empty;$('bottomNav').hidden=empty;
  $('menuButton').setAttribute('aria-label',empty?'打开页面菜单':'打开回顾目录');
  if(empty){
-  $('emptyText').textContent=r.source==='empty-demo'?'这是没有历史订单时的页面效果。没有记录时，会留下一页空白，不会把示例自动填进你的回顾。':r.fetched?'本次取得 '+r.fetched+' 笔记录，其中没有可用于回顾的已完成订单。':'已连接麦当劳服务，本次没有返回历史订单。这里先留给未来的回忆。';
+  $('emptyText').textContent=r.source==='empty-demo'?'这是没有历史订单时的页面效果。没有记录时，会留下一页空白，不会把示例自动填进你的回顾。':r.fetched?'本次取得 '+r.fetched+' 笔记录，其中没有可用于回顾的已完成订单。可在“我的订单”中查看其他状态的记录。':'已连接麦当劳服务，本次没有返回历史订单。这里先留给未来的回忆。';
   window.scrollTo({top:0,behavior:'instant'});return;
  }
  const top=r.meals[0],best=r.favoritePeriods.join('、'),max=Math.max(...r.periods.map(p=>p.count),1),total=r.periods.reduce((sum,p)=>sum+p.count,0);
@@ -383,6 +429,85 @@ function render(r){
 function recordMarkup(records){
  return records.map(row=>'<article class="record-row"><span class="record-date">'+esc(row.date)+' '+esc(row.clock)+'</span><strong>'+esc(row.store)+'</strong><p>'+ (row.items.map(item=>esc(item.name)+' × '+item.quantity).join('，')||'餐品明细未提供')+'</p></article>').join('');
 }
+function showAccount(panel='orders'){
+ if(panel==='orders')panel=liveReport?'history':'connect';
+ if(!['connect','history','tutorial'].includes(panel))return;
+ stopAnimations();sceneObserver?.disconnect();revealObserver?.disconnect();
+ $('story').hidden=true;$('empty').hidden=true;$('bottomNav').hidden=true;$('account').hidden=false;
+ for(const name of ['connect','history','tutorial'])$(name+'Panel').hidden=name!==panel;
+ document.querySelectorAll('.account-nav button').forEach(button=>{
+  if(button.dataset.account===panel)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
+ });
+ $('sourceTag').textContent=liveReport?'真实记录 · 本次查询':'连接自己的点餐记录';
+ $('modeButton').textContent='查看示例';
+ $('menuButton').setAttribute('aria-label','打开页面菜单');
+ if(panel==='history')renderHistory();
+ window.scrollTo({top:0,behavior:'instant'});$(panel+'Title').focus({preventScroll:true});
+}
+function renderHistory(){
+ const hasData=Boolean(liveReport),query=$('historySearch').value.trim().toLocaleLowerCase();
+ const rows=liveOrders.filter(row=>[row.time,row.date,row.clock,row.store,...row.items.map(item=>item.name)].join(' ').toLocaleLowerCase().includes(query));
+ $('historySummary').textContent=hasData?'本次 '+liveOrders.length+' 笔订单 · '+liveReport.count+' 笔纳入回顾'+(query?' · 找到 '+rows.length+' 笔':''):'连接账号后，这里会出现你的近期订单。';
+ $('historySearch').disabled=!hasData;
+ $('viewMyRecap').hidden=!hasData||!liveReport.count;$('clearOrders').hidden=!hasData;
+ $('reconnect').textContent=hasData?'重新查询 ↗':'连接账号，获取订单 ↗';
+ $('historyList').innerHTML=!hasData?'<p class="history-empty">还没有获取订单。到“连接账号”填入自己的 MCP 凭证，即可查看本次可查询的历史记录。</p>':!rows.length?'<p class="history-empty">'+(query?'没有找到符合条件的订单，换个关键词再试试。':'本次没有返回历史订单。这里先留给未来的回忆，不会用虚构示例替代。')+'</p>':rows.map(row=>{
+  const status=row.completed?(row.status==='8'||row.status==='已评价'?'已评价':'已完成'):row.status==='7'?'已取消':/^\d+$/.test(row.status)?'状态 '+row.status:row.status;
+  return '<article class="history-row"><div class="history-date">'+esc(row.time?dateLabel(row.time.slice(0,10)):row.date)+'<small>'+esc(row.clock?row.clock+' · 北京时间':'时间未提供')+'</small></div><div><h3>'+esc(row.store)+'</h3><p>'+(row.items.map(item=>esc(item.name)+' × '+item.quantity).join('，')||'餐品明细未提供')+'</p></div><span class="order-status '+(row.completed?'completed':'')+'">'+esc(status)+'</span></article>';
+ }).join('');
+}
+function queryBusy(busy){
+ $('connectSubmit').disabled=busy;$('mcpToken').disabled=busy;$('toggleToken').disabled=busy;$('cancelQuery').hidden=!busy;
+ $('connectSubmit').innerHTML=(busy?'正在获取订单…':'获取我的订单')+' <span class="button-arrow" aria-hidden="true">↗</span>';
+ $('connectForm').setAttribute('aria-busy',String(busy));
+}
+$('toggleToken').onclick=()=>{
+ const visible=$('mcpToken').type==='password';$('mcpToken').type=visible?'text':'password';
+ $('toggleToken').textContent=visible?'隐藏':'显示';$('toggleToken').setAttribute('aria-label',visible?'隐藏连接凭证':'显示连接凭证');$('toggleToken').setAttribute('aria-pressed',String(visible));
+};
+$('connectForm').addEventListener('submit',async event=>{
+ event.preventDefault();if(queryController)return;
+ let token=$('mcpToken').value.trim().replace(/^Bearer\s+/i,'');
+ if(!token||/\s/.test(token)){$('connectFeedback').textContent='请粘贴完整的 MCP Token，里面不应包含空格或换行。';$('connectFeedback').dataset.error='true';return;}
+ if(location.protocol==='file:'){$('connectFeedback').innerHTML='联网查询请打开<a href="https://mai-recap.vercel.app/" target="_blank" rel="noopener noreferrer">麦迹在线网站 ↗</a>，或按照教程运行本地命令。';$('connectFeedback').dataset.error='true';$('mcpToken').value='';token='';return;}
+ const controller=new AbortController();queryController=controller;
+ const timeout=setTimeout(()=>controller.abort('timeout'),35000);
+ $('mcpToken').value='';$('mcpToken').type='password';$('toggleToken').textContent='显示';$('toggleToken').setAttribute('aria-label','显示连接凭证');$('toggleToken').setAttribute('aria-pressed','false');
+ queryBusy(true);$('connectFeedback').dataset.error='false';$('connectFeedback').textContent='正在连接麦当劳订单服务，通常需要几秒钟…';
+ try{
+  const pending=fetch('/api/orders',{method:'POST',headers:{Authorization:'Bearer '+token,Accept:'application/json'},cache:'no-store',credentials:'omit',redirect:'error',signal:controller.signal});token='';
+  const response=await pending;
+  if(response.status===404)throw new Error('当前网站尚未启用订单查询服务，可以先按教程使用本地命令。');
+  if(!(response.headers.get('content-type')||'').includes('application/json'))throw new Error('查询服务没有返回有效结果，请稍后重试。');
+  const result=await response.json();
+  if(!response.ok)throw new Error(result.error||'查询失败，请稍后重试。');
+  if(result.report?.source!=='live'||!Array.isArray(result.orders))throw new Error('订单响应不完整，请稍后重试。');
+  if(controller.signal.aborted)return;
+  liveReport=result.report;liveOrders=result.orders;current=liveReport;$('historySearch').value='';
+  $('connectFeedback').textContent='查询完成，已获取 '+liveOrders.length+' 笔近期订单。';showAccount('history');
+ }catch(error){
+  $('connectFeedback').dataset.error='true';$('connectFeedback').textContent=controller.signal.aborted?(controller.signal.reason==='timeout'?'查询超时，请稍后重试。':'本次查询已取消。'):(error instanceof TypeError?'暂时无法连接查询服务，请检查网络并重试。':error.message);
+ }finally{token='';clearTimeout(timeout);if(queryController===controller){queryController=null;queryBusy(false);}}
+});
+$('cancelQuery').onclick=()=>queryController?.abort();
+$('historySearch').addEventListener('input',renderHistory);
+$('viewMyRecap').onclick=()=>{if(liveReport)render(liveReport);};
+$('backToStory').onclick=()=>render(current);
+$('accountDemo').onclick=()=>render(bundle.demo);
+$('clearOrders').onclick=()=>{
+ liveReport=null;liveOrders=[];$('mcpToken').value='';$('historySearch').value='';$('connectFeedback').textContent='';
+ if(bundle.initial.source==='live')bundle.initial=bundle.demo;
+ $('detailContent').textContent='';$('sharePreview').removeAttribute('src');
+ current=bundle.demo;shareCanvas=null;render(bundle.demo);showAccount('history');
+};
+document.addEventListener('click',async event=>{
+ const account=event.target.closest('[data-account]');
+ if(account){if($('detailDialog').open)closeModal($('detailDialog'),()=>showAccount(account.dataset.account));else showAccount(account.dataset.account);return;}
+ const copy=event.target.closest('[data-copy]');if(!copy)return;
+ const status=$(copy.dataset.copyStatus);
+ try{await navigator.clipboard.writeText($(copy.dataset.copy).textContent);status.textContent='已复制';}
+ catch{const selection=getSelection(),range=document.createRange();range.selectNodeContents($(copy.dataset.copy));selection.removeAllRanges();selection.addRange(range);status.textContent='已选中文字，请使用复制操作。';}
+});
 function methodText(){
  const r=current;
  return (isDemo(r)?'本页使用完全虚构的示例订单，不是本人消费记录。':'本页根据本人授权查询的订单在本机生成。')+'本次获取 '+r.fetched+' 笔，纳入 '+r.count+' 笔已完成或已评价订单，排除 '+r.skipped+' 笔其他状态订单；重复订单不重复统计。'+(r.unknown.time+r.unknown.store+r.unknown.meals?'其中 '+r.unknown.time+' 笔缺少有效时间，'+r.unknown.store+' 笔缺少门店名，'+r.unknown.meals+' 笔缺少有效餐品明细。':'')+'这些是本次可查询记录的统计，不代表完整全年。门店表示出餐门店，不代表实际用餐位置。餐品按订单顶层名称统计，套餐子项不重复拆算。分享卡省略门店名称与精确地点。麦迹是非官方参赛项目。';
@@ -443,11 +568,11 @@ function showDetail(kind,index,trigger){
  }else if(kind==='records'){
   title='回顾里的每一笔。';lead=r.count+' 笔已完成或已评价订单 · '+rangeText(r);html=recordMarkup(r.records);kicker='LITTLE MOMENTS, ALL HERE';
  }else if(kind==='method'){
-  title='回忆，也要有据可查。';lead='数据来源与接入说明';html='<p class="dialog-note"><strong>使用哪个服务</strong><br>真实回顾通过<a href="https://open.mcd.cn/mcp" target="_blank" rel="noopener noreferrer">麦当劳官方 MCP（新标签页）</a>连接订单服务，只调用 order-list 查询本人授权账号的近期订单。演示使用虚构订单，不查询真实账号。</p><p class="dialog-note" style="margin-top:18px"><strong>数据保存在哪里</strong><br>真实回顾在本机生成，默认保存为项目目录中的“麦迹-我的回顾.html”。凭证和原始响应不写入文件，项目网站不接收订单。分享卡以 PNG 图片下载，位置由浏览器的下载设置决定。</p><p class="dialog-note" style="margin-top:18px"><strong>统计范围</strong><br>'+esc(methodText())+'</p>';kicker='ABOUT THIS RECAP';
+  title='回忆，也要有据可查。';lead='数据来源与接入说明';html='<p class="dialog-note"><strong>使用哪个服务</strong><br>真实回顾通过<a href="https://open.mcd.cn/mcp" target="_blank" rel="noopener noreferrer">麦当劳官方 MCP（新标签页）</a>连接订单服务，只调用 order-list 查询本人授权账号的近期订单。演示使用虚构订单，不查询真实账号。</p><p class="dialog-note" style="margin-top:18px"><strong>数据保存在哪里</strong><br>网页查询通过麦迹服务器临时转发，仅调用 order-list。凭证和订单不写入数据库或日志，本次结果保留在当前页面；刷新或关闭后清除。本地命令另可生成“麦迹-我的回顾.html”，分享卡以 PNG 图片下载。</p><p class="dialog-note" style="margin-top:18px"><strong>统计范围</strong><br>'+esc(methodText())+'</p>';kicker='ABOUT THIS RECAP';
  }else if(kind==='chapters'){
   title=$('story').hidden?'先看一份示例。':'把回忆，翻到这一页。';lead='点击章节前往，也可以直接向下滚动。';kicker='EXPLORE YOUR RECAP';
   html=$('story').hidden?'<button type="button" class="chapter-choice" data-menu-demo><b>查看虚构示例</b><span aria-hidden="true">↗</span></button>':titles.map((name,i)=>'<button type="button" class="chapter-choice" data-chapter="'+i+'"><span><small>'+pad(i)+'</small><b>'+esc(name)+'</b></span><span aria-hidden="true">↗</span></button>').join('');
-  html+='<button type="button" class="chapter-choice" data-menu-mode><span><small>↔</small><b>'+esc($('modeButton').textContent)+'</b></span><span aria-hidden="true">↗</span></button>';
+  html+='<button type="button" class="chapter-choice" data-account="orders"><b>我的订单</b><span aria-hidden="true">↗</span></button><button type="button" class="chapter-choice" data-account="tutorial"><b>MCP 调用教程</b><span aria-hidden="true">↗</span></button><button type="button" class="chapter-choice" data-menu-mode><span><small>↔</small><b>'+esc($('modeButton').textContent)+'</b></span><span aria-hidden="true">↗</span></button>';
  }
  $('detailTitle').textContent=title;$('detailLead').textContent=lead;$('detailKicker').textContent=kicker;$('detailSource').textContent=sourceLabel();$('detailContent').innerHTML=html;openModal($('detailDialog'),trigger);
 }
@@ -458,13 +583,13 @@ document.addEventListener('click',event=>{
  if(event.target.closest('[data-menu-demo]'))closeModal($('detailDialog'),()=>render(bundle.demo));
 });
 function toggleMode(){
- if(current.source==='live'||current.source==='empty-demo')render(bundle.demo);
- else if(bundle.initial.source==='live')render(bundle.initial);
+ if(!$('account').hidden||current.source==='live'||current.source==='empty-demo')render(bundle.demo);
+ else if(liveReport)render(liveReport);
  else render({...bundle.demo,source:'empty-demo',count:0,fetched:0});
 }
 $('modeButton').onclick=toggleMode;$('showDemo').onclick=()=>render(bundle.demo);$('menuButton').onclick=()=>showDetail('chapters',0,$('menuButton'));
 $('begin').onclick=()=>go(1);$('scrollBegin').onclick=()=>go(1);$('previous').onclick=()=>go(active-1);$('next').onclick=()=>go(active+1);$('print').onclick=()=>window.print();$('openRecords').onclick=()=>showDetail('records',0,$('openRecords'));
-document.querySelector('.wordmark').onclick=event=>{event.preventDefault();if($('story').hidden)window.scrollTo({top:0,behavior:'smooth'});else go(0);};
+document.querySelector('.wordmark').onclick=event=>{event.preventDefault();if(!$('account').hidden)render(current);else if($('story').hidden)window.scrollTo({top:0,behavior:'smooth'});else go(0);};
 document.addEventListener('keydown',event=>{
  if($('story').hidden||document.querySelector('dialog[open]')||event.target.closest('button,a,input,textarea,select')||event.altKey||event.ctrlKey||event.metaKey)return;
  if(event.key==='ArrowRight'){event.preventDefault();go(active+1);}if(event.key==='ArrowLeft'){event.preventDefault();go(active-1);}
