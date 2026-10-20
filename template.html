@@ -60,10 +60,10 @@ body.scrolled .topbar{background:rgba(245,241,233,.94);backdrop-filter:blur(12px
 .time-page{margin:0 15px;border-radius:36px;background:var(--night);color:var(--paper);padding:68px clamp(30px,6.5vw,100px) 96px;overflow:hidden;isolation:isolate}
 .time-page:before{content:"";position:absolute;z-index:-1;width:780px;height:780px;left:-340px;bottom:-310px;background:radial-gradient(ellipse,#b84e2e77,transparent 66%);pointer-events:none}
 .time-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px);align-items:center}.time-page .eyebrow{color:#f0b78b}.time-page .section-description,.time-page .small-note{color:#c2b0a2}
-.time-art{position:relative;padding-top:20px}.time-dial{position:relative;width:min(450px,100%);aspect-ratio:1;margin:auto}.time-dial svg{width:100%;height:100%;transform:rotate(-90deg)}.dial-grid{stroke:#b4958030;fill:none}.period-ring{fill:none;stroke-width:22;transition:stroke-dasharray 1s var(--ease)}
+.time-art{position:relative;padding-top:20px}.time-dial{position:relative;width:min(450px,100%);aspect-ratio:1;margin:auto}.time-dial svg{width:100%;height:100%;transform:rotate(-90deg)}.dial-grid{stroke:#b4958030;fill:none}.period-ring{fill:none;stroke-width:22}.dial-cursor{opacity:0;transform-origin:220px 220px}
 .dial-center{position:absolute;inset:23%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.dial-small{font-size:11px;color:#c4ad9c}.dial-name{font-size:clamp(1.8rem,3.4vw,3.25rem);font-weight:500;letter-spacing:-.06em;line-height:1.4;overflow-wrap:anywhere}.dial-count{font:74px/1.1 var(--number);color:#f7bd7d;letter-spacing:-.07em;margin-top:8px}.dial-count small{font:12px/1 var(--body);margin-left:7px;color:#c4ad9c;letter-spacing:0}
 .dial-caption{text-align:center;font-size:11px;letter-spacing:.1em;color:#bda896;margin-top:16px}.time-summary{font-size:17px;margin-bottom:27px;max-width:25em}.time-summary strong{color:#f9bc79;font-weight:500}.time-band{display:grid;grid-template-columns:42px 1fr 50px 15px;gap:17px;align-items:center;width:100%;text-align:left;padding:18px 0;border-bottom:1px solid #a78a7630;background:none;transition:transform .3s var(--ease)}
-.time-band:not(:disabled):hover{transform:translateX(5px)}.time-band-label{font-size:14px}.bar-track{height:4px;background:#9a796344;overflow:hidden;border-radius:10px}.bar-fill{height:100%;background:var(--bar-color,#efb17d);transform-origin:left;transform:scaleX(var(--amount));border-radius:10px;transition:transform 1.15s var(--ease)}.motion-ready .time-page:not(.is-active) .bar-fill{transform:scaleX(0)}
+.time-band:not(:disabled):hover{transform:translateX(5px)}.time-band-label{font-size:14px}.bar-track{height:4px;background:#9a796344;overflow:hidden;border-radius:10px}.bar-fill{height:100%;background:var(--bar-color,#efb17d);transform-origin:left;transform:scaleX(var(--amount));border-radius:10px}
 .time-band-count{font:14px/1.5 var(--number);text-align:right}.row-arrow{font-size:16px;opacity:.6}.plot-foot{font-size:10px;color:#bda896;margin-top:25px;line-height:1.9;max-width:40em}
 .store-page{padding:100px clamp(30px,7.5vw,120px) 118px}.store-page .eyebrow{color:var(--red)}.store-top{display:grid;grid-template-columns:.95fr 1.05fr;gap:60px;align-items:end}.store-heading-note{font-size:13px;line-height:1.9;color:var(--muted);max-width:31em;margin-bottom:4px}.store-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:70px;align-items:center;margin-top:50px}
 .stamp-stack{position:relative;height:430px;isolation:isolate}.store-watermark{position:absolute;top:22px;left:-10px;font:300px/1 var(--number);letter-spacing:-.1em;color:#e6ddce;z-index:-1}
@@ -90,7 +90,7 @@ body.scrolled .topbar{background:rgba(245,241,233,.94);backdrop-filter:blur(12px
 .bottom-label{display:flex;gap:12px;align-items:center;font-size:10px;white-space:nowrap;min-width:105px}.bottom-label>span:first-child{font:10px/1 var(--number);color:#e8a678}.bottom-actions{display:flex;gap:6px;align-items:center}.bottom-actions button{width:37px;height:37px;display:grid;place-items:center;border:1px solid #e9dfce38;border-radius:50%;background:transparent;color:var(--paper);transition:background .2s,transform .2s}.bottom-actions button:hover:not(:disabled){background:var(--red);transform:scale(1.05)}.page-counter{font:10px/1 var(--number);padding:0 8px;min-width:45px;text-align:center}.bottom-progress{position:absolute;bottom:-1px;left:22px;right:22px;height:2px;overflow:hidden;border-radius:3px}.bottom-progress span{display:block;height:100%;background:var(--orange);transform:scaleX(var(--progress,0));transform-origin:left}
 .empty-page{min-height:100svh;display:grid;place-items:center;padding:150px 30px 100px;position:relative;isolation:isolate;overflow:hidden}.empty-page:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 80% 20%,#f9c693,transparent 55%)}
 .empty-content{width:min(830px,100%)}.empty-stamp{display:inline-flex;width:85px;height:85px;align-items:center;justify-content:center;border:1px solid var(--red);color:var(--red);border-radius:50%;font-size:22px;transform:rotate(-12deg);margin-bottom:30px}.empty-page h1{font-size:clamp(2.6rem,5vw,5rem)}.empty-page .eyebrow{color:var(--red);margin-bottom:20px}.empty-page p:not(.eyebrow){font-size:14px;color:var(--muted);max-width:38em;margin-top:25px}.empty-page .primary{margin-top:35px}.empty-page .small-note{font-size:11px!important}
-dialog{position:fixed;padding:0;border:0;max-width:calc(100% - 40px);width:650px;max-height:min(86svh,900px);border-radius:26px;background:var(--paper);color:var(--ink);box-shadow:0 30px 120px #160e1440;overflow:auto;overscroll-behavior:contain}
+dialog{position:fixed;padding:0;border:0;max-width:calc(100% - 40px);width:650px;max-height:min(86svh,900px);border-radius:26px;background:var(--paper);color:var(--ink);box-shadow:0 30px 120px #160e1440;overflow:auto;overscroll-behavior:contain;transform-origin:50% 65%;--dialog-start:translateY(45px) scale(.86)}
 dialog::backdrop{background:rgba(28,20,16,.45);backdrop-filter:blur(9px);animation:backdropIn .35s var(--ease)}
 dialog[open]{animation:dialogIn .45s var(--ease)}dialog.closing{animation:dialogOut .18s ease-in forwards}dialog.closing::backdrop{animation:backdropOut .18s ease-in forwards}
 .dialog-top{position:sticky;top:0;z-index:2;background:var(--paper);display:flex;align-items:center;justify-content:space-between;gap:20px;padding:21px 28px 14px}.dialog-source{font-size:10px;color:var(--muted)}.close-dialog{border:1px solid var(--line);border-radius:50%;width:40px;height:40px;background:none;font:25px/1 var(--number);transition:transform .3s var(--ease)}.close-dialog:hover{transform:rotate(90deg)}
@@ -99,14 +99,15 @@ dialog[open]{animation:dialogIn .45s var(--ease)}dialog.closing{animation:dialog
 .chapter-choice{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;text-align:left;padding:22px 0;border-top:1px solid var(--line);background:none;transition:color .2s,transform .3s var(--ease)}.chapter-choice:first-child{border:0}.chapter-choice:hover{color:var(--red);transform:translateX(5px)}.chapter-choice small{font:11px/1 var(--number);color:var(--muted);margin-right:20px}.chapter-choice b{font-size:23px;font-weight:500;letter-spacing:-.04em}
 .share-dialog{width:480px}.share-dialog .dialog-body{padding:0 25px 25px}.share-dialog h2{font-size:20px}.share-preview{width:100%;height:auto;max-height:55svh;object-fit:contain;display:block;margin:15px 0 21px}.share-dialog-actions{display:flex;align-items:center;gap:15px;justify-content:space-between}.share-dialog-actions p{max-width:14em;font-size:10px;color:var(--muted);line-height:1.8}.share-dialog .primary{min-height:48px;padding-left:21px;font-size:12px;gap:18px}.share-dialog .button-arrow{width:32px;height:32px;font-size:21px}
 .toast{position:fixed;left:50%;bottom:93px;z-index:100;transform:translate(-50%,15px);opacity:0;pointer-events:none;transition:transform .35s var(--ease),opacity .25s;background:var(--ink);color:var(--paper);font-size:12px;line-height:1.8;max-width:calc(100% - 40px);padding:13px 22px;border-radius:12px;text-align:center;box-shadow:0 10px 40px #29251f20}.toast.visible{transform:translate(-50%,0);opacity:1}
-.motion-ready [data-reveal]{opacity:0;transform:translateY(32px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--delay,0s)}.motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+.ticket-number,.dial-count,.pass-count,.store-count,.meal-orders,.share-big,.taste-stamp strong{font-variant-numeric:tabular-nums}
+.menu-button:active,.bottom-actions button:not(:disabled):active,.close-dialog:active{scale:.93}
 .motion-ready .hero .title-line>span{animation:titleIn 1s var(--ease) both}.motion-ready .hero .title-line:nth-child(2)>span{animation-delay:.12s}
 .hero-mesh:before,.orbit-surface,.floating-paper,.scroll-icon{animation-play-state:paused}.hero.is-active .hero-mesh:before,.hero.is-active .orbit-surface,.hero.is-active .floating-paper,.hero.is-active .scroll-icon{animation-play-state:running}
 .hero.is-active .hero-visual:hover .floating-paper,.hero.is-active .floating-paper:focus-within{animation-play-state:paused}
 body.page-paused *{animation-play-state:paused!important}
 @keyframes meshDrift{to{transform:translate(-6%,9%) rotate(18deg)}}@keyframes orbitTurn{to{transform:rotate(360deg)}}@keyframes paperFloat{50%{transform:translate3d(0,-15px,0) rotate(2deg)}}@keyframes scrollNudge{50%{transform:translateY(5px)}}
 @keyframes titleIn{from{transform:translateY(110%);opacity:.3}to{transform:translateY(0);opacity:1}}
-@keyframes dialogIn{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes dialogOut{to{opacity:0;transform:translateY(18px) scale(.98)}}@keyframes backdropIn{from{opacity:0}to{opacity:1}}@keyframes backdropOut{to{opacity:0}}
+@keyframes dialogIn{from{opacity:0;transform:var(--dialog-start)}to{opacity:1;transform:translateY(0) scale(1)}}@keyframes dialogOut{to{opacity:0;transform:translateY(18px) scale(.98)}}@keyframes backdropIn{from{opacity:0}to{opacity:1}}@keyframes backdropOut{to{opacity:0}}
 @media(min-width:1800px){.hero-visual{height:640px}.floating-paper{width:320px}.good-stamp{right:1%}}
 @media(max-width:1100px){.top-caption{display:none}.hero{padding-left:45px;padding-right:45px}.hero-wrap{grid-template-columns:1.1fr .9fr;gap:10px}.hero h1{font-size:6.8vw}.hero-visual{height:500px}.floating-paper{width:245px;left:12%;top:15%}.ticket-number{font-size:90px}.hero-ticket{padding:21px 21px 32px}.good-stamp{width:115px;height:115px;right:-4%}.good-stamp b{font-size:23px}.memory-orbit{top:2%;width:127%;left:-20%}.orbit-note{display:none}.hero-actions{gap:20px}.store-layout,.store-top{gap:40px}.food-layout{gap:40px}.finish-layout{gap:65px}.store-pass{width:190px;left:calc(50% - 95px);min-height:260px}.pass-count{font-size:66px}.store-row button{gap:12px}.time-layout{gap:35px}.time-band{gap:12px}}
 @media(max-width:760px){
@@ -117,13 +118,13 @@ body.page-paused *{animation-play-state:paused!important}
  .food-layout{grid-template-columns:1fr;gap:28px}.food-title{font-size:36px;margin-top:25px}.food-feature{padding-bottom:0}.food-description{font-size:11px;max-width:26em}.taste-stamp{position:absolute;width:84px;height:84px;right:0;bottom:3px;margin:0}.taste-stamp strong{font-size:32px}.taste-stamp span{font-size:8px}.food-description{padding-right:76px;box-sizing:content-box}.meal-row button{padding:20px 0;gap:10px;grid-template-columns:22px 1fr auto 15px}.meal-name{font-size:13px}.meal-meta{font-size:9px}.meal-orders{font-size:24px}.meal-orders small{font-size:9px}
  .finish-page{padding:67px 29px 75px}.finish-layout{grid-template-columns:1fr;gap:35px}.finish-page .eyebrow{margin-bottom:25px}.finish-title{font-size:clamp(2.7rem,9.5vw,4.5rem)}.endnote{font-size:11px;margin-top:20px}.finish-actions{margin-top:25px;gap:18px}.secondary-actions{margin-top:13px;gap:20px}.poster-wrap{max-width:350px;margin:auto;width:100%;padding:14px 18px}.share-sheet{padding:25px 26px 24px;transform:rotate(4deg)}.share-big{font-size:110px}.share-caption{font-size:15px}.share-stat{padding:12px 0}.share-stat b{font-size:11px}.poster-hint{width:73px;height:73px;right:-7px;bottom:32px;font-size:9px}.method{padding:30px 29px 112px;gap:28px;flex-direction:column}.method-copy{font-size:9px}.method-brand b{font-size:24px}
  .bottom-nav{bottom:14px;gap:12px;padding-left:17px}.bottom-label{font-size:9px;gap:9px;min-width:85px}.bottom-actions{gap:4px}.bottom-actions button{width:35px;height:35px}.page-counter{font-size:9px;min-width:39px;padding:0 5px}
- dialog{width:100%;max-width:100%;max-height:86dvh;inset:auto 0 0;margin:0;border-radius:25px 25px 0 0}.dialog-top{padding:18px 23px 12px}.dialog-body{padding:8px 26px 32px}.dialog-body h2{font-size:25px}.dialog-lead{font-size:11px}.dialog-metrics{gap:20px}.dialog-metrics strong{font-size:45px}.dialog-metrics span{font-size:10px}.share-dialog{width:100%}.share-dialog .dialog-body{padding:0 24px 28px}.share-preview{max-height:48dvh}.chapter-choice{padding:20px 0}.chapter-choice b{font-size:22px}.empty-page{padding:130px 29px 90px}.empty-page h1{font-size:38px}.empty-page p:not(.eyebrow){font-size:12px}
+ dialog{width:100%;max-width:100%;max-height:86dvh;inset:auto 0 0;margin:0;border-radius:25px 25px 0 0;transform-origin:50% 100%;--dialog-start:translateY(85px) scale(.98)}.dialog-top{padding:18px 23px 12px}.dialog-body{padding:8px 26px 32px}.dialog-body h2{font-size:25px}.dialog-lead{font-size:11px}.dialog-metrics{gap:20px}.dialog-metrics strong{font-size:45px}.dialog-metrics span{font-size:10px}.share-dialog{width:100%}.share-dialog .dialog-body{padding:0 24px 28px}.share-preview{max-height:48dvh}.chapter-choice{padding:20px 0}.chapter-choice b{font-size:22px}.empty-page{padding:130px 29px 90px}.empty-page h1{font-size:38px}.empty-page p:not(.eyebrow){font-size:12px}
 }
 @media(max-width:370px){.topbar{padding-left:19px;padding-right:19px}.hero{padding-left:24px;padding-right:24px}.source-tag{font-size:8px}.hero-actions{gap:18px}.hero h1{font-size:10.4vw}.hero-visual{height:405px}.good-stamp{right:-3%;bottom:13%}.taste-stamp{width:72px;height:72px}.store-pass{width:150px;left:calc(50% - 75px)}}
 @media(hover:none),(pointer:coarse){.floating-paper{animation:none!important}}
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}
- .motion-ready [data-reveal]{opacity:1!important;transform:none!important}.motion-ready .time-page:not(.is-active) .bar-fill{transform:scaleX(var(--amount))}.hero-object{transform:none!important}
+ .hero-object{transform:none!important}
 }
 @media print{
  .topbar,.bottom-nav,.hero-scroll,.hero-edition,.hero-actions,.finish-actions,.secondary-actions,.poster-hint,.method,dialog,.toast{display:none!important}
@@ -170,10 +171,10 @@ body.page-paused *{animation-play-state:paused!important}
    <h2 class="chapter-title" id="timeTitle" data-reveal>日子有自己的<br>节奏。</h2>
    <div class="time-layout">
     <div class="time-art" data-reveal>
-     <div class="time-dial"><svg viewBox="0 0 440 440" role="img" aria-label="下单时段分布" id="timeRing"><circle class="dial-grid" cx="220" cy="220" r="205"/><circle class="dial-grid" cx="220" cy="220" r="125"/><circle cx="220" cy="220" r="165" fill="none" stroke="#725544" stroke-width="22"/><g id="periodRings"></g></svg><div class="dial-center"><span class="dial-small">记录里最常出现的时段</span><span class="dial-name" id="favoritePeriod"></span><span class="dial-count"><span id="periodCount"></span><small>笔 / 时段</small></span></div></div>
+     <div class="time-dial" data-motion="dial"><svg viewBox="0 0 440 440" role="img" aria-label="下单时段分布" id="timeRing"><defs><mask id="dialMask" maskUnits="userSpaceOnUse" x="0" y="0" width="440" height="440"><circle id="dialReveal" cx="220" cy="220" r="165" pathLength="100" fill="none" stroke="white" stroke-width="26" stroke-dasharray="100" stroke-dashoffset="0"/></mask></defs><circle class="dial-grid" cx="220" cy="220" r="205"/><circle class="dial-grid" cx="220" cy="220" r="125"/><circle cx="220" cy="220" r="165" fill="none" stroke="#725544" stroke-width="22"/><g id="periodRings" mask="url(#dialMask)"></g><g id="dialCursor" class="dial-cursor" aria-hidden="true"><circle cx="385" cy="220" r="12" fill="#fff1d5" opacity=".2"/><circle cx="385" cy="220" r="5" fill="#fff1d5"/></g></svg><div class="dial-center"><span class="dial-small">记录里最常出现的时段</span><span class="dial-name" id="favoritePeriod"></span><span class="dial-count"><span id="periodCount"></span><small>笔 / 时段</small></span></div></div>
      <p class="dial-caption">把每个饭点，放回这段日子里。</p>
     </div>
-    <div class="time-data" data-reveal style="--delay:.1s"><p class="time-summary" id="timeStatement"></p><div id="timeBars" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p></div>
+    <div class="time-data" data-reveal style="--delay:.1s"><p class="time-summary" id="timeStatement"></p><div id="timeBars" data-motion="bars" aria-label="各时段订单数"></div><p class="plot-foot" id="timeFoot"></p></div>
    </div>
   </div>
  </section>
@@ -191,7 +192,7 @@ body.page-paused *{animation-play-state:paused!important}
   <div class="section-wrap">
    <div class="section-head" data-reveal><p class="eyebrow">03 / 反复出现的那一口</p><p class="section-meta">THE TASTE<br>YOU COME BACK TO</p></div>
    <div class="food-layout">
-    <div class="food-feature" data-reveal><h2 class="chapter-title" id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="food-description" id="mealStatement"></p><div class="taste-stamp"><strong id="tasteCount"></strong><span id="tasteLabel"></span></div></div>
+    <div class="food-feature" data-reveal><h2 class="chapter-title" id="foodTitle">点来点去，<br>还是会想起它。</h2><p class="food-title" id="favoriteMeal"></p><p class="food-description" id="mealStatement"></p><div class="taste-stamp" data-motion="stamp"><strong id="tasteCount"></strong><span id="tasteLabel"></span></div></div>
     <ol class="meal-list" id="mealList" data-reveal style="--delay:.12s"></ol>
    </div>
   </div>
@@ -236,6 +237,7 @@ const motion=matchMedia('(prefers-reduced-motion: reduce)');
 const finePointer=matchMedia('(hover: hover) and (pointer: fine)');
 const colors=['#b8956c','#f0a15b','#e66a45','#bf6b56','#8e7162'];
 let active=0,current=bundle.initial,shareCanvas=null,toastTimer,scrollFrame=0,sceneObserver,revealObserver;
+const entranceAnimations=new Set();
 const dateLabel=d=>d?d.replaceAll('-','.'):'';
 const rangeText=r=>r.dateStart?dateLabel(r.dateStart)+' — '+dateLabel(r.dateEnd):'日期信息尚未提供';
 const isDemo=r=>r.source!=='live';
@@ -263,26 +265,75 @@ function updateScroll(){
 }
 function queueScroll(){if(!scrollFrame)scrollFrame=requestAnimationFrame(updateScroll);}
 addEventListener('scroll',queueScroll,{passive:true});addEventListener('resize',queueScroll,{passive:true});
-function animateNumber(element,value){
+function setCount(id,value,padded=false){
+ const element=$(id);element.dataset.count=value;element.dataset.padded=String(padded);element.textContent=padded?pad(value):value;
+}
+function animateNumber(element){
+ const value=Number(element.dataset.count),format=n=>element.dataset.padded==='true'?pad(n):n;
  cancelAnimationFrame(element._countFrame||0);
- element.textContent=value;
+ element.textContent=format(value);
  if(motion.matches||value<1)return;
  const start=performance.now();
  function frame(now){
-  const progress=Math.min(1,(now-start)/950);
-  element.textContent=Math.round(value*(1-Math.pow(1-progress,4)));
+  const progress=Math.min(1,(now-start)/1100);
+  element.textContent=format(Math.round(value*(1-Math.pow(1-progress,4))));
   if(progress<1&&element.isConnected)element._countFrame=requestAnimationFrame(frame);
  }
  element._countFrame=requestAnimationFrame(frame);
 }
+function animateElement(element,keyframes,options={}){
+ if(motion.matches||!element?.animate)return;
+ const animation=element.animate(keyframes,{duration:600,easing:'cubic-bezier(.16,1,.3,1)',fill:'backwards',...options});
+ entranceAnimations.add(animation);
+ animation.onfinish=animation.oncancel=()=>entranceAnimations.delete(animation);
+ return animation;
+}
+function stopAnimations(){
+ for(const animation of entranceAnimations)animation.cancel();
+ entranceAnimations.clear();
+ document.querySelectorAll('[data-count]').forEach(element=>{
+  cancelAnimationFrame(element._countFrame||0);
+  element.textContent=element.dataset.padded==='true'?pad(element.dataset.count):element.dataset.count;
+ });
+}
+function revealElement(element){
+ if(motion.matches)return;
+ const type=element.dataset.motion,delay=Math.min(240,(parseFloat(getComputedStyle(element).getPropertyValue('--delay'))||0)*1000);
+ if(element.hasAttribute('data-count'))animateNumber(element);
+ if(element.hasAttribute('data-reveal')){
+  const visual=element.matches('.hero-visual,.time-art,.poster-wrap');
+  animateElement(element,[{opacity:.25,transform:visual?'translateY(26px) scale(.94)':'translateY(18px)'},{opacity:1,transform:'none'}],{duration:visual?750:550,delay});
+ }
+ if(element.id==='heroVisual'){
+  animateElement($('heroObject'),[{opacity:0,transform:'translateY(65px) rotate(-8deg) scale(.78)'},{opacity:1,transform:'none'}],{duration:900,delay:160});
+  const stamp=element.querySelector('.good-stamp');
+  animateElement(stamp,[{opacity:0,transform:'rotate(-20deg) scale(.45)'},{opacity:1,transform:getComputedStyle(stamp).transform}],{duration:650,delay:350});
+ }
+ if(type==='dial'&&current.periods.some(period=>period.count)){
+  const timing={duration:1450,easing:'cubic-bezier(.65,0,.35,1)'};
+  animateElement($('dialReveal'),[{strokeDashoffset:'100'},{strokeDashoffset:'0'}],timing);
+  animateElement($('dialCursor'),[{transform:'rotate(0deg)',opacity:0},{opacity:1,offset:.04},{opacity:1,offset:.94},{transform:'rotate(360deg)',opacity:0}],timing);
+ }else if(type==='bars'){
+  element.querySelectorAll('.bar-fill').forEach((bar,i)=>animateElement(bar,[{transform:'scaleX(0)'},{transform:getComputedStyle(bar).transform}],{duration:1000,delay:i*65}));
+ }else if(type==='pass'){
+  animateElement(element,[{opacity:0,transform:'translateY(55px) rotate(0deg) scale(.82)'},{opacity:1,transform:getComputedStyle(element).transform}],{duration:800,delay:Number(element.dataset.index)*110});
+ }else if(type==='row'){
+  animateElement(element,[{opacity:0,transform:'translateX(26px) scale(.97)'},{opacity:1,transform:'none'}],{duration:550,delay:Math.min(Number(element.dataset.index),4)*65});
+ }else if(type==='stamp'){
+  animateElement(element,[{opacity:0,transform:'rotate(12deg) scale(.55)'},{opacity:1,transform:getComputedStyle(element).transform}],{duration:650,delay:160});
+ }
+}
 function observeScenes(){
  if(sceneObserver)sceneObserver.disconnect();if(revealObserver)revealObserver.disconnect();
  document.body.classList.add('motion-ready');
- revealObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}}},{threshold:.08});
- document.querySelectorAll('[data-reveal]').forEach(el=>{el.classList.remove('is-visible');revealObserver.observe(el);});
+ if(!('IntersectionObserver' in window))return;
+ revealObserver=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){revealElement(entry.target);revealObserver.unobserve(entry.target);}}},{threshold:.12,rootMargin:'0px 0px -24px 0px'});
+ document.querySelectorAll('[data-reveal],[data-motion],[data-count]').forEach(el=>revealObserver.observe(el));
  sceneObserver=new IntersectionObserver(entries=>{for(const entry of entries)entry.target.classList.toggle('is-active',entry.isIntersecting);},{threshold:0});
  slides.forEach(slide=>sceneObserver.observe(slide));
 }
+motion.addEventListener('change',()=>{stopAnimations();if(!motion.matches&&!$('story').hidden)observeScenes();});
+addEventListener('beforeprint',stopAnimations);
 function periodFor(row){
  if(!row.time)return null;
  const parsed=new Date(row.time);if(Number.isNaN(parsed.getTime()))return null;
@@ -290,6 +341,7 @@ function periodFor(row){
  return h>=5&&h<11?'早餐':h>=11&&h<14?'午间':h>=14&&h<17?'下午':h>=17&&h<22?'晚间':'深夜';
 }
 function render(r){
+ stopAnimations();sceneObserver?.disconnect();revealObserver?.disconnect();
  current=r;shareCanvas=null;const demo=isDemo(r),empty=r.count===0;
  $('sourceTag').textContent=r.source==='empty-demo'?'空账户效果演示':demo?'演示数据 · 非本人记录':'真实记录 · 本机生成';
  $('modeButton').textContent=r.source==='live'?'查看示例':r.source==='empty-demo'?'返回示例':bundle.initial.source==='live'?'返回我的记录':'看看空账户';
@@ -303,10 +355,10 @@ function render(r){
  const tied=r.favoriteMeals.length,periodMax=Math.max(...r.periods.map(p=>p.count),0);
  $('introText').textContent=(demo?'这是一份虚构示例。':'')+'把最近 '+r.count+' 笔已完成订单，串成一段有饭点、有店名、有熟悉滋味的回忆。';
  $('range').textContent=rangeText(r)+(demo?' · 示例记录范围':' · 本次记录范围');
- animateNumber($('heroCount'),r.count);
+ setCount('heroCount',r.count);
  $('receiptStores').textContent=r.storeCount+' 家';$('receiptMeal').textContent=top?.name||'餐品未提供';
  $('receiptSource').textContent=demo?'DEMO / 虚构示例':'仅本次可查询记录';
- $('favoritePeriod').textContent=best||'时间待补充';$('periodCount').textContent=pad(periodMax);
+ $('favoritePeriod').textContent=best||'时间待补充';setCount('periodCount',periodMax,true);
  $('timeStatement').innerHTML=best?'这些订单里，<strong>'+esc(best)+'</strong>'+ (r.favoritePeriods.length>1?'并列出现最多。':'出现最多。')+'<br>点一下，看看那些饭点里的记录。':'这次没有取得可用于分析的下单时间。';
  let offset=0;
  $('periodRings').innerHTML=r.periods.map((p,i)=>{const size=total?p.count/total*100:0;const circle='<circle class="period-ring" cx="220" cy="220" r="165" pathLength="100" stroke="'+colors[i]+'" stroke-dasharray="'+size+' '+(100-size)+'" stroke-dashoffset="'+(-offset)+'"/>';offset+=size;return circle;}).join('');
@@ -314,15 +366,15 @@ function render(r){
  $('timeBars').innerHTML=r.periods.map((p,i)=>'<button type="button" class="time-band" data-detail="period" data-index="'+i+'" '+(p.count?'':'disabled')+' aria-label="'+esc(p.name)+' '+p.count+'笔，查看相关记录"><span class="time-band-label">'+esc(p.name)+'</span><span class="bar-track" aria-hidden="true"><span class="bar-fill" style="display:block;--amount:'+p.count/max+';--bar-color:'+colors[i]+'"></span></span><span class="time-band-count">'+p.count+' 笔</span><span class="row-arrow" aria-hidden="true">↗</span></button>').join('');
  $('timeFoot').textContent='北京时间 · '+(r.count-r.unknown.time)+' 笔有有效时间。早餐 05–11 时，午间 11–14 时，下午 14–17 时，晚间 17–22 时，其余为深夜。圆环仅统计有效时间。';
  const passAngles=[-16,4,18],passShifts=[-48,0,48];
- $('storeStack').innerHTML='<span class="store-watermark" aria-hidden="true">'+pad(r.storeCount)+'</span>'+r.stores.slice(0,3).map((s,i)=>'<button type="button" class="store-pass" data-detail="store" data-index="'+i+'" style="--angle:'+passAngles[i]+'deg;--shift:'+passShifts[i]+'px;--layer:'+(i+1)+'" aria-label="'+esc(s.name)+' '+s.count+'笔，查看相关记录"><span class="pass-label"><span>MAI / PLACES</span><span>'+pad(i+1)+'</span></span><span class="pass-count">'+pad(s.count)+'</span><span class="pass-store">'+esc(s.name)+'</span><span class="pass-arrow" aria-hidden="true">↗</span></button>').join('')+'<p class="stack-note">'+r.storeCount+' 家出餐门店 · 这是频次回顾，不是位置地图</p>';
- $('storeList').innerHTML=r.stores.length?r.stores.map((s,i)=>'<li class="store-row"><button type="button" data-detail="store" data-index="'+i+'"><span class="store-index">'+pad(i+1)+'</span><span class="store-name">'+esc(s.name)+'</span><span class="store-count">'+pad(s.count)+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>').join(''):'<li class="store-row"><p class="store-statement">本次没有取得门店名称。</p></li>';
+ $('storeStack').innerHTML='<span class="store-watermark" aria-hidden="true">'+pad(r.storeCount)+'</span>'+r.stores.slice(0,3).map((s,i)=>'<button type="button" class="store-pass" data-motion="pass" data-detail="store" data-index="'+i+'" style="--angle:'+passAngles[i]+'deg;--shift:'+passShifts[i]+'px;--layer:'+(i+1)+'" aria-label="'+esc(s.name)+' '+s.count+'笔，查看相关记录"><span class="pass-label"><span>MAI / PLACES</span><span>'+pad(i+1)+'</span></span><span class="pass-count">'+pad(s.count)+'</span><span class="pass-store">'+esc(s.name)+'</span><span class="pass-arrow" aria-hidden="true">↗</span></button>').join('')+'<p class="stack-note">'+r.storeCount+' 家出餐门店 · 这是频次回顾，不是位置地图</p>';
+ $('storeList').innerHTML=r.stores.length?r.stores.map((s,i)=>'<li class="store-row" data-motion="row" data-index="'+i+'"><button type="button" data-detail="store" data-index="'+i+'"><span class="store-index">'+pad(i+1)+'</span><span class="store-name">'+esc(s.name)+'</span><span class="store-count">'+pad(s.count)+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>').join(''):'<li class="store-row"><p class="store-statement">本次没有取得门店名称。</p></li>';
  $('storeStatement').textContent=(r.favoriteStores.length>1?'有 '+r.favoriteStores.length+' 家门店并列出现最多。':r.favoriteStores[0]?'「'+r.favoriteStores[0]+'」出现最多。':'')+'门店表示出餐门店，不代表实际用餐位置。';
  $('favoriteMeal').textContent=top?.name||'餐品信息待补充';
  $('mealStatement').textContent=top?'出现在 '+top.orders+' 笔订单里'+(tied>1?'，与另外 '+(tied-1)+' 种餐品并列最多。':'，在这份回顾里出现最多。')+'套餐按订单中的完整名称统计。':'本次没有取得可用于统计的餐品明细。';
- $('tasteCount').textContent=pad(tied>1?tied:top?.orders||0);$('tasteLabel').textContent=tied>1?'种餐品并列最多':'笔订单中出现';
- $('mealList').innerHTML=r.meals.map((m,i)=>{const rank=r.meals.findIndex(x=>x.orders===m.orders)+1;return '<li class="meal-row"><button type="button" data-detail="meal" data-index="'+i+'"><span class="meal-rank">'+pad(rank)+'</span><span><span class="meal-name">'+esc(m.name)+'</span><span class="meal-meta">合计 '+m.quantity+' 份</span></span><span class="meal-orders">'+m.orders+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>';}).join('');
+ setCount('tasteCount',tied>1?tied:top?.orders||0,true);$('tasteLabel').textContent=tied>1?'种餐品并列最多':'笔订单中出现';
+ $('mealList').innerHTML=r.meals.map((m,i)=>{const rank=r.meals.findIndex(x=>x.orders===m.orders)+1;return '<li class="meal-row" data-motion="row" data-index="'+i+'"><button type="button" data-detail="meal" data-index="'+i+'"><span class="meal-rank">'+pad(rank)+'</span><span><span class="meal-name">'+esc(m.name)+'</span><span class="meal-meta">合计 '+m.quantity+' 份</span></span><span class="meal-orders">'+m.orders+'<small>笔</small></span><span class="row-arrow" aria-hidden="true">↗</span></button></li>';}).join('');
  $('shareSource').textContent='麦迹 / '+(demo?'虚构示例回顾':'近期点餐回顾');
- $('shareCount').textContent=pad(r.count);
+ setCount('shareCount',r.count,true);
  $('shareStats').innerHTML=[['饭点',best||'时间未提供'],['常点',top?.name||'餐品未提供'],['时间',rangeText(r)]].map(row=>'<span class="share-stat"><span>'+esc(row[0])+'</span><b>'+esc(row[1])+'</b></span>').join('');
  $('feedback').classList.remove('visible');navigation(0);
  window.scrollTo({top:0,behavior:'instant'});observeScenes();queueScroll();
@@ -338,6 +390,11 @@ function openModal(dialog,trigger){
  dialog._trigger=trigger||document.activeElement;dialog._scrollX=scrollX;dialog._scrollY=scrollY;
  if(dialog._trigger?.isConnected)dialog._trigger.focus({preventScroll:true});
  dialog.classList.remove('closing');dialog.showModal();dialog.scrollTop=0;document.body.classList.add('dialog-open');
+ dialog.querySelectorAll('.dialog-kicker,.dialog-body h2,.dialog-lead,.record-row,.chapter-choice,.share-preview').forEach((element,i)=>{
+  if(i>7)return;
+  const preview=element.classList.contains('share-preview');
+  animateElement(element,[{opacity:0,transform:preview?'translateY(30px) rotate(-4deg) scale(.9)':'translateY(14px)'},{opacity:1,transform:'none'}],{duration:preview?650:400,delay:70+Math.min(i,5)*40});
+ });
 }
 function closeModal(dialog,after){
  if(!dialog.open||dialog.classList.contains('closing'))return;
