@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
+  <title id="title">麦迹 · 把日常，再回味一遍</title>
+  <desc id="desc">近期点餐记录，变成五页回顾和一张分享卡。麦迹的原创项目封面，不使用麦当劳官方标志。</desc>
+  <rect width="1200" height="340" fill="#79172a"/>
+  <path d="M0 327H1200" stroke="#f4d666" stroke-width="4"/>
+  <text x="54" y="61" fill="#f4d666" font-family="Georgia,serif" font-size="20" letter-spacing="3">MAI RECAP</text>
+  <text x="50" y="141" fill="#faf7f8" font-family="STZhongsong,Songti SC,SimSun,serif" font-size="56">把日常，</text>
+  <text x="50" y="219" fill="#faf7f8" font-family="STZhongsong,Songti SC,SimSun,serif" font-size="56">再回味一遍。</text>
+  <text x="54" y="285" fill="#f2dce1" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="18">近期点餐记录 · 五页回顾 · 一张分享卡</text>
+  <path d="M821 82V258" stroke="#b16b7b" stroke-width="1"/>
+  <g fill="#f4d666"><circle cx="821" cy="92" r="6"/><circle cx="821" cy="169" r="6"/><circle cx="821" cy="246" r="6"/></g>
+  <g fill="#faf7f8" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25"><text x="849" y="101">饭点的节奏</text><text x="849" y="178">熟悉的门店</text><text x="849" y="255">常点的那一口</text></g>
+</svg>
