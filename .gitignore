@@ -12,3 +12,5 @@ reports/
 *.pem
 *.key
 .impeccable.md
+dist/
+.vercel/

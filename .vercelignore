@@ -1,0 +1,8 @@
+# Upload only the public demo and its build files.
+/*
+!vercel.json
+!.vercelignore
+!麦迹-演示.html
+!scripts/
+/scripts/*
+!/scripts/build-demo.mjs

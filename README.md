@@ -79,6 +79,18 @@ python recap.py --demo
 
 生成后打开 `麦迹-演示.html`。演示始终保留“虚构示例”标记。
 
+## 部署演示版到 Vercel
+
+仓库已包含 Vercel 配置，只发布虚构订单演示，无需 MCP Token 或其他环境变量。线上版支持五页回顾、空账户效果演示和 PNG 分享卡下载；真实订单查询仍使用下方的本地命令。
+
+1. 登录 [Vercel](https://vercel.com/new)，导入 GitHub 仓库 `dandan1232/mai-recap`。
+2. 根目录保持仓库根目录，框架选择 **Other**。仓库配置会指定构建命令 `node scripts/build-demo.mjs` 和输出目录 `dist`。
+3. 点击 **Deploy**。连接 GitHub 后，后续推送到 `main` 会自动更新网站。
+
+构建使用 Node.js 内置功能，无需安装第三方依赖或在 Vercel 运行 Python。本地可执行同一条命令，生成 `dist/index.html`。
+
+网站只提供演示页面；构建会检查数据的演示标记，`.vercelignore` 只允许上传演示文件和构建配置，避免把本地个人报告或凭证带入部署。
+
 ## 生成自己的回顾
 
 1. 在[麦当劳官方 MCP 平台](https://open.mcd.cn/mcp)登录，进入控制台申请连接凭证 Token。
@@ -143,6 +155,9 @@ mai-recap/
 ├── template.html             # 叙事式回顾与分享卡
 ├── test_recap.py              # 11项数据与安全检查
 ├── 麦迹-演示.html             # 可直接打开的离线演示
+├── scripts/build-demo.mjs    # 将虚构演示构建为网站首页
+├── vercel.json              # Vercel 构建命令与网站输出目录
+├── .vercelignore             # 部署文件白名单
 ├── docs/                     # 原创封面、流程图和演示截图
 ├── MCP_INTEGRATION.md         # 实际调用流程与验证情况
 ├── mcp-config.example.json    # 环境变量占位符配置示例
