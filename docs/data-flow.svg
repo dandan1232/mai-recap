@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
  <title id="title">从订单到回忆</title>
- <desc id="desc">官方 MCP 只读查询或虚构示例订单，在本机去重、过滤状态和统计，再生成HTML回顾与PNG分享卡。</desc>
- <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#9a6470"/></marker></defs>
- <rect width="1200" height="300" fill="#f8f7f8"/>
+ <desc id="desc">本人授权的官方 MCP 只读查询或虚构演示，按统一口径整理记录，再生成网页或离线 HTML 回顾与 PNG 分享卡。</desc>
+ <defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7Z" fill="#cf0925"/></marker></defs>
+ <rect width="1200" height="300" fill="#fffaf0"/>
  <g font-family="Microsoft YaHei,PingFang SC,sans-serif">
-  <text x="35" y="46" font-size="16" fill="#674750">两种入口，同一套本地整理流程</text>
-  <rect x="35" y="77" width="230" height="65" rx="5" fill="#79172a"/>
-  <text x="55" y="105" font-size="18" fill="#faf7f8">本人授权 → 官方 MCP</text><text x="55" y="128" font-size="14" fill="#f4d666">只读查询 order-list</text>
-  <rect x="35" y="174" width="230" height="65" rx="5" fill="#e7dce0"/>
-  <text x="55" y="203" font-size="18" fill="#41202b">虚构示例订单</text><text x="55" y="226" font-size="14" fill="#674750">离线体验，始终标注演示</text>
-  <path d="M265 109H305V157H355M265 206H305V157" fill="none" stroke="#9a6470" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="355" y="105" width="280" height="105" rx="5" fill="#e7dce0"/>
-  <text x="378" y="139" font-size="21" fill="#41202b">在本机，把记录整理好</text>
-  <text x="378" y="170" font-size="16" fill="#674750">去重 · 筛选已完成 · 统计频次</text>
-  <text x="378" y="194" font-size="14" fill="#674750">凭证与原始响应不写入文件</text>
-  <path d="M635 157H711" stroke="#9a6470" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="711" y="105" width="190" height="105" rx="5" fill="#79172a"/>
-  <text x="738" y="148" font-size="22" fill="#faf7f8">五页叙事回顾</text><text x="738" y="181" font-size="16" fill="#f4d666">本地 HTML 文件</text>
-  <path d="M901 157H965" stroke="#9a6470" stroke-width="2" marker-end="url(#arrow)"/>
-  <rect x="965" y="105" width="200" height="105" rx="5" fill="#f4d666"/>
-  <text x="989" y="148" font-size="22" fill="#41202b">一张分享卡</text><text x="989" y="181" font-size="16" fill="#674750">浏览器内导出 PNG</text>
+  <text x="35" y="46" font-size="16" fill="#72534a">两种入口，同一套整理流程</text>
+  <rect x="35" y="77" width="230" height="65" rx="5" fill="#cf0925"/>
+  <text x="55" y="105" font-size="18" fill="#fffdf7">本人授权 → 官方 MCP</text><text x="55" y="128" font-size="14" fill="#ffe28a">只读查询 order-list</text>
+  <rect x="35" y="174" width="230" height="65" rx="5" fill="#fff0bd"/>
+  <text x="55" y="203" font-size="18" fill="#38201d">虚构示例订单</text><text x="55" y="226" font-size="14" fill="#72534a">离线体验，始终标注演示</text>
+  <path d="M265 109H305V157H355M265 206H305V157" fill="none" stroke="#cf0925" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="355" y="105" width="280" height="105" rx="5" fill="#fff0bd"/>
+  <text x="378" y="139" font-size="21" fill="#38201d">按统一口径，整理记录</text>
+  <text x="378" y="170" font-size="16" fill="#72534a">去重 · 筛选已完成 · 统计频次</text>
+  <text x="378" y="194" font-size="14" fill="#72534a">凭证与原始响应不落盘</text>
+  <path d="M635 157H711" stroke="#cf0925" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="711" y="105" width="190" height="105" rx="5" fill="#cf0925"/>
+  <text x="738" y="148" font-size="22" fill="#fffdf7">五页叙事回顾</text><text x="738" y="181" font-size="16" fill="#ffe28a">网页 / 离线 HTML</text>
+  <path d="M901 157H965" stroke="#cf0925" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="965" y="105" width="200" height="105" rx="5" fill="#ffbc0d"/>
+  <text x="989" y="148" font-size="22" fill="#38201d">一张分享小票</text><text x="989" y="181" font-size="16" fill="#63472f">浏览器内导出 PNG</text>
  </g>
 </svg>

@@ -1,13 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
   <title id="title">麦迹 · 把日常，再回味一遍</title>
-  <desc id="desc">近期点餐记录，变成五页回顾和一张分享卡。麦迹的原创项目封面，不使用麦当劳官方标志。</desc>
-  <rect width="1200" height="340" fill="#79172a"/>
-  <path d="M0 327H1200" stroke="#f4d666" stroke-width="4"/>
-  <text x="54" y="61" fill="#f4d666" font-family="Georgia,serif" font-size="20" letter-spacing="3">MAI RECAP</text>
-  <text x="50" y="141" fill="#faf7f8" font-family="STZhongsong,Songti SC,SimSun,serif" font-size="56">把日常，</text>
-  <text x="50" y="219" fill="#faf7f8" font-family="STZhongsong,Songti SC,SimSun,serif" font-size="56">再回味一遍。</text>
-  <text x="54" y="285" fill="#f2dce1" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="18">近期点餐记录 · 五页回顾 · 一张分享卡</text>
-  <path d="M821 82V258" stroke="#b16b7b" stroke-width="1"/>
-  <g fill="#f4d666"><circle cx="821" cy="92" r="6"/><circle cx="821" cy="169" r="6"/><circle cx="821" cy="246" r="6"/></g>
-  <g fill="#faf7f8" font-family="Microsoft YaHei,PingFang SC,sans-serif" font-size="25"><text x="849" y="101">饭点的节奏</text><text x="849" y="178">熟悉的门店</text><text x="849" y="255">常点的那一口</text></g>
+  <desc id="desc">麦迹非官方项目封面：经典红黄、黑红标题和金拱门。把近期点餐记录收进五页回顾和一张分享小票。</desc>
+  <rect width="1200" height="340" fill="#fffaf0"/>
+  <rect x="790" width="410" height="340" fill="#cf0925"/>
+  <path d="M0 336H1200" stroke="#ffbc0d" stroke-width="8"/>
+  <g font-family="Microsoft YaHei,PingFang SC,sans-serif">
+    <text x="52" y="58" fill="#cf0925" font-size="20" font-weight="700">麦迹 / MAI RECAP</text>
+    <text x="48" y="144" fill="#252018" font-size="62" font-weight="800">把日常，</text>
+    <text x="48" y="224" fill="#cf0925" font-size="62" font-weight="800">再回味一遍。</text>
+    <text x="52" y="291" fill="#72534a" font-size="18">近期点餐记录 · 五页回顾 · 一张分享小票</text>
+  </g>
+  <path transform="translate(913 31) scale(1.65)" fill="#ffbc0d" d="M7 95C7-8 49-8 50 82C51-8 93-8 93 95H79C79 17 62 5 58 95H42C38 5 21 17 21 95Z"/>
+  <g font-family="Microsoft YaHei,PingFang SC,sans-serif" text-anchor="middle">
+    <text x="995" y="245" fill="#fffdf7" font-size="29" font-weight="700">好好吃饭，回忆打包。</text>
+    <text x="995" y="293" fill="#ffe28a" font-size="13">非麦当劳官方产品 · 演示使用虚构订单</text>
+  </g>
 </svg>
