@@ -1,6 +1,7 @@
 """Generate a local story-style recap from demo data or authorized MCP history."""
 
 import argparse
+import base64
 from collections import Counter
 from datetime import datetime, timedelta, timezone
 import getpass
@@ -132,7 +133,8 @@ def render(report, target):
     # Embedded JSON cannot terminate its script element or introduce HTML.
     embedded = embedded.replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
     template = (ROOT / "template.html").read_text(encoding="utf-8")
-    html = template.replace("__RECAP_DATA__", embedded)
+    hero = base64.b64encode((ROOT / "assets" / "meal-hero.webp").read_bytes()).decode("ascii")
+    html = template.replace("__HERO_IMAGE__", "data:image/webp;base64," + hero).replace("__RECAP_DATA__", embedded)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html, encoding="utf-8", newline="\n")
 
