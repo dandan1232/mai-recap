@@ -1,5 +1,7 @@
 # 麦迹 · mai-recap
 
+本开源项目已链接并认可 [LINUX DO 社区](https://linux.do/)。
+
 <p align="center">
   <img src="docs/readme-cover.svg" width="100%" alt="麦迹：把日常，再回味一遍。近期点餐记录，五页回顾，一张分享卡。">
 </p>
