@@ -133,8 +133,16 @@ def render(report, target):
     # Embedded JSON cannot terminate its script element or introduce HTML.
     embedded = embedded.replace("&", "\\u0026").replace("<", "\\u003c").replace(">", "\\u003e")
     template = (ROOT / "template.html").read_text(encoding="utf-8")
-    hero = base64.b64encode((ROOT / "assets" / "meal-hero.webp").read_bytes()).decode("ascii")
-    html = template.replace("__HERO_IMAGE__", "data:image/webp;base64," + hero).replace("__RECAP_DATA__", embedded)
+    html = template
+    for placeholder, filename in (
+        ("__HERO_IMAGE__", "meal-hero.webp"),
+        ("__TIME_IMAGE__", "mealtime-scene.webp"),
+        ("__STORE_IMAGE__", "restaurant-scene.webp"),
+        ("__TAKEAWAY_IMAGE__", "takeaway-scene.webp"),
+    ):
+        image = base64.b64encode((ROOT / "assets" / filename).read_bytes()).decode("ascii")
+        html = html.replace(placeholder, "data:image/webp;base64," + image)
+    html = html.replace("__RECAP_DATA__", embedded)
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(html, encoding="utf-8", newline="\n")
 
